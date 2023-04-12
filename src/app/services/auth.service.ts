@@ -11,12 +11,12 @@ export class AuthService {
 
   private apiUrl = 'https://sumagoweb.sumagotest.in/login';
 
-  constructor(private http: HttpClient, private router: Router) { }
+   constructor(private http: HttpClient, private router: Router) { }
 
   login(username: string, password: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'content-type': 'application/json'
       })
     };
     const body = {
