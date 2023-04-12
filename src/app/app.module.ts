@@ -12,6 +12,21 @@ import { SalesByCategoryComponent } from './sales-by-category/sales-by-category.
 import { LastFewTransactionsComponent } from './last-few-transactions/last-few-transactions.component';
 import { TopThreeProductsComponent } from './top-three-products/top-three-products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './auth-components/login/login.component';
+import { NotFoundComponent } from './auth-components/not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BarComponent } from './modules/main/bar/bar.component';
+import { HomeComponent } from './modules/main/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,12 +38,27 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SalesByMonthComponent,
     SalesByCategoryComponent,
     LastFewTransactionsComponent,
-    TopThreeProductsComponent
+    TopThreeProductsComponent,
+    LoginComponent,
+    NotFoundComponent,
+    BarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
