@@ -12,6 +12,11 @@ import { SalesByCategoryComponent } from './sales-by-category/sales-by-category.
 import { LastFewTransactionsComponent } from './last-few-transactions/last-few-transactions.component';
 import { TopThreeProductsComponent } from './top-three-products/top-three-products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './auth-components/login/login.component';
+import { NotFoundComponent } from './auth-components/not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +28,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SalesByMonthComponent,
     SalesByCategoryComponent,
     LastFewTransactionsComponent,
-    TopThreeProductsComponent
+    TopThreeProductsComponent,
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
