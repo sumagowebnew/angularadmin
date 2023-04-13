@@ -1,8 +1,8 @@
 mat-toolbar{
     background-color: rgb(14,198,231);
-    height: 70px;
+    min-height: 70px;
     color: black;
-    /* box-shadow:1px black; */
+    width: 100%;
     box-shadow: 2px 2px 5px black;
 }
 img{
@@ -23,7 +23,7 @@ img{
     font-weight: bold;
 }
 .user-name {
-    margin-left: 750px;
+    /* margin-left: 750px; */
     color: black;
     font-size: large;
     font-weight: 10000;
@@ -34,7 +34,7 @@ img{
     border-radius: 50%;
     border: 2px solid #fff;
     background-color: #082a5d;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,12 +42,50 @@ img{
 }
 
 
+.sidebar a {
+    text-decoration: none;
+    padding: 10px 10px;
+    color: #000;
+    text-align: left;
+    display: block;
+}
+
+.sidebar i {
+    color: black;
+    padding-right: 10px;
+}
+
+.sidebar .icon {
+    float: right;
+}
+
+.dropdow-container{
+    padding-left: 10px;
+    overflow-y: hidden;
+    max-height: 0px;
+    transition: all .15s ease;
+}
+
+.dropdow-container.show{
+    max-height: 1000px;
+    transition: all .15 ease;
+}
+ul{
+    padding: 0px;
+}
+ul>li>a.active{
+    color: #000;
+}
+
 
 
 mat-sidenav{
-    width: 230px;
+    width: 200px;
     background-color: #113C60;
     border-right: 1px solid black;
+    transition-delay: 0ms;
+    height: 100%;
+
 }
 
 mat-nav-list {
@@ -55,22 +93,38 @@ mat-nav-list {
     font-size: 18px;
     color: white;
     text-decoration: none;
-    padding-top: 30px;
-    padding: 25px 20px ;
-}
-
-fa-icon{
-    margin-right: 20px;
+ 
 }
 
 .main-content{
-    height: 90.33vh;
+    padding: 10px 10px 10px 10px;
+    height: calc(100% - 10px);
+    overflow: hidden;
 }
 @media screen and (max-width: 768px) {
     mat-sidenav{
         width: 22vh;
     }
-    .main-content{
-        height: 91.33vh;
-    }
 }
+
+
+@media screen and (max-width:500px) {
+
+    .menu 
+    {
+        display: block;
+    }
+    .sidebar{
+        display: none;
+        width: 160px;
+    }
+    .sidebar a{
+        padding: 10px 0px;
+    }
+    .main-content
+    {
+        margin-left: 0px;
+    }
+
+}
+
