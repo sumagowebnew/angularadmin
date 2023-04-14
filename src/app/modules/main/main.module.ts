@@ -6,6 +6,7 @@ import { BarComponent } from './bar/bar.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PortfolioFormComponent } from './portfolio-form/portfolio-form.componen
   
   
   
-    PortfolioFormComponent
+    PortfolioFormComponent,
+               ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
