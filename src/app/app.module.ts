@@ -27,6 +27,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSortModule} from '@angular/material/sort';
+
+import { MatExpansionModule, matExpansionAnimations } from '@angular/material/expansion';
+import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
+
 
 @NgModule({
   declarations: [
@@ -39,10 +44,14 @@ import { MatIconModule } from '@angular/material/icon';
     SalesByCategoryComponent,
     LastFewTransactionsComponent,
     TopThreeProductsComponent,
+    //auth modules
     LoginComponent,
     NotFoundComponent,
+    //main modules
     BarComponent,
     HomeComponent,
+    PortfolioDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -50,6 +59,8 @@ import { MatIconModule } from '@angular/material/icon';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    //angular material modules
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
@@ -58,6 +69,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatGridListModule,
     MatIconModule,
+    MatSortModule,
+    MatExpansionModule,
 
   ],
   providers: [],

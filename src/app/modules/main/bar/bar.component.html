@@ -11,7 +11,7 @@
 
 <mat-toolbar>
     <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle();" >
+        <button mat-icon-button (click)="sidenav.toggle();openNav(false)">
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
@@ -21,23 +21,28 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container>
-    <mat-sidenav #sidenav  opened="true" mode="over" [ngStyle]="responsiveMenu">
+<mat-sidenav-container style="height: 100%;">
+    <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
         <mat-nav-list>
-            <a mat-list-item style="padding: 20px;"> <fa-icon [icon]="faDashboard"></fa-icon> Home</a>
-        
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faPerson"></fa-icon> Employee</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faShop"></fa-icon> Orders</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faBox"></fa-icon>
-                Products</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faChartBar"></fa-icon> Status</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faContactBook"></fa-icon> Contact</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <fa-icon [icon]="faHand"></fa-icon> Help</a>
-            <a mat-list-item style="padding: 20px;" routerLink="" routerLinkActive=""> <i class="fa fa-sign-out"></i>Logout</a>
+            <ul>
+                <li><a routerLink="/main/home"> <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true"></i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/port-form"> <i class="fa fa-plus" aria-hidden="true"></i> Add Portfolio</a></li>
+                        <li><a routerLink="/main/port-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Portfolio Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+
+            </ul>
+            <!-- </div> -->
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="main-content" >
+        <div class="main-content" [ngStyle]="responsiveContent">
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
@@ -87,7 +92,7 @@
     </div>
      -->
 
-    <!-- <div class="main">
+<!-- <div class="main">
         <router-outlet></router-outlet>
     </div>
       -->
