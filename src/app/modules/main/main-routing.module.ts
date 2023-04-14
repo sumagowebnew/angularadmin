@@ -4,6 +4,7 @@ import { BarComponent } from './bar/bar.component';
 import { HomeComponent } from './home/home.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {path:'',
@@ -12,6 +13,7 @@ const routes: Routes = [
     {  path:'home',component:HomeComponent},
     {  path:'port-det',component:PortfolioDetailsComponent},
     {  path:'port-form',component:PortfolioFormComponent},
+    {  path:'forgot-form',component:ForgotPasswordComponent},
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
   ]
   }
