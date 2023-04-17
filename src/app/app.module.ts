@@ -31,6 +31,7 @@ import {MatSortModule} from '@angular/material/sort';
 
 import { MatExpansionModule, matExpansionAnimations } from '@angular/material/expansion';
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
+import { CountComponent } from './modules/main/count/count.component';
 
 
 @NgModule({
@@ -51,6 +52,8 @@ import { PortfolioDetailsComponent } from './modules/main/portfolio-details/port
     BarComponent,
     HomeComponent,
     PortfolioDetailsComponent,
+    CountComponent
+
     
   ],
   imports: [

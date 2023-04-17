@@ -1,0 +1,38 @@
+<div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Consultations Enquiries</h2>
+          </div>
+        
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Action</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Topic</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inquiry of inquiries; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+           <i class="fa fa-trash-o" (click)="deleteInquiry(i)"></i>
+
+        </td>
+        <td>{{ inquiry.name }}</td>
+        <td>{{ inquiry.email }}</td>
+        <td>{{ inquiry.mobileNumber }}</td>
+        <td>{{ inquiry.topic }}</td>
+        <td>{{ inquiry.date | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
