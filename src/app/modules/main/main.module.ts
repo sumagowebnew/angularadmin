@@ -16,9 +16,6 @@ import { BirthdayComponent } from './birthday/birthday.component';
 
 @NgModule({
   declarations: [
-
-    PortfolioFormComponent,
-    ForgotPasswordComponent,
     FreeConsultationComponent,
     BirthdayComponent,
    
