@@ -32,6 +32,8 @@ import {MatSortModule} from '@angular/material/sort';
 import { MatExpansionModule, matExpansionAnimations } from '@angular/material/expansion';
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
 import { CountComponent } from './modules/main/count/count.component';
+import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
+import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
 
 
 @NgModule({
@@ -52,8 +54,9 @@ import { CountComponent } from './modules/main/count/count.component';
     BarComponent,
     HomeComponent,
     PortfolioDetailsComponent,
-    CountComponent
-
+    CountComponent,
+    PortfolioFormComponent,
+    ForgotPasswordComponent,
     
   ],
   imports: [
