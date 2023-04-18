@@ -1,1 +1,41 @@
-<p>count works!</p>
+<div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Index Count Details</h2>
+          </div>
+        
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Action</th>
+          <th>Clients</th>
+          <th>Projects</th>
+          <th>Cup of Coffee</th>
+          <th>Awards Win</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let count of counts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            
+              <i class="fa fa-trash-o" (click)="deleteCount(i)"></i> &nbsp; 
+            
+              <i class="fa fa-edit" (click)="editCount(count)"></i>
+          </td>
+          <td>{{ count.clients }}</td>
+          <td>{{ count.projects }}</td>
+          <td>{{ count.cupOfCoffee }}</td>
+          <td>{{ count.awardsWin }}</td>
+          <td>{{ count.date | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
