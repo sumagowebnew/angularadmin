@@ -5,6 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CountComponent } from './count/count.component';
+import { FreeConsultationComponent } from './free-consultation/free-consultation.component';
+import { BirthdayComponent } from './birthday/birthday.component';
 
 const routes: Routes = [
   {path:'',
@@ -13,6 +16,11 @@ const routes: Routes = [
     {  path:'home',component:HomeComponent},
     {  path:'port-det',component:PortfolioDetailsComponent},
     {  path:'port-form',component:PortfolioFormComponent},
+
+    {  path:'count',component:CountComponent},
+    {  path:'free-consultation',component:FreeConsultationComponent},
+    {  path:'birthday',component:BirthdayComponent},
+  
     {  path:'forgot-form',component:ForgotPasswordComponent},
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
   ]
