@@ -6,9 +6,9 @@ import { Count } from './count.model';
 })
 export class CountService {
   private counts: Count[] = [
-    new Count(1, 10, 5, 20, 3, new Date(2023, 3, 1)),
-    new Count(2, 8, 10, 15, 2, new Date(2023, 3, 5)),
-    new Count(3, 12, 7, 25, 5, new Date(2023, 3, 10))
+    new Count(1, 10, 5, 20, 3, new Date(2023, 3, 10)),
+    new Count(2, 8, 10, 15, 2, new Date(2023, 4, 15)),
+    new Count(3, 12, 7, 25, 5, new Date(2023, 4, 17))
   ];
 
   constructor() { }
