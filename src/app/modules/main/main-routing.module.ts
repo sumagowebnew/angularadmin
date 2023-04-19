@@ -8,6 +8,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { CountComponent } from './count/count.component';
 import { FreeConsultationComponent } from './free-consultation/free-consultation.component';
 import { BirthdayComponent } from './birthday/birthday.component';
+import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { EventAddComponent } from './event-add/event-add.component';
 
 const routes: Routes = [
   {path:'',
@@ -20,6 +23,10 @@ const routes: Routes = [
     {  path:'count',component:CountComponent},
     {  path:'free-consultation',component:FreeConsultationComponent},
     {  path:'birthday',component:BirthdayComponent},
+    {  path:'birthday-form',component:BirthdayFormComponent},
+
+    {  path:'event-details',component:EventDetailsComponent},
+    {  path:'event-add',component:EventAddComponent},
   
     {  path:'forgot-form',component:ForgotPasswordComponent},
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},

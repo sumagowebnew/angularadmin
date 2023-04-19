@@ -33,7 +33,12 @@ import { MatExpansionModule, matExpansionAnimations } from '@angular/material/ex
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
-import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+// import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
+import { BirthdayComponent } from './modules/main/birthday/birthday.component';
+import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
+import { EventAddComponent } from './modules/main/event-add/event-add.component';
+
 
 
 @NgModule({
@@ -54,9 +59,14 @@ import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-
     BarComponent,
     HomeComponent,
     PortfolioDetailsComponent,
+    FreeConsultationComponent,
+    BirthdayComponent,
     CountComponent,
-    PortfolioFormComponent,
-    // ForgotPasswordComponent,
+    // PortfolioFormComponent,
+    ForgotPasswordComponent,
+    EventDetailsComponent,
+    EventAddComponent
+    
     
   ],
   imports: [

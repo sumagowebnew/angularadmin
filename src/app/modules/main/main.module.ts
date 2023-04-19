@@ -2,19 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
-import { FreeConsultationComponent } from './free-consultation/free-consultation.component';
+
 import { InquiryService } from './free-consultation/inquiry.service';
-import { BirthdayComponent } from './birthday/birthday.component';
+import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
+import { EventAddComponent } from './event-add/event-add.component';
 
 
 
 @NgModule({
   declarations: [
-    FreeConsultationComponent,
-    BirthdayComponent,
-   
-               
-
+    BirthdayFormComponent,
+    // EventComponent
   ],
   imports: [
     CommonModule,
