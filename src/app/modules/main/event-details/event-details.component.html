@@ -1,1 +1,32 @@
-<p>Event Details working!</p>
+<div class="event-details">
+    <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>Event Details</h2>
+            </div>
+          
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+        <tr>
+          <th>SrNo</th>
+          <th>Action</th>
+          <th>Event Image</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events; let i = index">
+          <!-- <td>{{ event.file }}</td> -->
+          <td>{{ i + 1 }}</td>
+          <td>
+            <i class="fa fa-trash-o" (click)="deleteEvent(i)" title="Delete"></i></td>
+          <td><img [src]="event.image" alt="Event Image"></td>
+          <td>{{ event.date | date: 'shortDate' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

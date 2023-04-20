@@ -14,7 +14,7 @@ import { TopThreeProductsComponent } from './top-three-products/top-three-produc
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
 import { HomeComponent } from './modules/main/home/home.component';
@@ -75,6 +75,7 @@ import { EventAddComponent } from './modules/main/event-add/event-add.component'
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
 
     //angular material modules
     BrowserAnimationsModule,

@@ -10,8 +10,8 @@
       </div>
       <table class="table table-striped table-hover">
         <thead>
-    <table>
-      <thead>
+    <!-- <table>
+      <thead> -->
         <tr>
           
           <th>Sr No</th>
@@ -23,12 +23,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let birthday of birthdays">
+        <tr *ngFor="let birthday of birthdays; let i = index">
           
-          <td>{{ birthday.serialNumber }}</td>
-          
+          <!-- <td>{{ birthday.serialNumber }}</td> -->
+          <td>{{ i + 1 }}</td>
           <td>
-            <i class="fa fa-trash-o"  (click)="onDelete(birthday)"></i>
+            <i class="fa fa-trash-o"  (click)="onDelete(i)" title="Delete"></i>
           </td>
           <td>
             <img [src]="birthday.image" alt="Birthday Image">

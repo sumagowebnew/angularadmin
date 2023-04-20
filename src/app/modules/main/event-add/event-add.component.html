@@ -1,16 +1,15 @@
-<div class="image-upload">
-    <form (submit)="onSubmit()">
-      <h2>Add Event</h2>
-      <div class="form-group">
-        <label for="file">Event Image</label>
-        <input type="file" id="file" accept="image/*" (change)="onFileSelected($event)" required>
-        <img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image">
-      </div>
-      
-      <div class="button-group">
-        <button type="submit"><i class = "fa fa-check" aria-hidden="true"></i>Submit</button>
-        <button type="reset" (click)="onReset()"><i class = "fa fa-undo" aria-hidden="true"></i>Reset</button>
-      </div>
-    </form>
-  </div>
-  
+<div class="event-add">
+  <h2>Add Event</h2>
+  <form (ngSubmit)="submitEvent()" #eventForm="ngForm">
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" name="eventName" [(ngModel)]="eventName" required>
+
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" name="eventDate" [(ngModel)]="eventDate" required>
+
+    <label for="eventImage">Event Image:</label>
+    <input type="file" (change)="handleImageInput($event)" accept="image/*">
+
+    <button type="submit" [disabled]="!eventForm.form.valid">Add Event</button>
+  </form>
+</div>

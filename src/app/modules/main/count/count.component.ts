@@ -10,6 +10,8 @@ import { CountService } from './count.service';
 export class CountComponent implements OnInit {
   counts: Count[] =[];
 
+
+
   constructor(private countService: CountService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,12 @@ export class CountComponent implements OnInit {
     this.countService.deleteCount(index);
   }
 
+  
   editCount(count: Count): void {
-    // Do something when edit button is clicked
   }
+  
+      // TODO: Handle edit operation
+
+  
+  
 }

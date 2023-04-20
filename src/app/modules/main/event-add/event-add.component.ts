@@ -6,30 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-add.component.scss']
 })
 export class EventAddComponent {
-  imageUrl: string="";
+  eventName: string='';
+  eventDate: string='';
+  eventImage: string='';
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
+  handleImageInput(event: any) {
     const reader = new FileReader();
-
-    reader.onload = (e: any) => {
-      this.imageUrl = e.target.result;
+    reader.onload = () => {
+      this.eventImage = reader.result as string;
     };
-
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(event.target.files[0]);
   }
 
-  onSubmit() {
-    const data = {
-      imageUrl: this.imageUrl,
-    
+  submitEvent() {
+    const event = {
+      name: this.eventName,
+      date: this.eventDate,
+      image: this.eventImage
     };
-
-    console.log(data);
-    // Add logic to save the data to the server or perform other actions
-  }
-
-  onReset() {
-    this.imageUrl = '';
-}
+  
+    // Submit the event to the server or store it locally
+    // Replace the console log with your submission logic
+    console.log(event);
+  
+    // Clear the form fields
+    this.eventName = '';
+    this.eventDate = '';
+    this.eventImage = '';  }
 }
