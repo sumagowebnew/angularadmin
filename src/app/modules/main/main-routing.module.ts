@@ -11,6 +11,7 @@ import { BirthdayComponent } from './birthday/birthday.component';
 import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
+import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   {path:'',
@@ -27,6 +28,7 @@ const routes: Routes = [
 
     {  path:'event-details',component:EventDetailsComponent},
     {  path:'event-add',component:EventAddComponent},
+    {  path:'team',component:TeamComponent},
   
     {  path:'forgot-form',component:ForgotPasswordComponent},
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
