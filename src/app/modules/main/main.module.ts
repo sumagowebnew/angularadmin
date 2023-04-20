@@ -6,15 +6,11 @@ import { FreeConsultationComponent } from './free-consultation/free-consultation
 import { InquiryService } from './free-consultation/inquiry.service';
 import { BirthdayComponent } from './birthday/birthday.component';
 
-
-
 @NgModule({
   declarations: [
     FreeConsultationComponent,
     BirthdayComponent,
-   
-               
-
+ 
   ],
   imports: [
     CommonModule,
