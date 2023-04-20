@@ -6,12 +6,14 @@ import { MainRoutingModule } from './main-routing.module';
 import { InquiryService } from './free-consultation/inquiry.service';
 import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
 import { EventAddComponent } from './event-add/event-add.component';
+import { TeamComponent } from './team/team.component';
 
 
 
 @NgModule({
   declarations: [
     BirthdayFormComponent,
+    TeamComponent,
     // EventComponent
   ],
   imports: [
