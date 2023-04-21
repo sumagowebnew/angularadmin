@@ -25,8 +25,11 @@
     <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
         <mat-nav-list>
             <ul>
+                
                 <li><a routerLink="/main/home"> <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
                 <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
+                <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -48,6 +51,43 @@
                             Portfolio Details</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Awards</a></li>
+                        <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Award Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Appreciation <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-appreciation"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Appreciation</a></li>
+                        <li><a routerLink="/main/appreciation-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Appreciation Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Training</a></li>
+                        <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Training Details</a></li>
+                    </ul>
+                </li>
+
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Birthday <i class="fa fa-caret-down" aria-hidden="true"></i>

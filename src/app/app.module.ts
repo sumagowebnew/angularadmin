@@ -56,7 +56,8 @@ import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-
     PortfolioDetailsComponent,
     CountComponent,
     PortfolioFormComponent,
-    // ForgotPasswordComponent,
+     ForgotPasswordComponent,
+
     
   ],
   imports: [

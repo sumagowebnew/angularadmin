@@ -8,6 +8,14 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { CountComponent } from './count/count.component';
 import { FreeConsultationComponent } from './free-consultation/free-consultation.component';
 import { BirthdayComponent } from './birthday/birthday.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { QuoteComponent } from './quote/quote.component';
+import { AddAwardsComponent } from './add-awards/add-awards.component';
+import { AddAppreciationComponent } from './add-appreciation/add-appreciation.component';
+import { AddTrainingComponent } from './add-training/add-training.component';
+import { AwardDetComponent } from './award-det/award-det.component';
+import { AppreciationDetComponent } from './appreciation-det/appreciation-det.component';
+import { TrainingDetComponent } from './training-det/training-det.component';
 
 const routes: Routes = [
   {path:'',
@@ -23,6 +31,15 @@ const routes: Routes = [
   
     {  path:'forgot-form',component:ForgotPasswordComponent},
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
+
+    { path:'award-det',component:AwardDetComponent},
+    { path:'add-awards',component:AddAwardsComponent},
+    { path:'add-appreciation',component:AddAppreciationComponent},
+    { path:'appreciation-det',component:AppreciationDetComponent},
+    { path:'add-training',component:AddTrainingComponent},
+    { path:'training-det',component:TrainingDetComponent},
+    { path:'questions',component:QuestionsComponent},
+    { path:'quote',component:QuoteComponent}
   ]
   }
 ];
