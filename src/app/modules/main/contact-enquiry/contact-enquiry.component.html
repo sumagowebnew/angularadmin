@@ -1,0 +1,42 @@
+<div class="text-white bg-primary">Result for lastest "Contact Enquiries"</div>
+<div class="table-responsive">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-xs-6">
+          <h2>Contact Enquiries</h2>
+        </div>
+        <div class="col-xs-6">
+          <a class="btn btn-success" routerLink="/main/port-form"><i class="material-icons">&#xE147;</i> <span>Add New
+              Portfolio</span></a>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Action</th>
+          <th scope="col">Name</th>
+          <th scope="col">Mobile No</th>
+          <th scope="col">Email</th>
+          <th scope="col">Message</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let contact of contacts; let i=index">
+          <td>{{i+1}}</td>
+          <td>
+            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+          </td>
+          <td>{{contact.name}}</td>
+          <td>{{contact.mobno}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.message}}</td>
+          <td>{{contact.date | date}}</td>
+      </tbody>
+    </table>
+  </div>
+</div>
