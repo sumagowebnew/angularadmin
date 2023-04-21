@@ -1,13 +1,4 @@
-<!-- <div class="header">
-    
-    <div class="header1">
-        <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <div class="user">
-            <div class="user-name">Sumago Infotech</div>
-            <div class="user-image">SI</div>
-        </div>
-    </div>
-</div> -->
+
 
 <mat-toolbar>
     <mat-toolbar-row>
@@ -15,18 +6,54 @@
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <h1></h1>
-        <div class="user-name">Sumago Infotech</div>
-        <div class="user-image">SI</div>
+        <div class="user-name">Purva Diwate</div>
+        <div class="user-image border-white ">PD</div>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container style="height: 100%;">
     <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
         <mat-nav-list>
+
+            <div class="text-center">
+                <i class="green fa fa-signal" aria-hidden="true"></i>
+                <i class="red fa fa-pencil" aria-hidden="true"></i>
+                <i class="yellow fa fa-archive" aria-hidden="true"></i>
+                <i class="blue fa fa-cogs" aria-hidden="true"></i>
+            </div>
+
             <ul>
-                
-                <li><a routerLink="/main/home"> <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <!-- purva's components -->
+                <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+                </li>
+                <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
+                        Enquiries</a></li>
+                <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
+                        Enquiries</a></li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-achievements"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                Achievements</a></li>
+                        <li><a routerLink="/main/view-achievements"> <i class="fa fa-info" aria-hidden="true"></i>
+                                Achievement Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> News <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-news"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                News</a></li>
+                        <li><a routerLink="/main/view-news"> <i class="fa fa-info" aria-hidden="true"></i>
+                                News Details</a></li>
+                    </ul>
+                </li>
+                <!-- purva's components -->
+
                 <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
                 <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
                 <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
@@ -35,13 +62,23 @@
                     </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
-                        
                         <li><a routerLink="/main/count"> <i class="fa fa-info" aria-hidden="true">    
                         </i> Count Details</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    <a> <i class="fa fa-list" aria-hidden="true">
+                    </i> Client Logo <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-logo"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Client Logo</a></li>
+                        <li><a routerLink="/main/client-logo"> <i class="fa fa-info" aria-hidden="true"></i>
+                            View Client Logo</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -90,6 +127,28 @@
 
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
+                    </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-cert"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Certificate</a></li>
+                        <li><a routerLink="/main/cert-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Certificate details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true">
+                    </i> MOU<i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-mou"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add MOU</a></li>
+                        <li><a routerLink="/main/mou-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            MOU  Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Birthday <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -113,8 +172,8 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--  
+<!-- 
+ 
 <div class="sidebarmain">
     <div class="sidebar">
         <div class="nav-items">

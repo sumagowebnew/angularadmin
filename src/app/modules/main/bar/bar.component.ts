@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenav} from '@angular/material/sidenav';
 import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -22,10 +22,8 @@ export class BarComponent implements OnInit  {
   ngOnInit(): void {
 
     let alldrpdwn = document.querySelectorAll('.dropdow-container');
-    console.log(alldrpdwn,'alldrpdwn#');
     alldrpdwn.forEach((item:any)=>{
       const a = item.parentElement?.querySelector('a:first-child');
-      console.log(a,'a#');
       a.addEventListener('click',(e:any)=>{
           e.preventDefault();
           this.el.nativeElement.classList.toggle('active');
@@ -46,6 +44,9 @@ export class BarComponent implements OnInit  {
   openNav(status:any){
     if(status===this.defaultStatus)
     {
+      this.responsiveMenu={
+
+      }
       this.responsiveContent={
   
       }
