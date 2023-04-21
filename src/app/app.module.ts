@@ -34,6 +34,14 @@ import { PortfolioDetailsComponent } from './modules/main/portfolio-details/port
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+import { ClientLogoComponent } from './modules/main/client-logo/client-logo.component';
+import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+import { AddCertificationComponent } from './modules/main/add-certification/add-certification.component';
+import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
+import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
+// import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+
 
 
 @NgModule({
@@ -56,7 +64,16 @@ import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-
     PortfolioDetailsComponent,
     CountComponent,
     PortfolioFormComponent,
+
      ForgotPasswordComponent,
+     
+    ClientLogoComponent,
+    AddLogoComponent,
+    AddCertificationComponent,
+    CertificationDetailsComponent,
+    AddMouComponent,
+    MouDetailsComponent,
+    ForgotPasswordComponent,
 
     
   ],

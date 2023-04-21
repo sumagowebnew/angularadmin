@@ -14,8 +14,6 @@ import { AppreciationDetComponent } from './appreciation-det/appreciation-det.co
 import { QuoteComponent } from './quote/quote.component';
 import { QuestionsComponent } from './questions/questions.component';
 
-
-
 @NgModule({
   declarations: [
     FreeConsultationComponent,
@@ -31,6 +29,7 @@ import { QuestionsComponent } from './questions/questions.component';
    
                
 
+ 
   ],
   imports: [
     CommonModule,
