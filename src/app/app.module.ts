@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
@@ -25,19 +26,28 @@ import { MatExpansionModule, matExpansionAnimations } from '@angular/material/ex
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
+
 // import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
 import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
 import { BirthdayComponent } from './modules/main/birthday/birthday.component';
 import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
 import { EventAddComponent } from './modules/main/event-add/event-add.component';
 
+import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+import { ClientLogoComponent } from './modules/main/client-logo/client-logo.component';
+import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+import { AddCertificationComponent } from './modules/main/add-certification/add-certification.component';
+import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
+import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
+// import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
-   
     //auth modules
     LoginComponent,
     NotFoundComponent,
@@ -51,8 +61,16 @@ import { EventAddComponent } from './modules/main/event-add/event-add.component'
     // PortfolioFormComponent,
     ForgotPasswordComponent,
     EventDetailsComponent,
-    EventAddComponent
-    
+    EventAddComponent,
+     ForgotPasswordComponent,
+    ClientLogoComponent,
+    AddLogoComponent,
+    AddCertificationComponent,
+    CertificationDetailsComponent,
+    AddMouComponent,
+    MouDetailsComponent,
+    ForgotPasswordComponent,
+
     
   ],
   imports: [
