@@ -24,7 +24,7 @@ export class PortfolioDetailsComponent {
   StatusAction:false,
   Title:'Aemo',
   WebsiteStatus:true,
-  Portfolio:'demh',
+  Portfolio:'demo',
   WebsiteLink:'google',
   Date:'27-10-2001',
   }

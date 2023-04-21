@@ -25,10 +25,17 @@ import { PortfolioDetailsComponent } from './modules/main/portfolio-details/port
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+
 import { DashboardComponent } from './modules/main/dashboard/dashboard.component';
 import { ContactEnquiryComponent } from './modules/main/contact-enquiry/contact-enquiry.component';
 import { CareerEnquiryComponent } from './modules/main/career-enquiry/career-enquiry.component';
 
+import { ClientLogoComponent } from './modules/main/client-logo/client-logo.component';
+import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+import { AddCertificationComponent } from './modules/main/add-certification/add-certification.component';
+import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
+import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +50,15 @@ import { CareerEnquiryComponent } from './modules/main/career-enquiry/career-enq
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
+    ForgotPasswordComponent,
+    ClientLogoComponent,
+    AddLogoComponent,
+    AddCertificationComponent,
+    CertificationDetailsComponent,
+    AddMouComponent,
+    MouDetailsComponent,
+    ForgotPasswordComponent,
+
   ],
   imports: [
     BrowserModule,
