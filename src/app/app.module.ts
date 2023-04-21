@@ -64,6 +64,9 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     PortfolioDetailsComponent,
     CountComponent,
     PortfolioFormComponent,
+
+     ForgotPasswordComponent,
+     
     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
@@ -71,6 +74,7 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     AddMouComponent,
     MouDetailsComponent,
     ForgotPasswordComponent,
+
     
   ],
   imports: [
