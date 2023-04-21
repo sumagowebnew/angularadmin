@@ -46,9 +46,6 @@ export class ImageService {
     });
   }
 
-  getAllImageBase64(){
-  return this.http.get('http://localhost:3000/images')
-}
 
 
 }

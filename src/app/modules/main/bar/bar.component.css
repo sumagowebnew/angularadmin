@@ -45,13 +45,13 @@ img{
 .sidebar a {
     text-decoration: none;
     padding: 10px 10px;
-    color: #000;
+    color: white;
     text-align: left;
     display: block;
 }
 
 .sidebar i {
-    color: black;
+    color: white;
     padding-right: 10px;
 }
 
@@ -79,17 +79,54 @@ ul>li>a.active{
 
 
 
+
+
 mat-sidenav{
-    width: 200px;
+    /* padding: 50px; */
+    width: 300px;
     background-color: #113C60;
     border-right: 1px solid black;
     transition-delay: 0ms;
     height: 100%;
+    
+
 
 }
 
+.nav-items {
+    padding-top: 40px;
+}
+.nav-items .nav-item {
+    padding: 25px 50px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1300px) {
+    .nav-items .nav-item {
+        padding: 25px 40px;
+   }
+}
+.nav-items .nav-item.hover {
+    background-color: #070666;
+}
+.nav-items .nav-item fa-icon {
+    margin-right: 20px;
+    font-size: 22px;
+}
+.nav-items .nav-item span {
+    display: inline;
+}
+@media only screen and (max-width: 1300px) {
+    .nav-items .nav-item span {
+        display: none;
+   }
+}
+
+ul {
+    list-style-type: none;
+  }
+
 mat-nav-list {
-    
+    /* padding-bottom: 50px; */
     font-size: 18px;
     color: white;
     text-decoration: none;
@@ -106,6 +143,7 @@ mat-nav-list {
         width: 22vh;
     }
 }
+
 
 
 @media screen and (max-width:500px) {
