@@ -45,7 +45,7 @@ export class BarComponent implements OnInit  {
     if(status===this.defaultStatus)
     {
       this.responsiveMenu={
-
+      
       }
       this.responsiveContent={
   

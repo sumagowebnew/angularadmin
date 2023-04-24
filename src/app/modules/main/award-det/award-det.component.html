@@ -57,13 +57,15 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let award of awards; let i=index">
-                   <td>{{i+1}}</td>
-                   <td><img [src]="" alt="Image"></td>
-                  <td>{{award.Date}}</td>
-                </tr>
-                <!-- add more rows as needed -->
-              </tbody>
+              <tr *ngFor="let award of awards; let i=index">
+                <td>{{i+1}}</td>
+                <td>
+                  <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+                </td>
+      
+                <td><img [src]="" alt="Image"></td>
+                <td>{{award.date | date}}</td>
+            </tbody>
           </table>
         </div>
       </div>        
