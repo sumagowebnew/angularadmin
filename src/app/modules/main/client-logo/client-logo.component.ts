@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { fileTypeFromBuffer } from 'file-type';
+
 import { map } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { url } from 'inspector';
 
 @Component({
   selector: 'app-client-logo',

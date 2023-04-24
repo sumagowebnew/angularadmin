@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +25,13 @@ import { MatExpansionModule, matExpansionAnimations } from '@angular/material/ex
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
+
+// import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
+import { BirthdayComponent } from './modules/main/birthday/birthday.component';
+import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
+import { EventAddComponent } from './modules/main/event-add/event-add.component';
+
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
 import { DashboardComponent } from './modules/main/dashboard/dashboard.component';
 import { CareerEnquiryComponent } from './modules/main/career-enquiry/career-enquiry.component';
@@ -35,7 +42,12 @@ import { AddCertificationComponent } from './modules/main/add-certification/add-
 import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+<<<<<<< HEAD
 
+=======
+import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
+// import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
+>>>>>>> b59692ca928e56265e013cf11db6c3e8b551149d
 
 
 
@@ -43,24 +55,52 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
   declarations: [
     AppComponent,
 
+<<<<<<< HEAD
+=======
+
+    
+   
+    //auth modules
+
+
+>>>>>>> b59692ca928e56265e013cf11db6c3e8b551149d
     LoginComponent,
     NotFoundComponent,
     BarComponent,
     PortfolioDetailsComponent,
+    FreeConsultationComponent,
+    BirthdayComponent,
     CountComponent,
+
     PortfolioFormComponent,
+     ForgotPasswordComponent,
+
+
+
+    // PortfolioFormComponent,
+    ForgotPasswordComponent,
+    EventDetailsComponent,
+    EventAddComponent,
+
+
+     ForgotPasswordComponent,
+
+    PortfolioFormComponent,
+
     ForgotPasswordComponent,
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
     ForgotPasswordComponent,
-    ClientLogoComponent,
+     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
     AddMouComponent,
     MouDetailsComponent,
     ForgotPasswordComponent,
+    EventAddComponent,
+    EventDetailsComponent,
 
 
   ],
@@ -70,6 +110,14 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+
+    //angular material modules
+
+    FormsModule,
+
+    //angular material modules
+
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,

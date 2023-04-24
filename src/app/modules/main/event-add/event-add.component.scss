@@ -1,0 +1,40 @@
+.event-add {
+  max-width: 600px;
+  margin:  auto;
+  margin-top: 25px;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="file"],
+    button {
+      padding: 20px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #435d7d;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0069d9;
+      }
+    }
+  }
+}

@@ -8,12 +8,27 @@ import { Component } from '@angular/core';
 export class ContactEnquiryComponent {
   contacts:any[]=[
     {
-      name:'purva',
+      name:'Purva Diwate',
       mobno:'86734267846',
       email:'abc@gmail.com',
-      message:'hello im angular developer',
-      date:new Date('2023-04-12'),
-    }
+      message:'Hello! Im angular developer',
+      date:new Date('2022-09-08'),
+    },
+    {
+      name:'Mitisha Patel' ,
+      mobno:'99219029336',
+      email:'demo@gmail.com',
+      message:'Hi! Im react developer',
+      date:new Date('2021-08-31'),
+    },
+    {
+      name:'Aditi Sonawane',
+      mobno:'86734267846',
+      email:'trial@gmail.com',
+      message:'Hey, Im angular developer',
+      date:new Date('2019-02-24'),
+    },
+    
 
   ];
   deletecontact(index: number){
