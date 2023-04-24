@@ -13,9 +13,20 @@ export class CareerEnquiryComponent {
       mobno: '8673478465',
       technology: 'PHP',
       position: 'Developer',
-      circulumvitae: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
+      circulumvitae: ' ',
       duration: '3 months',
-      letter: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
+      letter: 'https://assets.qwikresume.com/cover-letters/images/photo-editor-cover-letter-sample.jpg',
+      date: new Date('2023-04-12'),
+    },
+    {
+      name: 'mitisha',
+      email: 'abc@gmail.com',
+      mobno: '9999778665',
+      technology: 'JAVA',
+      position: 'Developer',
+      circulumvitae: ' ',
+      duration: '3 months',
+      letter: 'https://assets.qwikresume.com/cover-letters/images/photo-editor-cover-letter-sample.jpg',
       date: new Date('2023-04-12'),
     }
 

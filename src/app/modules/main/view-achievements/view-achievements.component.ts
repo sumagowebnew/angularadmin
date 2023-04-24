@@ -10,12 +10,12 @@ export class ViewAchievementsComponent {
     {
       title:'Purva Diwate',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
+      date:new Date('2022-03-09'),
     },
     {
-      title:'Purva Diwate',
+      title:'Mitisha Patel',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
+      date:new Date('2022-10-31'),
     }
 
   ];
