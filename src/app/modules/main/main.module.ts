@@ -18,8 +18,6 @@ import { AppreciationDetComponent } from './appreciation-det/appreciation-det.co
 import { QuoteComponent } from './quote/quote.component';
 import { QuestionsComponent } from './questions/questions.component';
 
-
-
 @NgModule({
   declarations: [
     AddAppreciationComponent,
@@ -30,7 +28,10 @@ import { QuestionsComponent } from './questions/questions.component';
     AppreciationDetComponent,
     QuoteComponent,
     QuestionsComponent,
+   
+               
 
+ 
   ],
   imports: [
     CommonModule,

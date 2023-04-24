@@ -23,7 +23,7 @@ img{
     font-weight: bold;
 }
 .user-name {
-    /* margin-left: 750px; */
+    margin-left: 770px;
     color: black;
     font-size: large;
     font-weight: 10000;
@@ -32,19 +32,22 @@ img{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    color:white;
     border: 2px solid #fff;
     background-color: #082a5d;
-    /* margin-left: 20px; */
+    margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 
 .sidebar a {
     text-decoration: none;
     padding: 10px 10px;
+
+    color: #fff;
     color: white;
     text-align: left;
     display: block;
@@ -52,11 +55,14 @@ img{
 
 .sidebar i {
     color: white;
+    padding: 2px;
+    border-radius: 10%;
     padding-right: 10px;
 }
 
 .sidebar .icon {
     float: right;
+    color: white;
 }
 
 .dropdow-container{
@@ -165,4 +171,26 @@ mat-nav-list {
     }
 
 }
-
+.green{
+    border: 1px solid seagreen;
+    background: seagreen;
+    margin-right: 1rem;
+   color:#fff;
+}
+.red{
+    border: 1px solid rgb(197, 38, 17);
+    background: rgb(197, 38, 17);
+    margin-right: 1rem;
+}
+.yellow{
+    border: 1px solid rgb(218, 161, 4);
+    background: rgb(243, 198, 0);
+    margin-right: 1rem;
+   color:#fff;
+}
+.blue{
+    border: 1px solid rgb(0, 68, 255);
+    background: rgb(0, 68, 255);
+    margin-right: 1rem;
+   color:#fff;
+}

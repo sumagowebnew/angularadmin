@@ -3,14 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
-import { HomeComponent } from './modules/main/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -20,7 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
 
 import { MatExpansionModule, matExpansionAnimations } from '@angular/material/expansion';
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
@@ -34,6 +32,11 @@ import { EventDetailsComponent } from './modules/main/event-details/event-detail
 import { EventAddComponent } from './modules/main/event-add/event-add.component';
 
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
+
+import { DashboardComponent } from './modules/main/dashboard/dashboard.component';
+import { ContactEnquiryComponent } from './modules/main/contact-enquiry/contact-enquiry.component';
+import { CareerEnquiryComponent } from './modules/main/career-enquiry/career-enquiry.component';
+
 import { ClientLogoComponent } from './modules/main/client-logo/client-logo.component';
 import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
 import { AddCertificationComponent } from './modules/main/add-certification/add-certification.component';
@@ -44,24 +47,18 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     //auth modules
     LoginComponent,
     NotFoundComponent,
-    //main modules
     BarComponent,
-    HomeComponent,
     PortfolioDetailsComponent,
     FreeConsultationComponent,
     BirthdayComponent,
     CountComponent,
-    // PortfolioFormComponent,
-    ForgotPasswordComponent,
-    EventDetailsComponent,
-    EventAddComponent,
+    PortfolioFormComponent,
      ForgotPasswordComponent,
     ClientLogoComponent,
     AddLogoComponent,
@@ -70,8 +67,9 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     AddMouComponent,
     MouDetailsComponent,
     ForgotPasswordComponent,
+    EventAddComponent,
+    EventDetailsComponent,
 
-    
   ],
   imports: [
     BrowserModule,
@@ -79,7 +77,6 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
 
     //angular material modules
     BrowserAnimationsModule,
