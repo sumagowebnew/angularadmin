@@ -25,12 +25,16 @@ import { ViewAchievementsComponent } from './view-achievements/view-achievements
 import { ViewNewsComponent } from './view-news/view-news.component';
 
 
+
+
 @NgModule({
   declarations: [
+
 
     // EventComponent
 
     BirthdayComponent,
+
     AddAppreciationComponent,
     AddAwardsComponent,
     AddTrainingComponent,
@@ -40,17 +44,23 @@ import { ViewNewsComponent } from './view-news/view-news.component';
     QuoteComponent,
     QuestionsComponent,
 
+   
+               
+
+
     AddAchievementsComponent,
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
 
    
+
   ],
   imports: [
     CommonModule,
     MainRoutingModule
   ],
+
   providers: [InquiryService],
 })
 export class MainModule { }

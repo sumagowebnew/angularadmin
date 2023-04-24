@@ -62,8 +62,6 @@ const routes: Routes = [
     {  path:'team',component:TeamComponent},
   
     {  path:'forgot-form',component:ForgotPasswordComponent},
-
-
     {  path:'forgot-form',component:ForgotPasswordComponent},    //P's modules
     {  path:'port-form',component:PortfolioFormComponent},
     {  path:'port-det',component:PortfolioDetailsComponent},
@@ -73,6 +71,7 @@ const routes: Routes = [
     {  path:'mou-det',component:MouDetailsComponent},
     {  path:'add-cert',component:AddCertificationComponent},
     {  path:'cert-det',component:CertificationDetailsComponent},
+
 
 
 
