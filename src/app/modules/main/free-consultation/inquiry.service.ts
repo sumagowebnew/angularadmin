@@ -37,9 +37,12 @@ export class InquiryService {
   }
 
   deleteInquiry(inquiryId: number) {
-    const inquiryIndex = this.inquiries.findIndex(inquiry => inquiry.id === inquiryId);
-    if (inquiryIndex !== -1) {
-      this.inquiries.splice(inquiryIndex, 1);
+    // const inquiryIndex = this.inquiries.findIndex(inquiry => inquiry.id === inquiryId);
+    // if (inquiryIndex !== -1) {
+    //   this.inquiries.splice(inquiryIndex, 1);
+      
+        this.inquiries.splice(inquiryId, 1);
+      }
     }
-  }
-}
+  
+
