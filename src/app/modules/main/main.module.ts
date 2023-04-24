@@ -18,6 +18,16 @@ import { AppreciationDetComponent } from './appreciation-det/appreciation-det.co
 import { QuoteComponent } from './quote/quote.component';
 import { QuestionsComponent } from './questions/questions.component';
 
+
+
+import { AddAchievementsComponent } from './add-achievements/add-achievements.component';
+import { AddNewsComponent } from './add-news/add-news.component';
+import { ViewAchievementsComponent } from './view-achievements/view-achievements.component';
+import { ViewNewsComponent } from './view-news/view-news.component';
+
+
+
+
 @NgModule({
   declarations: [
     AddAppreciationComponent,
@@ -28,10 +38,19 @@ import { QuestionsComponent } from './questions/questions.component';
     AppreciationDetComponent,
     QuoteComponent,
     QuestionsComponent,
+
    
                
 
- 
+
+    AddAchievementsComponent,
+    AddNewsComponent,
+    ViewAchievementsComponent,
+    ViewNewsComponent,
+
+   
+      
+
   ],
   imports: [
     CommonModule,

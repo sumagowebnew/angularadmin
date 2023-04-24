@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
@@ -50,6 +51,8 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
 @NgModule({
   declarations: [
     AppComponent,
+
+
     //auth modules
     LoginComponent,
     NotFoundComponent,
@@ -58,9 +61,24 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     FreeConsultationComponent,
     BirthdayComponent,
     CountComponent,
+
     PortfolioFormComponent,
      ForgotPasswordComponent,
-    ClientLogoComponent,
+
+
+    // PortfolioFormComponent,
+    ForgotPasswordComponent,
+    EventDetailsComponent,
+    EventAddComponent,
+     ForgotPasswordComponent,
+
+    PortfolioFormComponent,
+    ForgotPasswordComponent,
+    DashboardComponent,
+    ContactEnquiryComponent,
+    CareerEnquiryComponent,
+    ForgotPasswordComponent,
+     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
@@ -79,6 +97,12 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     HttpClientModule,
 
     //angular material modules
+
+
+    FormsModule,
+
+    //angular material modules
+
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
