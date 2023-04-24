@@ -71,6 +71,20 @@
   button[type="submit"]:hover {
     background-color: #128f84;
   }
+
+  .table-title {        
+    padding-bottom: 15px;
+    background: #435d7d;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h1 {
+    /* margin: 5px 0 0; */
+    /* font-size: 24px; */
+}
+
   
   /* Responsive styles */
   @media screen and (max-width: 768px) {
