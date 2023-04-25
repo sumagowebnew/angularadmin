@@ -42,6 +42,7 @@ import { AddCertificationComponent } from './modules/main/add-certification/add-
 import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+import { TeamComponent } from './modules/main/team/team.component';
 
 
 
@@ -121,6 +122,7 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
+    
 
   ],
   providers: [],
