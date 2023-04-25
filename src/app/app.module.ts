@@ -44,6 +44,9 @@ import { AddCertificationComponent } from './modules/main/add-certification/add-
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
 import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
+import { TeamComponent } from './modules/main/team/team.component';
+import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
+import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
 // import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
 
 
@@ -77,7 +80,7 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     EventAddComponent,
 
 
-     ForgotPasswordComponent,
+    ForgotPasswordComponent,
 
     PortfolioFormComponent,
 
@@ -95,7 +98,9 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
-
+    TeamComponent,
+    DevelopmentTeamdetailsComponent,
+    DesignationDetailsComponent
   ],
   imports: [
     BrowserModule,

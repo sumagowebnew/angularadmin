@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      margin-top: 10px;
+    }
+  
+    input, select {
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      font-size: 16px;
+    }
+  
+    button {
+      margin-top: 20px;
+      background-color: #14a098;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #128f84;
+      }
+    }
+  }
+  

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Inquiry } from './inquiry.model';
+import { Sort } from '@angular/material/sort';
+
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +32,12 @@ export class InquiryService {
       topic: 'Request for more information',
       date: new Date('2023-04-17')
     }
-  ];
+  ]
+    sortData:Inquiry[]
+
+    constructor(){
+      this.sortData=this.inquiries.slice();
+    }
 
   getInquiries(): Inquiry[] {
     return this.inquiries;

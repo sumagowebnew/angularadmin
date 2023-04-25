@@ -36,6 +36,18 @@ body {
 .table-title .btn-group {
 float: right;
 }
+.table-title .btn-group {
+  float: right;
+}
+.table-toolbar{
+  padding: 10px;
+}
+svg{
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
 .table-title .btn {
 color: #fff;
 float: right;
