@@ -1,13 +1,4 @@
-<!-- <div class="header">
-    
-    <div class="header1">
-        <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <div class="user">
-            <div class="user-name">Sumago Infotech</div>
-            <div class="user-image">SI</div>
-        </div>
-    </div>
-</div> -->
+
 
 <mat-toolbar>
     <mat-toolbar-row>
@@ -15,8 +6,8 @@
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <div class="user-name">Purva Diwate</div>
-        <div class="user-image border-white ">PD</div>
+        <!-- <div class="user-name">Purva Diwate</div>
+        <div class="user-image border-white ">PD</div> -->
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -136,7 +127,7 @@
 
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </i> <b [hidden]="hideanchor == true">Certificate</b> <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-cert"> <i class="fa fa-plus" aria-hidden="true">

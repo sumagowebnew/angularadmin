@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { MatSidenav} from '@angular/material/sidenav';
 import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -45,7 +45,7 @@ export class BarComponent implements OnInit  {
     if(status===this.defaultStatus)
     {
       this.responsiveMenu={
-
+      
       }
       this.responsiveContent={
   

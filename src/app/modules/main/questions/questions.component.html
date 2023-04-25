@@ -23,7 +23,7 @@
                 
               </tr>
             </thead>
-            <tbody>
+            <!-- <tbody>
               <tr>
                 <td>1</td>
                 <td><a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
@@ -33,6 +33,19 @@
                 <td> 12 April 2023</td>
                 
               </tr>
+            </tbody> -->
+
+            <tbody>
+              <tr *ngFor="let question of questions; let i=index">
+                <td>{{i+1}}</td>
+                <td>
+                  <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+                </td>
+      
+                <td>{{question.name}}</td>
+                <td>{{question.email}}</td>
+                <td>{{question.question}}</td>
+                <td>{{question.date | date}}</td>
             </tbody>
           </table>
         </div>

@@ -33,21 +33,15 @@ import { EventDetailsComponent } from './modules/main/event-details/event-detail
 import { EventAddComponent } from './modules/main/event-add/event-add.component';
 
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
-
 import { DashboardComponent } from './modules/main/dashboard/dashboard.component';
-import { ContactEnquiryComponent } from './modules/main/contact-enquiry/contact-enquiry.component';
 import { CareerEnquiryComponent } from './modules/main/career-enquiry/career-enquiry.component';
-
+import { ContactEnquiryComponent } from './modules/main/contact-enquiry/contact-enquiry.component';
 import { ClientLogoComponent } from './modules/main/client-logo/client-logo.component';
 import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
 import { AddCertificationComponent } from './modules/main/add-certification/add-certification.component';
+import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
-import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
-import { TeamComponent } from './modules/main/team/team.component';
-import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
-import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
-// import { AddLogoComponent } from './modules/main/add-logo/add-logo.component';
 
 
 
@@ -59,7 +53,6 @@ import { DesignationDetailsComponent } from './modules/main/team/designation-det
     
    
     //auth modules
-
 
     LoginComponent,
     NotFoundComponent,
@@ -98,9 +91,11 @@ import { DesignationDetailsComponent } from './modules/main/team/designation-det
     ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
-    TeamComponent,
-    DevelopmentTeamdetailsComponent,
-    DesignationDetailsComponent
+  
+
+
+
+
   ],
   imports: [
     BrowserModule,
