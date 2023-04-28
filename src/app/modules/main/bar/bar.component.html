@@ -1,3 +1,4 @@
+
 <!--navbar code-->
 <mat-toolbar>
     <mat-toolbar-row>
@@ -126,7 +127,7 @@
 
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </i> <b [hidden]="hideanchor == true">Certificate</b> <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-cert"> <i class="fa fa-plus" aria-hidden="true">

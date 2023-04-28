@@ -408,6 +408,18 @@ ul>li>a.active{
 }
 @media screen and (max-width:800px) {
 
+
+.main-content{
+    padding: 10px 10px 10px 10px;
+    height: calc(100% - 10px);
+    overflow: hidden;
+}*/
+
+
+
+
+@media screen and (max-width:700px) {
+
     .menu 
     {
         display: block;
@@ -423,6 +435,8 @@ ul>li>a.active{
     
     .main-content{
         margin-left: 0px;
+        display:block;
+
     }
 
-} */
+} 

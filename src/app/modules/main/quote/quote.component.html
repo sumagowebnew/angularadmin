@@ -28,19 +28,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td><a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
-                <td>Mohak Sharma</td>
-                <td>8888888888</td>
-                <td>m@gmail.com</td>
-                <td>Training Internship</td>
-                <td>     </td>
-                <td>Nashik</td>
-                <td>hdfbhdbfyudhbfdhbdbv vbfhyibgvfgb mnfhibgbhbgf</td>
-                <td> 12 April 2023</td>
-                
-              </tr>
+              <tr *ngFor="let quote of quotes; let i=index">
+                <td>{{i+1}}</td>
+                <td>
+                  <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+                </td>
+      
+                <td>{{quote.name}}</td>
+                <td>{{quote.mobile}}</td>
+                <td>{{quote.email}}</td>
+                <td>{{quote.type_of_service}}</td>
+                <td>{{quote.other}}</td>
+                <td>{{quote.address}}</td>
+                <td>{{quote.comment}}</td>
+                <td>{{quote.date | date}}</td>
             </tbody>
           </table>
         </div>
