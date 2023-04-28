@@ -1,47 +1,53 @@
-mat-toolbar{
-    background-color: rgb(14,198,231);
+/* correct code commenting for some time */
+mat-toolbar {
+    background-color: rgb(14, 198, 231);
     min-height: 70px;
     color: black;
     width: 100%;
     box-shadow: 2px 2px 5px black;
 }
-img{
+
+img {
     padding: 20px;
     display: flex;
     align-items: center;
     width: 300px;
 }
+
 .header .logo {
     font-weight: bold;
     font-size: 30px;
 
 }
+
 .header .user {
     float: left;
     display: flex;
     align-items: center;
     font-weight: bold;
 }
-/* .user-name {
+
+.user-name {
     margin-left: 770px;
     color: black;
     font-size: large;
     font-weight: 10000;
 }
+
 .user-image {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    color:white;
+    color: white;
     border: 2px solid #fff;
     background-color: #082a5d;
     margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-   font-weight: bold;
+    font-weight: bold;
 }
- */
+
 
 .sidebar a {
     text-decoration: none;
@@ -65,6 +71,310 @@ img{
     color: white;
 }
 
+.dropdow-container {
+    padding-left: 10px;
+    overflow-y: hidden;
+    max-height: 0px;
+    transition: all .15s ease;
+}
+
+.dropdow-container.show {
+    max-height: 1000px;
+    transition: all .15 ease;
+}
+
+ul {
+    padding: 0px;
+}
+
+ul>li>a.active {
+    color: #000;
+}
+
+mat-sidenav {
+    width: 300px;
+    background-color: #113C60;
+    border-right: 1px solid black;
+    transition-delay: 0ms;
+    height: 100%;
+
+
+
+}
+
+.nav-items {
+    padding-top: 40px;
+}
+
+.nav-items .nav-item {
+    padding: 25px 50px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1300px) {
+    .nav-items .nav-item {
+        padding: 25px 40px;
+    }
+}
+
+.nav-items .nav-item.hover {
+    background-color: #070666;
+}
+
+.nav-items .nav-item fa-icon {
+    margin-right: 20px;
+    font-size: 22px;
+}
+
+.nav-items .nav-item span {
+    display: inline;
+}
+
+@media only screen and (max-width: 1300px) {
+    .nav-items .nav-item span {
+        display: none;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+mat-nav-list {
+    padding-bottom: 50px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+
+}
+
+.main-content {
+    padding: 10px 10px 10px 10px;
+    height: calc(100% - 10px);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    mat-sidenav {
+        width: 22vh;
+    }
+}
+
+
+
+@media screen and (max-width:500px) {
+
+    .menu {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+        width: 160px;
+    }
+
+    .sidebar a {
+        padding: 10px 0px;
+    }
+
+    .main-content {
+        margin-left: 0px;
+    }
+
+}
+
+.green {
+    border: 1px solid seagreen;
+    background: seagreen;
+    margin-right: 1rem;
+    color: #fff;
+}
+
+.red {
+    border: 1px solid rgb(197, 38, 17);
+    background: rgb(197, 38, 17);
+    margin-right: 1rem;
+    color: #fff;
+}
+
+.yellow {
+    border: 1px solid rgb(218, 161, 4);
+    background: rgb(243, 198, 0);
+    margin-right: 1rem;
+    color: #fff;
+}
+
+.blue {
+    border: 1px solid rgb(0, 68, 255);
+    background: rgb(0, 68, 255);
+    margin-right: 1rem;
+    color: #fff;
+}
+
+/*trying new code from yt*/
+/* nav{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
+    left:0;
+    width:90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1)
+}
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+.logo img{
+    width:45px;
+    height : 45px;
+    border-radius: 50%;
+
+}
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fa{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top:14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+a:hover{
+    background: #eee;
+}
+nav:hover{
+    width:280px;
+    transition: all 0.5s ease;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* admindemo  */
+/* .topnav {
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    overflow: hidden;
+    background-color: rgb(14, 198, 231);
+    border-bottom: 1px solid rgb(128, 128, 128);
+    z-index: 10;
+}
+img{
+    float: left;
+    width: 50px;
+
+}
+.topnav a {
+    justify-content: space-between;
+    float: left; */
+    /* text-align: center; */
+    /* font-size: 17px; */
+    /* font-weight: bold; */
+    /* padding: 14px 16px;
+    color: red;
+}
+
+.menu {
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    display: block;
+}
+
+img{
+    height: 30%;
+    width: 30%;
+} */
+/* topnav css  */
+
+/* left sidebar nav  */
+
+/* .sidebar {
+    position: fixed;
+    top: 55px;
+    overflow: auto;
+    background-color: #113C60;
+    height: 100%;
+    border-right: 1px solid rgb(128, 128, 128);
+    padding: 30px 5px;
+    margin: 0px;
+    width: 240px;    */
+
+    /* size: 100px; */
+/* }
+.sidebar a:hover { */
+    /* background-color:white; */
+    /* color: green;
+    border-radius: 10px;
+  }
+.sidebar a {
+    text-decoration: none;
+    padding: 10px 10px;
+    color: white;
+    display: block; */
+    /* text-align: center; */
+       /* font-weight: 100; */
+/* }
+
+.sidebar i {
+    padding-right: 5px;
+    font-size:30px;
+}
+
+.sidebar .icon {
+    float: right;
+}
+
+.sidebar li{
+    font-size: medium;
+}
+
 .dropdow-container{
     padding-left: 10px;
     overflow-y: hidden;
@@ -77,82 +387,26 @@ img{
     transition: all .15 ease;
 }
 ul{
-    padding: 0px;
-}
+    padding: 0px; */
+    /* border:1px solid #000 ; */
+/* }
 ul>li>a.active{
-    color: #000;
-}
-
-
-
-
-
-mat-sidenav{
-    /* padding: 50px; */
-    width: 300px;
-    background-color: #113C60;
-    border-right: 1px solid black;
-    transition-delay: 0ms;
-    height: 100%;
-    
-
+    color: black;
+    background-color: white;
+    border-radius: 10px;
 
 }
 
-.nav-items {
-    padding-top: 40px;
-}
-.nav-items .nav-item {
-    padding: 25px 50px;
-    cursor: pointer;
-}
-@media only screen and (max-width: 1300px) {
-    .nav-items .nav-item {
-        padding: 25px 40px;
-   }
-}
-.nav-items .nav-item.hover {
-    background-color: #070666;
-}
-.nav-items .nav-item fa-icon {
-    margin-right: 20px;
-    font-size: 22px;
-}
-.nav-items .nav-item span {
-    display: inline;
-}
-@media only screen and (max-width: 1300px) {
-    .nav-items .nav-item span {
-        display: none;
-   }
-}
+.main-content {
 
-ul {
-    list-style-type: none;
-  }
+    margin-left:150px;
+    padding-top: 50px;
+     */
+    /* padding: 10px 10px; */
+    /* transition: margin-left .3s;
 
-mat-nav-list {
-    /* padding-bottom: 50px; */
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
- 
 }
-
-.main-content{
-    padding: 10px 10px 10px 10px;
-    height: calc(100% - 10px);
-    overflow: hidden;
-}
-@media screen and (max-width: 768px) {
-    mat-sidenav{
-        width: 22vh;
-    }
-}
-
-
-
-@media screen and (max-width:500px) {
+@media screen and (max-width:800px) {
 
     .menu 
     {
@@ -160,37 +414,15 @@ mat-nav-list {
     }
     .sidebar{
         display: none;
-        width: 160px;
+        width: 155px;
     }
     .sidebar a{
         padding: 10px 0px;
+        text-align: center;
     }
-    .main-content
-    {
+    
+    .main-content{
         margin-left: 0px;
     }
 
-}
-.green{
-    border: 1px solid seagreen;
-    background: seagreen;
-    margin-right: 1rem;
-   color:#fff;
-}
-.red{
-    border: 1px solid rgb(197, 38, 17);
-    background: rgb(197, 38, 17);
-    margin-right: 1rem;
-}
-.yellow{
-    border: 1px solid rgb(218, 161, 4);
-    background: rgb(243, 198, 0);
-    margin-right: 1rem;
-   color:#fff;
-}
-.blue{
-    border: 1px solid rgb(0, 68, 255);
-    background: rgb(0, 68, 255);
-    margin-right: 1rem;
-   color:#fff;
-}
+} */

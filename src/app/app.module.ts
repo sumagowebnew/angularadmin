@@ -26,7 +26,6 @@ import { PortfolioDetailsComponent } from './modules/main/portfolio-details/port
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
 
-// import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
 import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
 import { BirthdayComponent } from './modules/main/birthday/birthday.component';
 import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
@@ -51,13 +50,6 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
 @NgModule({
   declarations: [
     AppComponent,
-
-
-    
-   
-    //auth modules
-
-
     LoginComponent,
     NotFoundComponent,
     BarComponent,
@@ -65,28 +57,19 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     FreeConsultationComponent,
     BirthdayComponent,
     CountComponent,
-
     PortfolioFormComponent,
-     ForgotPasswordComponent,
-
-
-
-    // PortfolioFormComponent,
+    ForgotPasswordComponent,
     ForgotPasswordComponent,
     EventDetailsComponent,
     EventAddComponent,
-
-
-     ForgotPasswordComponent,
-
+    ForgotPasswordComponent,
     PortfolioFormComponent,
-
     ForgotPasswordComponent,
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
     ForgotPasswordComponent,
-     ClientLogoComponent,
+    ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
@@ -95,7 +78,6 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -103,14 +85,7 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
-
-
-    //angular material modules
-
     FormsModule,
-
-    //angular material modules
-
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
