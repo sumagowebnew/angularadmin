@@ -1,13 +1,11 @@
 
-
 <mat-toolbar>
     <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle();openNav(false)">
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <!-- <div class="user-name">Purva Diwate</div>
-        <div class="user-image border-white ">PD</div> -->
+       
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -23,38 +21,17 @@
             </div>
 
             <ul>
-                <!-- purva's components -->
-                <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+              
+                <li><a  routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
                 </li>
                 <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
                         Enquiries</a></li>
                 <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
                         Enquiries</a></li>
-                <li>
-                    <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
-                            aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-achievements"> <i class="fa fa-plus" aria-hidden="true"></i> Add
-                                Achievements</a></li>
-                        <li><a routerLink="/main/view-achievements"> <i class="fa fa-info" aria-hidden="true"></i>
-                                Achievement Details</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a> <i class="fa fa-list" aria-hidden="true"></i> News <i class="fa fa-caret-down"
-                            aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-news"> <i class="fa fa-plus" aria-hidden="true"></i> Add
-                                News</a></li>
-                        <li><a routerLink="/main/view-news"> <i class="fa fa-info" aria-hidden="true"></i>
-                                News Details</a></li>
-                    </ul>
-                </li>
-                <!-- purva's components -->
+                <li><a routerLink="/main/questions"> <i class="fa fa-question-circle" aria-hidden="true"></i> Questions</a></li>
+                
 
-                <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
+                
                 <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
                 <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
@@ -90,16 +67,29 @@
                 </li>
 
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
-                    </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Awards</a></li>
-                        <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Award Details</a></li>
+                        <li><a routerLink="/main/add-achievements"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                Achievements</a></li>
+                        <li><a routerLink="/main/view-achievements"> <i class="fa fa-info" aria-hidden="true"></i>
+                                Achievement Details</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> News <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-news"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                News</a></li>
+                        <li><a routerLink="/main/view-news"> <i class="fa fa-info" aria-hidden="true"></i>
+                                News Details</a></li>
+                    </ul>
+                </li>
+              
 
                 <li>
                     <a> <i class="fa fa-address-card" aria-hidden="true">
@@ -113,21 +103,11 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
-                    </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Training</a></li>
-                        <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Training Details</a></li>
-                    </ul>
-                </li>
+            
 
                 <li>
-                    <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> <b [hidden]="hideanchor == true">Certificate</b> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-cert"> <i class="fa fa-plus" aria-hidden="true">
@@ -172,6 +152,30 @@
                     </ul>
                 </li>
                 <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Awards</a></li>
+                        <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Award Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
+                        </i> Add Training</a></li>
+                        <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                            Training Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Team <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
@@ -200,52 +204,3 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- 
- 
-<div class="sidebarmain">
-    <div class="sidebar">
-        <div class="nav-items">
-            <div class="nav-item">
-                
-                <fa-icon [icon]="faDashboard"></fa-icon>
-                <span>Dashboard</span>
-                
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faPerson"></fa-icon>
-                <span>Employee</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faShop"></fa-icon>
-                <span>Orders</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faBox"></fa-icon>
-                <span>Products</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faChartBar"></fa-icon>
-                <span>Status</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faContactBook"></fa-icon>
-                <span>Contact</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faHand"></fa-icon>
-                <span>Help?</span>
-            </div>
-        </div>
-    </div>
-     -->
-
-<!-- <div class="main">
-        <router-outlet></router-outlet>
-    </div>
-      -->

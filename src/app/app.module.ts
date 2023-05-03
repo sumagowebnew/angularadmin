@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -104,6 +105,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
 
 
     //angular material modules
@@ -122,6 +124,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
+    FlexLayoutModule,
     
 
   ],

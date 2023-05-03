@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav} from '@angular/material/sidenav';
 import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
@@ -18,7 +19,16 @@ export class BarComponent implements OnInit  {
   faHand=faHand;
   faFolder=faFolder;
 
-  constructor(private el:ElementRef){}
+  constructor(private el:ElementRef){
+
+      window.addEventListener('scroll', function(){
+        var mattoolbar:any = document.querySelector("mat-toolbar");
+        mattoolbar.classList.toggle("sticky", window.scrollY > 0);
+      }
+      )
+     
+  
+  }
   ngOnInit(): void {
 
     let alldrpdwn = document.querySelectorAll('.dropdow-container');
@@ -33,6 +43,8 @@ export class BarComponent implements OnInit  {
     });
 
   }
+
+  
 
   
 
