@@ -8,7 +8,7 @@ import { InquiryService } from './free-consultation/inquiry.service';
 import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
 import { EventAddComponent } from './event-add/event-add.component';
 
-import { BirthdayComponent } from './birthday/birthday.component';
+// import { BirthdayComponent } from './birthday/birthday.component';
 import { AddAppreciationComponent } from './add-appreciation/add-appreciation.component';
 import { AddAwardsComponent } from './add-awards/add-awards.component';
 import { AddTrainingComponent } from './add-training/add-training.component';
@@ -34,7 +34,11 @@ import { ViewNewsComponent } from './view-news/view-news.component';
 
     // EventComponent
 
+
  
+
+    // BirthdayComponent,
+
 
     AddAppreciationComponent,
     AddAwardsComponent,

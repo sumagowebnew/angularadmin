@@ -1,13 +1,21 @@
 
+<!--navbar code-->
+
 <mat-toolbar>
     <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle();openNav(false)">
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
+
        
+
+        <div class="user-name">Purva Diwate</div>
+        <div class="user-image border-white ">PD</div>
+
     </mat-toolbar-row>
 </mat-toolbar>
+
 
 <mat-sidenav-container style="height: 100%;">
     <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
@@ -21,17 +29,49 @@
             </div>
 
             <ul>
+
               
                 <li><a  routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+
+
+                <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+
                 </li>
                 <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
                         Enquiries</a></li>
                 <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
                         Enquiries</a></li>
+
                 <li><a routerLink="/main/questions"> <i class="fa fa-question-circle" aria-hidden="true"></i> Questions</a></li>
                 
 
                 
+
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-achievements"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                Achievements</a></li>
+                        <li><a routerLink="/main/view-achievements"> <i class="fa fa-info" aria-hidden="true"></i>
+                                Achievement Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true"></i> News <i class="fa fa-caret-down"
+                            aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-news"> <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                News</a></li>
+                        <li><a routerLink="/main/view-news"> <i class="fa fa-info" aria-hidden="true"></i>
+                                News Details</a></li>
+                    </ul>
+                </li>
+                
+                <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
+
                 <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
                 <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
@@ -195,7 +235,7 @@
                 <li><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
             </ul>
-            <!-- </div> -->
+            
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -204,3 +244,86 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!--correct code above trying new-->
+
+<!--youtube demo code hover effect on side nav-->
+<!-- <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img src="https://sumagotraining.in/images/sumago-logo.png">
+                
+                </a>
+            </li>
+            <li><a href="#"><i class="fa fa-home"></i><span class="nav-item">Home</span></a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i><span class="nav-item">Task</span></a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i><span class="nav-item">Analytics</span></a></li>
+            <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+            </li>
+            <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
+                    Enquiries</a></li>
+            <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
+                    Enquiries</a></li>
+                    <li><a href="#" class="logout"><i class="fa fa-logout"></i><span class="nav-item">logout</span></a></li>     
+        </ul>
+    </nav>
+</body> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--admindemo code-->
+<!-- <div class="topnav shadow p-1">
+    <span class="menu" (click)="openNav(false)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </span>
+    <img src="https://sumagotraining.in/images/sumago-logo.png">
+      
+</div>
+<div  class="sidebar shadow p-2"  id="sidebar"  [ngStyle]="responsiveMenu">
+    <ul>
+        <li ><a routerLink="/main/dashboard" routerLinkActive="active" ><i class="bi bi-list"></i> <b [hidden]="hideanchor == true">Dashboard</b>  </a></li>
+        <li><a routerLink="/main/forgot-form"    routerLinkActive="active"><i class="bi bi-card-text"></i> <b [hidden]="hideanchor == true">Logout</b></a></li>
+        <li>
+            <a> <i class="fa fa-list" aria-hidden="true">
+            </i> Birthday <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </a>
+            <ul class="dropdow-container">
+                <li><a routerLink="/main/birthday-form"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg> <b [hidden]="hideanchor == true"></b>Add Birthday</a></li>
+                
+                <li><a routerLink="/main/birthday"> <i class="fa fa-info" aria-hidden="true">    
+                </i> Birthday Details</a></li>
+            </ul>
+        </li>
+    
+
+    </ul>
+</div>
+
+<div class="main-content" [ngStyle]="responsiveContent">
+    <router-outlet></router-outlet>
+</div> -->
