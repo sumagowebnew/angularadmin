@@ -1,5 +1,10 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav} from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { MatDrawer } from '@angular/material/sidenav';
+
+import { map, shareReplay } from 'rxjs/operators';
 import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -9,6 +14,8 @@ import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContac
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit  {
+  
+
   faDashboard = faDashboard;
   faPerson=faPerson;
   faShop=faShop;
@@ -18,8 +25,17 @@ export class BarComponent implements OnInit  {
   faContactBook=faContactBook;
   faHand=faHand;
   faFolder=faFolder;
+  
+  isHandset$: Observable<boolean>;
+  constructor(
+    private breakpointObserver: BreakpointObserver, private el: ElementRef
+    ){
+      this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    
+  );
 
-  constructor(private el:ElementRef){
 
       window.addEventListener('scroll', function(){
         var mattoolbar:any = document.querySelector("mat-toolbar");
@@ -70,6 +86,13 @@ export class BarComponent implements OnInit  {
       this.responsiveContent={
       }
       this.defaultStatus=false;
+  }
+}
+@ViewChild(MatDrawer) drawer: MatDrawer | undefined;
+
+toggleDrawer() {
+  if (this.drawer) {
+    this.drawer.toggle();
   }
 }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BarComponent } from './bar/bar.component';
+
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
@@ -50,6 +51,8 @@ const routes: Routes = [
       { path: 'add-news', component: AddNewsComponent },
       { path: 'view-achievements', component: ViewAchievementsComponent },
       { path: 'view-news', component: ViewNewsComponent },
+      { path:'questions', component:QuestionsComponent },
+      { path: 'training-det',component:TrainingDetComponent},
 
       { path: 'port-det', component: PortfolioDetailsComponent },
       { path: 'port-form', component: PortfolioFormComponent },
@@ -57,6 +60,12 @@ const routes: Routes = [
       { path: 'count', component: CountComponent },
       { path: 'free-consultation', component: FreeConsultationComponent },
       { path: 'birthday', component: BirthdayComponent },
+      { path: 'quote', component: QuoteComponent },
+      { path: 'add-awards', component: AddAwardsComponent},
+      { path: 'add-appreciation', component:AddAppreciationComponent },
+      { path: 'add-training', component:AddTrainingComponent},
+      { path: 'award-det', component:AwardDetComponent},
+      { path: 'appreciation-det', component:AppreciationDetComponent},
 
       { path: 'birthday-form', component: BirthdayFormComponent },
 
@@ -74,7 +83,8 @@ const routes: Routes = [
       { path: 'mou-det', component: MouDetailsComponent },
       { path: 'add-cert', component: AddCertificationComponent },
       { path: 'cert-det', component: CertificationDetailsComponent },
-
+      { path: 'designation-details', component:DesignationDetailsComponent},
+      { path:'development-teamdetails', component:DevelopmentTeamdetailsComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 
 

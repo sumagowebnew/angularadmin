@@ -9,6 +9,9 @@
      width: 100%;
      box-shadow: 2px 2px 5px black;
  }
+ .mat-toolbar-row .spacer {
+    flex: 1;
+ }
  img{
      padding: 20px;
      display: flex;

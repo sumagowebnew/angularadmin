@@ -1,24 +1,23 @@
 
 <!--navbar code-->
 
-<mat-toolbar>
+<mat-toolbar >
     <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle();openNav(false)">
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-
-       
-
-        <div class="user-name">Purva Diwate</div>
-        <div class="user-image border-white ">PD</div>
+        <span class="spacer"></span>
+          <div class="user-image border-white">SI</div>
+         
 
     </mat-toolbar-row>
 </mat-toolbar>
 
 
+
 <mat-sidenav-container style="height: 100%;">
-    <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
+    <mat-sidenav #sidenav opened="true" mode="side" class="sidebar shadow p-2" id="sidebar" [ngStyle]="responsiveMenu" >
         <mat-nav-list>
 
             <div class="text-center">
@@ -30,18 +29,15 @@
 
             <ul>
 
-              
                 <li><a  routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
                 <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
                         Enquiries</a></li>
                 <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
                         Enquiries</a></li>
+                 <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
+                 <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
 
-                <li><a routerLink="/main/questions"> <i class="fa fa-question-circle" aria-hidden="true"></i> Questions</a></li>
-                
-
-                
-
+                 <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
                             aria-hidden="true"></i>
@@ -64,11 +60,7 @@
                                 News Details</a></li>
                     </ul>
                 </li>
-                
-                <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
-
-                <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
-                <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
+            
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -125,9 +117,8 @@
                     </ul>
                 </li>
               
-
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Appreciation <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -137,11 +128,8 @@
                             Appreciation Details</a></li>
                     </ul>
                 </li>
-
-            
-
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -187,7 +175,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -199,7 +187,7 @@
                 </li>
 
                 <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
+                    <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -226,7 +214,7 @@
                     </ul>
                 </li>
 
-                <li><a routerLink="/main/forgot-form"> <i class="fa fa-sign-out" aria-hidden="true"></i> Forgot Password</a></li>
+                <li><a routerLink="/main/forgot-form"> <i class="fa fa-key" aria-hidden="true"></i> Forgot Password</a></li>
                 <li><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
             </ul>
@@ -235,7 +223,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="main-content" [ngStyle]="responsiveContent">
-            <router-outlet></router-outlet>
+ <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

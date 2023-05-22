@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -66,31 +67,25 @@ import { TeamComponent } from './modules/main/team/team.component';
     BirthdayComponent,
     CountComponent,
     PortfolioFormComponent,
-    ForgotPasswordComponent,
-    ForgotPasswordComponent,
     EventDetailsComponent,
     EventAddComponent,
 
     ForgotPasswordComponent,
 
-
-    ForgotPasswordComponent,
-
     PortfolioFormComponent,
-    ForgotPasswordComponent,
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
-    ForgotPasswordComponent,
+    
     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
     AddMouComponent,
     MouDetailsComponent,
-    ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
+    TeamComponent
   
 
 
@@ -102,6 +97,9 @@ import { TeamComponent } from './modules/main/team/team.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
 
 
 
