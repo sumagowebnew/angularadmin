@@ -4,7 +4,7 @@ body {
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
 }
-.event-details {
+.table-responsive {
      margin: 30px 0; 
      border: 1px solid #435d7d ;
 
@@ -30,6 +30,15 @@ body {
 }
 .table-title .btn-group {
   float: right;
+}
+.table-toolbar{
+  padding: 10px;
+}
+svg{
+  padding: 1px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
 }
 .table-title .btn {
   color: #fff;

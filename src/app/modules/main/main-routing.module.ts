@@ -34,6 +34,8 @@ import { AddMouComponent } from './add-mou/add-mou.component';
 import { MouDetailsComponent } from './mou-details/mou-details.component';
 import { AddCertificationComponent } from './add-certification/add-certification.component';
 import { CertificationDetailsComponent } from './certification-details/certification-details.component';
+import { DesignationDetailsComponent } from './team/designation-details/designation-details.component';
+import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/development-teamdetails.component';
 
 const routes: Routes = [
   {
@@ -75,15 +77,21 @@ const routes: Routes = [
 
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 
-      { path: 'award-det', component: AwardDetComponent },
-      { path: 'add-awards', component: AddAwardsComponent },
-      { path: 'add-appreciation', component: AddAppreciationComponent },
-      { path: 'appreciation-det', component: AppreciationDetComponent },
-      { path: 'add-training', component: AddTrainingComponent },
-      { path: 'training-det', component: TrainingDetComponent },
-      { path: 'questions', component: QuestionsComponent },
-      { path: 'quote', component: QuoteComponent }
-    ]
+    {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
+
+    { path:'award-det',component:AwardDetComponent},
+    { path:'add-awards',component:AddAwardsComponent},
+    { path:'add-appreciation',component:AddAppreciationComponent},
+    { path:'appreciation-det',component:AppreciationDetComponent},
+    { path:'add-training',component:AddTrainingComponent},
+    { path:'training-det',component:TrainingDetComponent},
+    { path:'team',component:TeamComponent},
+    { path:'designation-details',component:DesignationDetailsComponent},
+    { path:'development-teamdetails',component:DevelopmentTeamdetailsComponent},
+    { path:'questions',component:QuestionsComponent},
+    { path:'quote',component:QuoteComponent},
+ 
+  ]
   }
 ];
 

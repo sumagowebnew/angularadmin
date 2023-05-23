@@ -27,13 +27,14 @@ import { ViewNewsComponent } from './view-news/view-news.component';
 
 
 
+
 @NgModule({
   declarations: [
 
 
     // EventComponent
 
-    // BirthdayComponent,
+ 
 
     AddAppreciationComponent,
     AddAwardsComponent,
@@ -52,6 +53,7 @@ import { ViewNewsComponent } from './view-news/view-news.component';
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
+    
 
    
 
