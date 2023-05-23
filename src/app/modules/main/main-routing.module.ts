@@ -38,44 +38,44 @@ import { DesignationDetailsComponent } from './team/designation-details/designat
 import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/development-teamdetails.component';
 
 const routes: Routes = [
-  {path:'',
-  component:BarComponent,
-  children:[
- 
-    { path:'dashboard',component:DashboardComponent},
-    { path:'contact-enquiry',component:ContactEnquiryComponent},
-    { path:'career-enquiry',component:CareerEnquiryComponent},
-    { path:'add-achievements',component:AddAchievementsComponent},
-    { path:'add-news',component:AddNewsComponent},
-    { path:'view-achievements',component:ViewAchievementsComponent},
-    { path:'view-news',component:ViewNewsComponent},
+  {
+    path: '',
+    component: BarComponent,
+    children: [
 
-    {  path:'port-det',component:PortfolioDetailsComponent},
-    {  path:'port-form',component:PortfolioFormComponent},
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'contact-enquiry', component: ContactEnquiryComponent },
+      { path: 'career-enquiry', component: CareerEnquiryComponent },
+      { path: 'add-achievements', component: AddAchievementsComponent },
+      { path: 'add-news', component: AddNewsComponent },
+      { path: 'view-achievements', component: ViewAchievementsComponent },
+      { path: 'view-news', component: ViewNewsComponent },
 
-    {  path:'count',component:CountComponent},
-    {  path:'free-consultation',component:FreeConsultationComponent},
-    {  path:'birthday',component:BirthdayComponent},
+      { path: 'port-det', component: PortfolioDetailsComponent },
+      { path: 'port-form', component: PortfolioFormComponent },
 
-    {  path:'birthday-form',component:BirthdayFormComponent},
+      { path: 'count', component: CountComponent },
+      { path: 'free-consultation', component: FreeConsultationComponent },
+      { path: 'birthday', component: BirthdayComponent },
 
-    {  path:'event-details',component:EventDetailsComponent},
-    {  path:'event-add',component:EventAddComponent},
-    {  path:'team',component:TeamComponent},
-  
-    {  path:'forgot-form',component:ForgotPasswordComponent},
-    {  path:'forgot-form',component:ForgotPasswordComponent},    //P's modules
-    {  path:'port-form',component:PortfolioFormComponent},
-    {  path:'port-det',component:PortfolioDetailsComponent},
-    {  path:'add-logo',component:AddLogoComponent},
-    {  path:'client-logo',component:ClientLogoComponent},
-    {  path:'add-mou',component:AddMouComponent},
-    {  path:'mou-det',component:MouDetailsComponent},
-    {  path:'add-cert',component:AddCertificationComponent},
-    {  path:'cert-det',component:CertificationDetailsComponent},
+      { path: 'birthday-form', component: BirthdayFormComponent },
 
+      { path: 'event-details', component: EventDetailsComponent },
+      { path: 'event-add', component: EventAddComponent },
+      { path: 'team', component: TeamComponent },
 
+      { path: 'forgot-form', component: ForgotPasswordComponent },
+      { path: 'forgot-form', component: ForgotPasswordComponent },    //P's modules
+      { path: 'port-form', component: PortfolioFormComponent },
+      { path: 'port-det', component: PortfolioDetailsComponent },
+      { path: 'add-logo', component: AddLogoComponent },
+      { path: 'client-logo', component: ClientLogoComponent },
+      { path: 'add-mou', component: AddMouComponent },
+      { path: 'mou-det', component: MouDetailsComponent },
+      { path: 'add-cert', component: AddCertificationComponent },
+      { path: 'cert-det', component: CertificationDetailsComponent },
 
+      { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 
     {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
 

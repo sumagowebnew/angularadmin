@@ -1,16 +1,16 @@
-
-
+<!--navbar code-->
 <mat-toolbar>
     <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle();openNav(false)">
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <!-- <div class="user-name">Purva Diwate</div>
-        <div class="user-image border-white ">PD</div> -->
+        <div class="user-name">Purva Diwate</div>
+        <div class="user-image border-white ">PD</div>
     </mat-toolbar-row>
 </mat-toolbar>
 
+<!--sidenav code-->
 <mat-sidenav-container style="height: 100%;">
     <mat-sidenav #sidenav opened="true" mode="side" [ngStyle]="responsiveMenu" class="sidebar shadow p-2" id="sidebar">
         <mat-nav-list>
@@ -23,7 +23,7 @@
             </div>
 
             <ul>
-                <!-- purva's components -->
+
                 <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
                 </li>
                 <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
@@ -52,123 +52,123 @@
                                 News Details</a></li>
                     </ul>
                 </li>
-                <!-- purva's components -->
 
                 <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
-                <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free Consultations</a></li>
+                <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free
+                        Consultations</a></li>
                 <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
-                        <li><a routerLink="/main/count"> <i class="fa fa-info" aria-hidden="true">    
-                        </i> Count Details</a></li>
+                        <li><a routerLink="/main/count"> <i class="fa fa-info" aria-hidden="true">
+                                </i> Count Details</a></li>
                     </ul>
                 </li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Client Logo <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Client Logo <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-logo"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Client Logo</a></li>
+                                </i> Add Client Logo</a></li>
                         <li><a routerLink="/main/client-logo"> <i class="fa fa-info" aria-hidden="true"></i>
-                            View Client Logo</a></li>
+                                View Client Logo</a></li>
                     </ul>
                 </li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/port-form"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Portfolio</a></li>
+                                </i> Add Portfolio</a></li>
                         <li><a routerLink="/main/port-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Portfolio Details</a></li>
+                                Portfolio Details</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a> <i class="fa fa-address-card" aria-hidden="true">
-                    </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Awards</a></li>
+                                </i> Add Awards</a></li>
                         <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Award Details</a></li>
+                                Award Details</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a> <i class="fa fa-address-card" aria-hidden="true">
-                    </i> Appreciation <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Appreciation <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-appreciation"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Appreciation</a></li>
+                                </i> Add Appreciation</a></li>
                         <li><a routerLink="/main/appreciation-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Appreciation Details</a></li>
+                                Appreciation Details</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a> <i class="fa fa-address-card" aria-hidden="true">
-                    </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Training</a></li>
+                                </i> Add Training</a></li>
                         <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Training Details</a></li>
+                                Training Details</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> <b [hidden]="hideanchor == true">Certificate</b> <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-cert"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add Certificate</a></li>
+                                </i> Add Certificate</a></li>
                         <li><a routerLink="/main/cert-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            Certificate details</a></li>
+                                Certificate details </a></li>
                     </ul>
                 </li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> MOU<i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> MOU<i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
                         <li><a routerLink="/main/add-mou"> <i class="fa fa-plus" aria-hidden="true">
-                        </i> Add MOU</a></li>
+                                </i> Add MOU</a></li>
                         <li><a routerLink="/main/mou-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                            MOU  Details</a></li>
+                                MOU Details</a></li>
                     </ul>
                 </li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Birthday <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Birthday <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
-                        <li><a routerLink="/main/birthday-form"> <i class="fa fa-plus" aria-hidden="true">    
-                        </i> Add Birthday</a></li>
-                        
-                        <li><a routerLink="/main/birthday"> <i class="fa fa-info" aria-hidden="true">    
-                        </i> Birthday Details</a></li>
+                        <li><a routerLink="/main/birthday-form"> <i class="fa fa-plus" aria-hidden="true">
+                                </i> Add Birthday</a></li>
+
+                        <li><a routerLink="/main/birthday"> <i class="fa fa-info" aria-hidden="true">
+                                </i> Birthday Details</a></li>
                     </ul>
                 </li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                    </i> Event <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </i> Event <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
-                        <li><a routerLink="/main/event-add"> <i class="fa fa-plus" aria-hidden="true">    
-                        </i> Add Event</a></li>
-                        
-                        <li><a routerLink="/main/event-details"> <i class="fa fa-info" aria-hidden="true">    
-                        </i> Event Details</a></li>
+                        <li><a routerLink="/main/event-add"> <i class="fa fa-plus" aria-hidden="true">
+                                </i> Add Event</a></li>
+
+                        <li><a routerLink="/main/event-details"> <i class="fa fa-info" aria-hidden="true">
+                                </i> Event Details</a></li>
                     </ul>
                 </li>
                 <li>
@@ -187,11 +187,12 @@
                     </ul>
                 </li>
 
-                <li><a routerLink="/main/forgot-form"> <i class="fa fa-sign-out" aria-hidden="true"></i> Forgot Password</a></li>
+                <li><a routerLink="/main/forgot-form"> <i class="fa fa-sign-out" aria-hidden="true"></i> Forgot
+                        Password</a></li>
                 <li><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
             </ul>
-            <!-- </div> -->
+
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -200,52 +201,5 @@
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- 
- 
-<div class="sidebarmain">
-    <div class="sidebar">
-        <div class="nav-items">
-            <div class="nav-item">
-                
-                <fa-icon [icon]="faDashboard"></fa-icon>
-                <span>Dashboard</span>
-                
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faPerson"></fa-icon>
-                <span>Employee</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faShop"></fa-icon>
-                <span>Orders</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faBox"></fa-icon>
-                <span>Products</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faChartBar"></fa-icon>
-                <span>Status</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faContactBook"></fa-icon>
-                <span>Contact</span>
-            </div>
-        
-            <div class="nav-item">
-                <fa-icon [icon]="faHand"></fa-icon>
-                <span>Help?</span>
-            </div>
-        </div>
-    </div>
-     -->
 
-<!-- <div class="main">
-        <router-outlet></router-outlet>
-    </div>
-      -->
+<!--correct code above trying new-->
