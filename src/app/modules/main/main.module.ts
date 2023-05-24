@@ -15,6 +15,15 @@ import { AddAchievementsComponent } from './add-achievements/add-achievements.co
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ViewAchievementsComponent } from './view-achievements/view-achievements.component';
 import { ViewNewsComponent } from './view-news/view-news.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatOptionModule } from '@angular/material/core';
+import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
+
 
 @NgModule({
   declarations: [
@@ -30,10 +39,24 @@ import { ViewNewsComponent } from './view-news/view-news.component';
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
+    TraineeTdetailsComponent
+    
+    
+
+   
+
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatListModule,
+    MatOptionModule
   ],
 
   providers: [InquiryService],

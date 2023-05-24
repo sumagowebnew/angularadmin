@@ -13,11 +13,11 @@ export class EventDetailsComponent {
     },
     {
       image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',
-            date: new Date('2023-03-31')
+      date: new Date('2023-03-31')
     },
     {
       image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',
-      date: new Date('2023/10/02')
+      date: new Date('2023-04-15')
     },
     {
       image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',

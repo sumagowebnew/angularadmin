@@ -1,6 +1,15 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { MatSidenav} from '@angular/material/sidenav';
+
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { MatDrawer } from '@angular/material/sidenav';
+
+import { map, shareReplay } from 'rxjs/operators';
+import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
+
 // import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-bar',
@@ -8,6 +17,29 @@ import { MatSidenav} from '@angular/material/sidenav';
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements OnInit  {
+
+  
+
+  faDashboard = faDashboard;
+  faPerson=faPerson;
+  faShop=faShop;
+  faBox=faBox;
+  faMoneyBill=faMoneyBill;
+  faChartBar=faChartBar;
+  faContactBook=faContactBook;
+  faHand=faHand;
+  faFolder=faFolder;
+  
+  isHandset$: Observable<boolean>;
+  constructor(
+    private breakpointObserver: BreakpointObserver, private el: ElementRef
+    ){
+      this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    
+  );
+
   // faDashboard = faDashboard;
   // faPerson=faPerson;
   // faShop=faShop;
@@ -18,7 +50,16 @@ export class BarComponent implements OnInit  {
   // faHand=faHand;
   // faFolder=faFolder;
 
-  constructor(private el:ElementRef){}
+
+
+      window.addEventListener('scroll', function(){
+        var mattoolbar:any = document.querySelector("mat-toolbar");
+        mattoolbar.classList.toggle("sticky", window.scrollY > 0);
+      }
+      )
+     
+  
+  }
   ngOnInit(): void {
 
     let alldrpdwn = document.querySelectorAll('.dropdow-container');
@@ -33,6 +74,10 @@ export class BarComponent implements OnInit  {
     });
 
   }
+
+
+
+  
 
   @ViewChild('sidenav') sidenav:MatSidenav | undefined
   responsiveMenu:any;
@@ -56,6 +101,13 @@ export class BarComponent implements OnInit  {
       this.responsiveContent={
       }
       this.defaultStatus=false;
+  }
+}
+@ViewChild(MatDrawer) drawer: MatDrawer | undefined;
+
+toggleDrawer() {
+  if (this.drawer) {
+    this.drawer.toggle();
   }
 }
 }

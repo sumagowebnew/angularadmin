@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -38,6 +41,11 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
 
+
+import { TeamComponent } from './modules/main/team/team.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,26 +57,28 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
     BirthdayComponent,
     CountComponent,
     PortfolioFormComponent,
-    ForgotPasswordComponent,
-    ForgotPasswordComponent,
     EventDetailsComponent,
     EventAddComponent,
     ForgotPasswordComponent,
     PortfolioFormComponent,
-    ForgotPasswordComponent,
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
-    ForgotPasswordComponent,
+    
     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
     AddMouComponent,
     MouDetailsComponent,
-    ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
+    TeamComponent,
+    
+  
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -76,6 +86,14 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+
+
+
+    //angular material modules
+
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -87,7 +105,9 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
-    MatMenuModule
+    // FlexLayoutModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
