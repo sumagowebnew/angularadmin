@@ -28,10 +28,12 @@ export class TeamComponent {
     }
 
   ];
+
   editcontact(index: number){
     this.admins.splice(index, 1);
   }
   deletecontact(index: number){
     this.admins.splice(index, 1);
   }
-}
+  }
+

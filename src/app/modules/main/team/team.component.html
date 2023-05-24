@@ -31,7 +31,9 @@
           <tr *ngFor="let admin of admins; let i=index">
             <td>{{i+1}}</td>
             <td>
+
                 <i class="fa fa-edit" (click)="editcontact(i)"title="Edit"></i>&nbsp;
+
               <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
             </td>
             <td>{{admin.name}}</td>
