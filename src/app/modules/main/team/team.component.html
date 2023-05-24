@@ -1,0 +1,47 @@
+<div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Trainee Development Team Details</h2>
+          </div>
+          <div class="col-xs-6">
+            <a  class="btn btn-success" routerLink="/main/team"><i class="material-icons">&#xE147;</i> <span>Add development</span></a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Action</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Designation</th>
+            <th>Qulification</th>
+            <th>Experience</th>
+            <th>Status</th>
+            <th>Date</th>
+            
+          </tr>
+        </thead>
+       
+
+        <tbody>
+          <tr *ngFor="let admin of admins; let i=index">
+            <td>{{i+1}}</td>
+            <td>
+                <i class="fa fa-edit" (click)="editcontact(i)"></i> &nbsp;
+              <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            </td>
+            <td>{{admin.name}}</td>
+            <td><img [src]="" alt="Image"></td>
+            <td>{{ admin.designation}}</td>
+            <td>{{ admin.qulification}}</td>
+            <td>{{ admin.experience}}</td>
+            <td>{{ admin.status}}</td>
+            <td>{{ admin.date }}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>        
