@@ -85,7 +85,8 @@ import { TeamComponent } from './modules/main/team/team.component';
     MouDetailsComponent,
     EventAddComponent,
     EventDetailsComponent,
-    TeamComponent
+    TeamComponent,
+    
   
 
 

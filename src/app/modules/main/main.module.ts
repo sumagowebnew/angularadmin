@@ -30,6 +30,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
+import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
 
 
 
@@ -65,6 +66,7 @@ import { MatOptionModule } from '@angular/material/core';
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
+    TraineeTdetailsComponent
     
     
 

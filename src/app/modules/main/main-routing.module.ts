@@ -37,6 +37,7 @@ import { AddCertificationComponent } from './add-certification/add-certification
 import { CertificationDetailsComponent } from './certification-details/certification-details.component';
 import { DesignationDetailsComponent } from './team/designation-details/designation-details.component';
 import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/development-teamdetails.component';
+import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
 
 const routes: Routes = [
   {
@@ -72,7 +73,9 @@ const routes: Routes = [
       { path: 'event-details', component: EventDetailsComponent },
       { path: 'event-add', component: EventAddComponent },
       { path: 'team', component: TeamComponent },
-
+      { path:'designation-details', component:DesignationDetailsComponent },
+      { path: 'development-teamdetails', component:DevelopmentTeamdetailsComponent},
+      { path: 'trainee-tdetails', component:TraineeTdetailsComponent },
       { path: 'forgot-form', component: ForgotPasswordComponent },
       { path: 'forgot-form', component: ForgotPasswordComponent },    //P's modules
       { path: 'port-form', component: PortfolioFormComponent },
@@ -83,8 +86,6 @@ const routes: Routes = [
       { path: 'mou-det', component: MouDetailsComponent },
       { path: 'add-cert', component: AddCertificationComponent },
       { path: 'cert-det', component: CertificationDetailsComponent },
-      { path: 'designation-details', component:DesignationDetailsComponent},
-      { path:'development-teamdetails', component:DevelopmentTeamdetailsComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 
 
