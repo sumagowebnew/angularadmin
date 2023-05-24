@@ -11,7 +11,6 @@ import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { TeamComponent } from './team/team.component';
-
 import { QuestionsComponent } from './questions/questions.component';
 import { QuoteComponent } from './quote/quote.component';
 import { AddAwardsComponent } from './add-awards/add-awards.component';
@@ -27,7 +26,6 @@ import { AddNewsComponent } from './add-news/add-news.component';
 import { AddAchievementsComponent } from './add-achievements/add-achievements.component';
 import { ViewAchievementsComponent } from './view-achievements/view-achievements.component';
 import { ViewNewsComponent } from './view-news/view-news.component';
-
 import { ClientLogoComponent } from './client-logo/client-logo.component';
 import { AddLogoComponent } from './add-logo/add-logo.component';
 import { AddMouComponent } from './add-mou/add-mou.component';
@@ -50,20 +48,15 @@ const routes: Routes = [
       { path: 'add-news', component: AddNewsComponent },
       { path: 'view-achievements', component: ViewAchievementsComponent },
       { path: 'view-news', component: ViewNewsComponent },
-
       { path: 'port-det', component: PortfolioDetailsComponent },
       { path: 'port-form', component: PortfolioFormComponent },
-
       { path: 'count', component: CountComponent },
       { path: 'free-consultation', component: FreeConsultationComponent },
       { path: 'birthday', component: BirthdayComponent },
-
       { path: 'birthday-form', component: BirthdayFormComponent },
-
       { path: 'event-details', component: EventDetailsComponent },
       { path: 'event-add', component: EventAddComponent },
       { path: 'team', component: TeamComponent },
-
       { path: 'forgot-form', component: ForgotPasswordComponent },
       { path: 'forgot-form', component: ForgotPasswordComponent },    //P's modules
       { path: 'port-form', component: PortfolioFormComponent },
@@ -74,24 +67,20 @@ const routes: Routes = [
       { path: 'mou-det', component: MouDetailsComponent },
       { path: 'add-cert', component: AddCertificationComponent },
       { path: 'cert-det', component: CertificationDetailsComponent },
-
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
-
-    {  path:' ',redirectTo:'/main/home',pathMatch:'full'},
-
-    { path:'award-det',component:AwardDetComponent},
-    { path:'add-awards',component:AddAwardsComponent},
-    { path:'add-appreciation',component:AddAppreciationComponent},
-    { path:'appreciation-det',component:AppreciationDetComponent},
-    { path:'add-training',component:AddTrainingComponent},
-    { path:'training-det',component:TrainingDetComponent},
-    { path:'team',component:TeamComponent},
-    { path:'designation-details',component:DesignationDetailsComponent},
-    { path:'development-teamdetails',component:DevelopmentTeamdetailsComponent},
-    { path:'questions',component:QuestionsComponent},
-    { path:'quote',component:QuoteComponent},
- 
-  ]
+      { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
+      { path: 'award-det', component: AwardDetComponent },
+      { path: 'add-awards', component: AddAwardsComponent },
+      { path: 'add-appreciation', component: AddAppreciationComponent },
+      { path: 'appreciation-det', component: AppreciationDetComponent },
+      { path: 'add-training', component: AddTrainingComponent },
+      { path: 'training-det', component: TrainingDetComponent },
+      { path: 'team', component: TeamComponent },
+      { path: 'designation-details', component: DesignationDetailsComponent },
+      { path: 'development-teamdetails', component: DevelopmentTeamdetailsComponent },
+      { path: 'questions', component: QuestionsComponent },
+      { path: 'quote', component: QuoteComponent },
+    ]
   }
 ];
 

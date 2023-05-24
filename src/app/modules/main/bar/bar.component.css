@@ -205,6 +205,16 @@ mat-nav-list {
     color: #fff;
 }
 
+.d-flex {
+    display: inline-block;
+    margin-left: auto;
+    /* background: black;
+    color: #fff; */
+}
+.text-center {
+    padding: 10px;
+}
+
 @media screen and (max-width:700px) {
 
     .menu {

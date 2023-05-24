@@ -5,8 +5,18 @@
             <mat-icon>menu</mat-icon>
         </button>
         <img src="https://sumagotraining.in/images/sumago-logo.png">
-        <div class="user-name">Purva Diwate</div>
-        <div class="user-image border-white ">PD</div>
+        <!-- <div class="user-name">Purva Diwate</div>
+        <div class="user-image border-white ">PD</div> -->
+        <button mat-button [matMenuTriggerFor]="menu" class="mt-2 d-flex align-right">
+           <b> Purva Diwate </b>
+            <mat-icon class="user-image-icon ml-1"><b>keyboard_arrow_down</b></mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -21,15 +31,55 @@
                 <i class="yellow fa fa-archive" aria-hidden="true"></i>
                 <i class="blue fa fa-cogs" aria-hidden="true"></i>
             </div>
-
+        
+            <mat-divider></mat-divider>
             <ul>
 
                 <li><a routerLink="/main/dashboard"> <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
                 </li>
-                <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Contact
+
+                <li><a routerLink="/main/contact-enquiry"> <i class="fa fa-phone-square" aria-hidden="true"></i> Contact
                         Enquiries</a></li>
-                <li><a routerLink="/main/career-enquiry"> <i class="fa fa-envelope" aria-hidden="true"></i> Career
+
+                <li><a routerLink="/main/career-enquiry"> <i class="fa fa-commenting" aria-hidden="true"></i> Career
                         Enquiries</a></li>
+
+                        <li><a routerLink="/main/questions"> <i class="fa fa-question-circle" aria-hidden="true"></i> Questions</a></li>
+                        <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free
+                                Consultations</a></li>
+                        <li><a routerLink="/main/quote"> <i class="fa fa-info-circle" aria-hidden="true"></i> GET A QUOTE</a></li>
+                        <li>
+                            <a> <i class="fa fa-list" aria-hidden="true">
+                                </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdow-container">
+                                <li><a routerLink="/main/count"> <i class="fa fa-info" aria-hidden="true">
+                                        </i> Count Details</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a> <i class="fa fa-list" aria-hidden="true">
+                                </i> Client Logo <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdow-container">
+                                <li><a routerLink="/main/add-logo"> <i class="fa fa-plus" aria-hidden="true">
+                                        </i> Add Client Logo</a></li>
+                                <li><a routerLink="/main/client-logo"> <i class="fa fa-info" aria-hidden="true"></i>
+                                        View Client Logo</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a> <i class="fa fa-list" aria-hidden="true">
+                                </i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdow-container">
+                                <li><a routerLink="/main/port-form"> <i class="fa fa-plus" aria-hidden="true">
+                                        </i> Add Portfolio</a></li>
+                                <li><a routerLink="/main/port-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                                        Portfolio Details</a></li>
+                            </ul>
+                        </li>
+
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true"></i> Achievements <i class="fa fa-caret-down"
                             aria-hidden="true"></i>
@@ -53,56 +103,8 @@
                     </ul>
                 </li>
 
-                <li><a routerLink="/main/questions"> <i class="fa fa-user" aria-hidden="true"></i> Questions</a></li>
-                <li><a routerLink="/main/free-consultation"> <i class="fa fa-user" aria-hidden="true"></i> Free
-                        Consultations</a></li>
-                <li><a routerLink="/main/quote"> <i class="fa fa-user" aria-hidden="true"></i> GET A QUOTE</a></li>
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
-                        </i> Count <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/count"> <i class="fa fa-info" aria-hidden="true">
-                                </i> Count Details</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a> <i class="fa fa-list" aria-hidden="true">
-                        </i> Client Logo <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-logo"> <i class="fa fa-plus" aria-hidden="true">
-                                </i> Add Client Logo</a></li>
-                        <li><a routerLink="/main/client-logo"> <i class="fa fa-info" aria-hidden="true"></i>
-                                View Client Logo</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a> <i class="fa fa-list" aria-hidden="true">
-                        </i> Portfolio <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/port-form"> <i class="fa fa-plus" aria-hidden="true">
-                                </i> Add Portfolio</a></li>
-                        <li><a routerLink="/main/port-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                                Portfolio Details</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
-                        </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
-                                </i> Add Awards</a></li>
-                        <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                                Award Details</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
                         </i> Appreciation <i class="fa fa-caret-down" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdow-container">
@@ -112,19 +114,6 @@
                                 Appreciation Details</a></li>
                     </ul>
                 </li>
-
-                <li>
-                    <a> <i class="fa fa-address-card" aria-hidden="true">
-                        </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    </a>
-                    <ul class="dropdow-container">
-                        <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
-                                </i> Add Training</a></li>
-                        <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
-                                Training Details</a></li>
-                    </ul>
-                </li>
-
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                         </i> Certificate <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -171,6 +160,31 @@
                                 </i> Event Details</a></li>
                     </ul>
                 </li>
+               
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true">
+                        </i> Awards <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-awards"> <i class="fa fa-plus" aria-hidden="true">
+                                </i> Add Awards</a></li>
+                        <li><a routerLink="/main/award-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                                Award Details</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a> <i class="fa fa-list" aria-hidden="true">
+                        </i> Training <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdow-container">
+                        <li><a routerLink="/main/add-training"> <i class="fa fa-plus" aria-hidden="true">
+                                </i> Add Training</a></li>
+                        <li><a routerLink="/main/training-det"> <i class="fa fa-info" aria-hidden="true"></i>
+                                Training Details</a></li>
+                    </ul>
+                </li>
+               
                 <li>
                     <a> <i class="fa fa-list" aria-hidden="true">
                     </i> Team <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -187,7 +201,7 @@
                     </ul>
                 </li>
 
-                <li><a routerLink="/main/forgot-form"> <i class="fa fa-sign-out" aria-hidden="true"></i> Forgot
+                <li><a routerLink="/main/forgot-form"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Forgot
                         Password</a></li>
                 <li><a href="#"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 
