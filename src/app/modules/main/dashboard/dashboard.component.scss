@@ -1,0 +1,93 @@
+
+.widget-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5px auto;
+    max-width: auto;
+    // max-width: 1200px;
+}
+
+.widget {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #939393;
+    margin: 2px;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    width: calc(25% - 20px);
+}
+
+@media only screen and (max-width: 1200px) {
+    .widget {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .widget {
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .widget {
+        width: 100%;
+    }
+}
+
+.green {
+    background-color: rgb(1, 112, 71);
+}
+
+.red {
+
+    background-color: rgb(201, 16, 16);
+}
+
+.yellow {
+
+    background-color: rgb(231, 203, 23);
+}
+
+.blue {
+
+    background-color: rgb(86, 14, 231);
+}
+
+.icon {
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.top {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    margin-left: 50%;
+}
+
+.bottom {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 50%;
+}
+
+@media (max-width: 768px) {
+    .widget {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .widget {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
