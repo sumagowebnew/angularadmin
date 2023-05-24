@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BarComponent } from './modules/main/bar/bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -41,6 +43,8 @@ import { AddCertificationComponent } from './modules/main/add-certification/add-
 import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
+
+
 import { TeamComponent } from './modules/main/team/team.component';
 
 
@@ -50,9 +54,13 @@ import { TeamComponent } from './modules/main/team/team.component';
     AppComponent,
 
 
+
+
     
    
     //auth modules
+
+
 
     LoginComponent,
     NotFoundComponent,
@@ -62,29 +70,28 @@ import { TeamComponent } from './modules/main/team/team.component';
     BirthdayComponent,
     CountComponent,
     PortfolioFormComponent,
-    ForgotPasswordComponent,
-    ForgotPasswordComponent,
     EventDetailsComponent,
     EventAddComponent,
+
 
 
     ForgotPasswordComponent,
 
     PortfolioFormComponent,
-    ForgotPasswordComponent,
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
-    ForgotPasswordComponent,
+    
     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
     CertificationDetailsComponent,
     AddMouComponent,
     MouDetailsComponent,
-    ForgotPasswordComponent,
     EventAddComponent,
     EventDetailsComponent,
+    TeamComponent,
+    
   
 
 
@@ -96,6 +103,14 @@ import { TeamComponent } from './modules/main/team/team.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+
+
+
+    //angular material modules
+
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -107,6 +122,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
+    FlexLayoutModule,
     
 
   ],

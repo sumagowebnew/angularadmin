@@ -1,0 +1,46 @@
+<div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-xs-6">
+            <h2>Trainee Development Team Details</h2>
+          </div>
+          <div class="col-xs-6">
+            <a  class="btn btn-success" routerLink="/main/team"><i class="material-icons">&#xE147;</i> <span>Add development</span></a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Action</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Designation</th>
+            <th>Qulification</th>
+            <th>Experience</th>
+            <th>Status</th>
+            <th>Date</th>
+            
+          </tr>
+        </thead>
+       
+
+        <tbody>
+          <tr *ngFor="let trainee of trainees; let i=index">
+            <td>{{i+1}}</td>
+            <td>
+              <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            </td>
+            <td>{{trainee.name}}</td>
+            <td><img [src]="" alt="Image"></td>
+            <td>{{ trainee.designation}}</td>
+            <td>{{ trainee.qulification}}</td>
+            <td>{{ trainee.experience}}</td>
+            <td>{{ trainee.status}}</td>
+            <td>{{ trainee.date }}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>        
