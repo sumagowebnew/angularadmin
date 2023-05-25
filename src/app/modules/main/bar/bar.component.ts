@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { MatDrawer } from '@angular/material/sidenav';
 
 import { map, shareReplay } from 'rxjs/operators';
-import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
+// import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
 // import { faDashboard, faPerson, faShop, faBox, faMoneyBill, faChartBar, faContactBook, faHand, faFolder } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,15 +20,15 @@ export class BarComponent implements OnInit  {
 
   
 
-  faDashboard = faDashboard;
-  faPerson=faPerson;
-  faShop=faShop;
-  faBox=faBox;
-  faMoneyBill=faMoneyBill;
-  faChartBar=faChartBar;
-  faContactBook=faContactBook;
-  faHand=faHand;
-  faFolder=faFolder;
+  // faDashboard = faDashboard;
+  // faPerson=faPerson;
+  // faShop=faShop;
+  // faBox=faBox;
+  // faMoneyBill=faMoneyBill;
+  // faChartBar=faChartBar;
+  // faContactBook=faContactBook;
+  // faHand=faHand;
+  // faFolder=faFolder;
   
   isHandset$: Observable<boolean>;
   constructor(

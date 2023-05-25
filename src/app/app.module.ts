@@ -106,7 +106,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     MatSortModule,
     MatExpansionModule,
     // FlexLayoutModule,
-    
+    MatMenuModule
 
   ],
   providers: [],
