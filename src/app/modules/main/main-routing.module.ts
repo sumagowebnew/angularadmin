@@ -12,7 +12,6 @@ import { BirthdayFormComponent } from './birthday-form/birthday-form.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { TeamComponent } from './team/team.component';
-
 import { QuestionsComponent } from './questions/questions.component';
 import { QuoteComponent } from './quote/quote.component';
 import { AddAwardsComponent } from './add-awards/add-awards.component';
@@ -28,7 +27,6 @@ import { AddNewsComponent } from './add-news/add-news.component';
 import { AddAchievementsComponent } from './add-achievements/add-achievements.component';
 import { ViewAchievementsComponent } from './view-achievements/view-achievements.component';
 import { ViewNewsComponent } from './view-news/view-news.component';
-
 import { ClientLogoComponent } from './client-logo/client-logo.component';
 import { AddLogoComponent } from './add-logo/add-logo.component';
 import { AddMouComponent } from './add-mou/add-mou.component';
@@ -57,7 +55,6 @@ const routes: Routes = [
 
       { path: 'port-det', component: PortfolioDetailsComponent },
       { path: 'port-form', component: PortfolioFormComponent },
-
       { path: 'count', component: CountComponent },
       { path: 'free-consultation', component: FreeConsultationComponent },
       { path: 'birthday', component: BirthdayComponent },
@@ -69,7 +66,6 @@ const routes: Routes = [
       { path: 'appreciation-det', component:AppreciationDetComponent},
 
       { path: 'birthday-form', component: BirthdayFormComponent },
-
       { path: 'event-details', component: EventDetailsComponent },
       { path: 'event-add', component: EventAddComponent },
       { path: 'team', component: TeamComponent },
