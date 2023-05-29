@@ -22,7 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { PortfolioDetailsComponent } from './modules/main/portfolio-details/portfolio-details.component';
 import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
@@ -40,11 +40,8 @@ import { AddCertificationComponent } from './modules/main/add-certification/add-
 import { MouDetailsComponent } from './modules/main/mou-details/mou-details.component';
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
-
-
 import { TeamComponent } from './modules/main/team/team.component';
-
-
+import { AddAchievementsComponent } from './modules/main/add-achievements/add-achievements.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +61,6 @@ import { TeamComponent } from './modules/main/team/team.component';
     DashboardComponent,
     ContactEnquiryComponent,
     CareerEnquiryComponent,
-    
     ClientLogoComponent,
     AddLogoComponent,
     AddCertificationComponent,
@@ -74,10 +70,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     EventAddComponent,
     EventDetailsComponent,
     TeamComponent,
-    
-  
-
-
+    AddAchievementsComponent
 
   ],
   imports: [
@@ -89,11 +82,9 @@ import { TeamComponent } from './modules/main/team/team.component';
     MatSlideToggleModule,
     MatSidenavModule,
     MatToolbarModule,
-
-
+    ReactiveFormsModule,
 
     //angular material modules
-
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -105,7 +96,6 @@ import { TeamComponent } from './modules/main/team/team.component';
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
-    // FlexLayoutModule,
     MatMenuModule
 
   ],
