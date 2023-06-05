@@ -53,4 +53,10 @@ export class AuthService {
     this.router.navigate(['login']);
   }
 
+  //API INTEGRATION PART
+  url= "http://localhost:8000/employee/";
+  getData(): Observable<any>{
+    return this.http.get<any>(`${this.url}find`);
+  }
+
 }
