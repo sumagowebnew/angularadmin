@@ -6,15 +6,14 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
- constructor (private auth: AuthService){}
+export class DashboardComponent implements OnInit{
+  constructor (private auth: AuthService) {}
   ngOnInit(): void {
-      this.getData()
+    this.getData()
   }
-  getData() {
-    this.auth.getData().subscribe((res) =>{
-      console.log(res)
-    }
-    )
-  }
+getData() {
+  this.auth.getData().subscribe((res) =>{
+    console.log(res)
+  })
+}
 }

@@ -58,4 +58,5 @@ export class AuthService {
   getData(): Observable<any>{
     return this.http.get<any>(`${this.url}find`);
   }
+
 }

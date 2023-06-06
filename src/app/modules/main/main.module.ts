@@ -11,7 +11,6 @@ import { AwardDetComponent } from './award-det/award-det.component';
 import { AppreciationDetComponent } from './appreciation-det/appreciation-det.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { AddAchievementsComponent } from './add-achievements/add-achievements.component';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { ViewAchievementsComponent } from './view-achievements/view-achievements.component';
 import { ViewNewsComponent } from './view-news/view-news.component';
@@ -23,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,18 +35,15 @@ import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetai
     AppreciationDetComponent,
     QuoteComponent,
     QuestionsComponent,
-    AddAchievementsComponent,
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
     TraineeTdetailsComponent
-    
-    
-
-   
 
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     MainRoutingModule,
     LayoutModule,
