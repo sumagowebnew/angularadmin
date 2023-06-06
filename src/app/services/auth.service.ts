@@ -52,5 +52,10 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['login']);
   }
+  
+  url = "http://localhost:8000/employee/";
 
+  getData(): Observable<any>{
+    return this.http.get<any>(`${this.url}find`);
+  }
 }

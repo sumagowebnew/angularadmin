@@ -1,7 +1,8 @@
 
+<!-- <h2 class="text-primary bold">Add Birthday </h2>
+<div class="card p-3">
 <div class="image-upload">
     <form (submit)="onSubmit()">
-      <h2>Add Birthday</h2>
       <div class="form-group">
         <label for="file">Birthday Image</label>
         <input type="file" id="file" accept="image/*" (change)="onFileSelected($event)" required>
@@ -13,5 +14,22 @@
         <button type="reset" (click)="onReset()"><i class = "fa fa-undo" aria-hidden="true"></i>Reset</button>
       </div>
     </form>
+  </div> -->
+  <h2 class="text-primary bold">Add Birthday</h2>
+  <div class="card">
+    <div class="image-upload">
+      <form [formGroup]="fileForm">
+        <div class="form-group">
+          <label for="file">Birthday Image</label>
+          <input type="file" id="file" accept="image/*" formControlName="fileInput" #fileInput required>
+          <img *ngIf="fileForm.get('fileInput')?.valid" [src]="imageUrl" alt="Uploaded Image">
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" (click)="onUpload()">Submit</button>
+          <button type="reset" class="btn btn-primary"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+        </div>
+      </form>
+    </div>
   </div>
   

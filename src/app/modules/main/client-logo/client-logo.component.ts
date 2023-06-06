@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-client-logo',
   templateUrl: './client-logo.component.html',
-  styleUrls: ['./client-logo.component.css']
+  styleUrls: ['./client-logo.component.scss']
 })
 export class ClientLogoComponent implements OnInit {
 

@@ -28,6 +28,7 @@ import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
 import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
 import { BirthdayComponent } from './modules/main/birthday/birthday.component';
+
 import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
 import { EventAddComponent } from './modules/main/event-add/event-add.component';
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
@@ -43,6 +44,7 @@ import { CertificationDetailsComponent } from './modules/main/certification-deta
 
 
 import { TeamComponent } from './modules/main/team/team.component';
+import { BirthdayFormComponent } from './modules/main/birthday-form/birthday-form.component';
 
 
 
@@ -55,6 +57,7 @@ import { TeamComponent } from './modules/main/team/team.component';
     PortfolioDetailsComponent,
     FreeConsultationComponent,
     BirthdayComponent,
+    BirthdayFormComponent,
     CountComponent,
     PortfolioFormComponent,
     EventDetailsComponent,

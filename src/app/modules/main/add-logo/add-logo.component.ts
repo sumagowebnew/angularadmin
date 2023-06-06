@@ -3,10 +3,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
 
+
 @Component({
   selector: 'app-add-logo',
   templateUrl: './add-logo.component.html',
-  styleUrls: ['./add-logo.component.css']
+  styleUrls: ['./add-logo.component.scss']
 })
 export class AddLogoComponent {
   fileForm = new FormGroup({

@@ -1,35 +1,41 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild, OnInit} from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ImageService } from 'src/app/services/image.service';
+
 
 @Component({
   selector: 'app-birthday-form',
   templateUrl: './birthday-form.component.html',
   styleUrls: ['./birthday-form.component.scss']
 })
-export class BirthdayFormComponent {
-  imageUrl: string="";
+export class BirthdayFormComponent  {
+  fileForm = new FormGroup({
+    fileInput: new FormControl('',Validators.required)
+  });
+  imageUrl: string | null = null; // Declare imageUrl property
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
 
-    reader.onload = (e: any) => {
-      this.imageUrl = e.target.result;
-    };
+  @ViewChild('fileInput') fileInput: ElementRef<HTMLInputElement> | undefined;
 
-    reader.readAsDataURL(file);
+  constructor (private http: HttpClient,private imageService:ImageService) { }
+
+  onUpload(): void {
+    const fileInput = this.fileInput?.nativeElement;
+    if (fileInput && fileInput.files && fileInput.files[0]) {
+      const file = fileInput.files[0];
+      this.imageService.convertImageToBase64(file, (base64String, error) => {
+        if (error) {
+          console.error(error);
+        } else {
+          this.imageService.saveImageToServer(base64String);
+        }
+      });
+    }
   }
-
-  onSubmit() {
-    const data = {
-      imageUrl: this.imageUrl,
-    
-    };
-
-    console.log(data);
-    // Add logic to save the data to the server or perform other actions
+ 
+  onReset(): void {
+    this.fileForm.reset();
+    this.imageUrl = null;
   }
-
-  onReset() {
-    this.imageUrl = '';
-}
 }
