@@ -97,6 +97,9 @@ table.table {
 			cursor: pointer;
 		}
 	}
+	.fa-trash {
+		color: red;
+	}
 	td {
 		&:last-child {
 			i {

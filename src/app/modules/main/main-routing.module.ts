@@ -52,6 +52,7 @@ const routes: Routes = [
       { path: 'view-news', component: ViewNewsComponent },
       { path: 'questions', component: QuestionsComponent },
       { path: 'training-det', component: TrainingDetComponent },
+      { path: 'trainee-tdetails', component: TraineeTdetailsComponent },
 
       { path: 'port-det', component: PortfolioDetailsComponent },
       { path: 'port-form', component: PortfolioFormComponent },

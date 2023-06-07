@@ -27,7 +27,11 @@ export class TraineeTdetailsComponent {
     }
 
   ];
+  editcontact(index: number){
+    this.trainees.splice(index, 1);
+  }
   deletecontact(index: number){
     this.trainees.splice(index, 1);
   }
+ 
 }

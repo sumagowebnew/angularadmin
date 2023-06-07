@@ -48,6 +48,7 @@ import { BirthdayFormComponent } from './modules/main/birthday-form/birthday-for
 
 
 import { AddAchievementsComponent } from './modules/main/add-achievements/add-achievements.component';
+import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { AddAchievementsComponent } from './modules/main/add-achievements/add-ac
     EventAddComponent,
     EventDetailsComponent,
     TeamComponent,
-    AddAchievementsComponent
+    AddAchievementsComponent,
+    DesignationDetailsComponent
 
   ],
   imports: [

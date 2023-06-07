@@ -1,13 +1,7 @@
-<div class="table-title">
-    <div class="row">
-      <div class="col-xs-6">
-        <h1>Add<b> Certificate</b></h1>
-      </div>
-    </div>
-</div>
-<div class="card">
-  <form>
-    <h2>Add Certificate</h2>
+<h2 class="text-primary bold">Add Certificate</h2>
+
+<div class="card p-3">
+  <form [formGroup]="certificateForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" id="title" name="title" required>
@@ -24,10 +18,10 @@
       <label for="file">Certificate (model)</label>
       <input type="file" id="file" name="file" required>
     </div>
-   
-    <button type="submit">Submit</button>
-
-    <button type="reset">Reset</button>
+    <div class="form-group">
+      <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
+      <button type="button" class="btn btn-primary" (click)="onReset()"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+    </div>
   </form>
 </div>
 
