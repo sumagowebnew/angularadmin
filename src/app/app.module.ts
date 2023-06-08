@@ -28,6 +28,7 @@ import { CountComponent } from './modules/main/count/count.component';
 import { ForgotPasswordComponent } from './modules/main/forgot-password/forgot-password.component';
 import { FreeConsultationComponent } from './modules/main/free-consultation/free-consultation.component';
 import { BirthdayComponent } from './modules/main/birthday/birthday.component';
+
 import { EventDetailsComponent } from './modules/main/event-details/event-details.component';
 import { EventAddComponent } from './modules/main/event-add/event-add.component';
 import { PortfolioFormComponent } from './modules/main/portfolio-form/portfolio-form.component';
@@ -41,7 +42,14 @@ import { MouDetailsComponent } from './modules/main/mou-details/mou-details.comp
 import { AddMouComponent } from './modules/main/add-mou/add-mou.component';
 import { CertificationDetailsComponent } from './modules/main/certification-details/certification-details.component';
 import { TeamComponent } from './modules/main/team/team.component';
+
+import { BirthdayFormComponent } from './modules/main/birthday-form/birthday-form.component';
+
+
+
 import { AddAchievementsComponent } from './modules/main/add-achievements/add-achievements.component';
+import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +60,7 @@ import { AddAchievementsComponent } from './modules/main/add-achievements/add-ac
     PortfolioDetailsComponent,
     FreeConsultationComponent,
     BirthdayComponent,
+    BirthdayFormComponent,
     CountComponent,
     PortfolioFormComponent,
     EventDetailsComponent,
@@ -70,7 +79,8 @@ import { AddAchievementsComponent } from './modules/main/add-achievements/add-ac
     EventAddComponent,
     EventDetailsComponent,
     TeamComponent,
-    AddAchievementsComponent
+    AddAchievementsComponent,
+    DesignationDetailsComponent
 
   ],
   imports: [

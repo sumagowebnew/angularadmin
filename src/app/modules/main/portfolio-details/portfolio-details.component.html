@@ -82,7 +82,7 @@
         <tr *ngFor="let port of portfolios; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deleteportfolio(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteportfolio(i)" title="Delete"></i>&nbsp;
             <i class="fa fa-edit" (click)="editportfolio(i)" title="Edit"></i>
           </td>
           <td>{{port.title}}</td>

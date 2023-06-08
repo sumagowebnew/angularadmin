@@ -91,9 +91,6 @@ table.table {
 	.fa-trash{
 		color: red;
 	}
-	.fa-edit{
-		color:green;
-	}
 	th {
 		i {
 			font-size: 13px;
@@ -118,12 +115,6 @@ table.table {
 			&:hover {
 				color: $color_3;
 			}
-		}
-		a.edit {
-			color: $color_4;
-		}
-		a.delete {
-			color: $color_5;
 		}
 		i {
 			font-size: 19px;

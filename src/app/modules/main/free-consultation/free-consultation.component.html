@@ -78,7 +78,7 @@
       <tr *ngFor="let inquiry of inquiries; let i = index">
         <td>{{ i + 1 }}</td>
         <td>
-           <i class="fa fa-trash-o" (click)="deleteInquiry(i)"></i>
+           <i class="fa fa-trash" (click)="deleteInquiry(i)"></i>
 
         </td>
         <td>{{ inquiry.name }}</td>
