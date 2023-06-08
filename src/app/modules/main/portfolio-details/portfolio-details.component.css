@@ -259,6 +259,7 @@ tr.hover {
     color: red;
 }
 .fa-edit {
+    margin: 1rem;
     color: green;
 }
 .fa {
