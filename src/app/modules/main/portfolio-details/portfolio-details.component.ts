@@ -11,24 +11,24 @@ import { Sort } from '@angular/material/sort';
 export class PortfolioDetailsComponent {
   portfolios:any[]=[
     {
-      title:'Purva Diwate',
-      webstatus:'86734267846',
-      portfolio:'abc@gmail.com',
-      weblink:'Hello! Im angular developer',
+      title:'MEAN stack development',
+      webstatus:'on-site',
+      portfolio:'Purva Diwate',
+      weblink:'https://angular.io/',
       date:new Date('2022-09-08'),
     },
     {
-      title:'Mitisha Patel' ,
-      webstatus:'99219029336',
-      portfolio:'demo@gmail.com',
-      weblink:'Hi! Im react developer',
+      title:'UI/UX' ,
+      webstatus:'remote',
+      portfolio:'Mitisha Patel',
+      weblink:'https://react.io/',
       date:new Date('2021-08-31'),
     },
     {
-      title:'Aditi Sonawane',
-      webstatus:'86734267846',
-      portfolio:'trial@gmail.com',
-      weblink:'Hey, Im angular developer',
+      title:'Angular Developer',
+      webstatus:'hybrid',
+      portfolio:'Aditi Sonawane',
+      weblink:'https://bootstrap.io/',
       date:new Date('2019-02-24'),
     },
     
