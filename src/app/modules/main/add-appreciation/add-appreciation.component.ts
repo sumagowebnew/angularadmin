@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
-
-@Component({
+ @Component({
   selector: 'app-add-appreciation',
   templateUrl: './add-appreciation.component.html',
   styleUrls: ['./add-appreciation.component.scss']
