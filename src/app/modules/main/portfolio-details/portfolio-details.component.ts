@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { PortDet } from './port-det.model';
-import { Sort } from '@angular/material/sort';
+import { FilterPipe } from '../../../filter.pipe'
 
 
 @Component({
@@ -9,6 +8,7 @@ import { Sort } from '@angular/material/sort';
   styleUrls: ['./portfolio-details.component.css']
 })
 export class PortfolioDetailsComponent {
+  public searchQuery: string = '';
   portfolios:any[]=[
     {
       title:'MEAN stack development',
