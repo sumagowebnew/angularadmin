@@ -84,7 +84,7 @@
         <tr *ngFor="let contact of contacts; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteContactEnquiry(contact.id)" title="Delete"></i>
           </td>
           <td>{{contact.name}}</td>
           <td>{{contact.mobno}}</td>

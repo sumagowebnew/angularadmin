@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ClientLogoService } from 'src/app/services/client-logo.service';
 import { ImageService } from 'src/app/services/image.service';
 
 
@@ -11,24 +12,38 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class AddLogoComponent {
   fileForm = new FormGroup({
-    fileInput: new FormControl('',Validators.required)
+    fileInput: new FormControl('', Validators.required)
   });
 
-  @ViewChild('fileInput') fileInput: ElementRef<HTMLInputElement> | undefined;
+  constructor(private http: HttpClient, private imageService: ImageService, private clientLogoService: ClientLogoService) { }
 
-  constructor(private http: HttpClient,private imageService:ImageService) { }
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
 
-  onUpload(): void {
-    const fileInput = this.fileInput?.nativeElement;
-    if (fileInput && fileInput.files && fileInput.files[0]) {
-      const file = fileInput.files[0];
-      this.imageService.convertImageToBase64(file, (base64String, error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          this.imageService.saveImageToServer(base64String);
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
+  }
+
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image)
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  uploadLogo(): void {
+    if (this.base64Image) {
+      this.clientLogoService.addClientLogo(this.base64Image).subscribe(
+        response => {
+          console.log('Logo uploaded successfully:', response);
+        },
+        error => {
+          console.error('Failed to upload logo:', error);
         }
-      });
+      );
     }
   }
 
