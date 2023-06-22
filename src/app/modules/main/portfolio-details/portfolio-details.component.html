@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-      <input type="text" [(ngModel)]="searchQuery" placeholder="Search by title">
+      <input type="text"  placeholder="Search by title">
     </div>
   </div>
 </div>
@@ -77,19 +77,19 @@
         </tr>
       </thead>
       <tbody>
-      <tbody>
+      <tbody  *ngFor="let port of portfolio ; let i=index">
 
-        <tr *ngFor="let port of portfolios| filter: searchQuery;; let i=index">
+        <tr>
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deleteportfolio(i)" title="Delete"></i>&nbsp;
-            <i class="fa fa-edit" (click)="editportfolio(i)" title="Edit"></i>
+            <!-- <i class="fa fa-trash" (click)="deleteportfolio(i)" title="Delete"></i>&nbsp; -->
+            <!-- <i class="fa fa-edit" (click)="editportfolio(i)" title="Edit"></i> -->
           </td>
           <td>{{port.title}}</td>
-          <td>{{port.webstatus}}</td>
-          <td>{{port.portfolio}}</td>
-          <td>{{port.weblink}}</td>
-          <td>{{port.date | date}}</td>
+          <td>{{port.website_status}}</td>
+          <td>{{port.description}}</td>
+          <td>{{port.website_link}}</td>
+          <td>{{port.created_at | date}}</td>
       </tbody>
     </table>
   </div>

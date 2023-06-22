@@ -6,14 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = '{{sumagoadmin}}contact'
+  private apiUrl = 'http://localhost/main-main/main/contact'
   constructor(private http:HttpClient) { }
 
   getAllContactEnquiries(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-all-record`);
   }
 
-  deleteContactEnquiry(id: string): Observable<any> {
+  deleteContactEnquiry(id: number): Observable<any> {
     const url = `${this.apiUrl}/delete/${id}`;
     return this.http.delete(url);
   }

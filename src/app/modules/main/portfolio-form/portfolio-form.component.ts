@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
+
+interface Portfolio{
+  title:string;
+  description:string;
+  website_link:string;
+  image_file:string;
+}
 
 @Component({
   selector: 'app-portfolio-form',
@@ -7,28 +15,52 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./portfolio-form.component.css']
 })
 export class PortfolioFormComponent implements OnInit {
-  portfolioForm: FormGroup;
+  PortfolioForm: FormGroup;
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit() {
-    this.portfolioForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      file: [null, Validators.required]
+  constructor(private service: SharedService) {
+    this.PortfolioForm = new FormGroup({
+      title: new FormControl('Test', Validators.required),
+      description: new FormControl('check', Validators.required),
+      websitelink: new FormControl('https://', Validators.required),
+      image_file: new FormControl('', Validators.required)
     });
   }
 
-  onSubmit() {
-    if (this.portfolioForm.invalid) {
-      return;
+  ngOnInit(): void {}
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
+  }
+
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image);
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  onSubmit(): void {
+    if (this.base64Image) {
+      const title = this.PortfolioForm.get('title')?.value;
+      const description = this.PortfolioForm.get('description')?.value;
+      const websiteLink = this.PortfolioForm.get('websitelink')?.value;
+
+      this.service
+        .addPortfolio(title, description, websiteLink, this.base64Image)
+        .subscribe(
+          response => {
+            console.log('Portfolio uploaded successfully:', response);
+          },
+          error => {
+            console.error('Failed to upload Portfolio:', error);
+          }
+        );
     }
-
-    // Process the form submission
-    console.log(this.portfolioForm.value);
-    // You can send the form data to the server or perform any other necessary actions here
   }
 
-  onReset() {
-    this.portfolioForm.reset();
-  }
 }

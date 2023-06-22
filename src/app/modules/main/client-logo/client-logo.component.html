@@ -72,9 +72,10 @@
         <tr>
           <td><b>{{i+1}}</b></td>
           <td>
-            <button class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+            <button class="btn btn-danger" (click)="onDelete(logo.id)">Delete</button>
           </td>
-          <td> <img [src]="getBase64Image(logo)" alt="Client Logo"> &nbsp;
+
+          <td> <img  [src]="logo.image" alt="Client Logo"> &nbsp;
           </td>
       </tbody>
     </table>

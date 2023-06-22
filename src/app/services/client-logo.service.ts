@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientLogoService {
-  private apiUrl = '{{sumagoadmin}}clientLogo';
+  private apiUrl = 'http://localhost/main-main/main/clientLogo';
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +20,7 @@ export class ClientLogoService {
     return this.http.get<any>(`${this.apiUrl}/get-all-record`);
   }
 
-  deleteClientLogo(id:string): Observable<any>{
-    return this.http.delete(`${this.apiUrl}/clientLogo/delete/${id}`)
+  deleteClientLogo(id:number): Observable<any>{
+    return this.http.delete(`${this.apiUrl}/delete/${id}`)
   }
 }

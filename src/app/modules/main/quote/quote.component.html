@@ -73,28 +73,24 @@
                 <th>Mobile</th>
                 <th>Email</th>
                 <th>Type of Service</th>
-                <th>Other</th>
                 <th>Address</th>
                 <th>Comment</th>
-                <th>Date</th>
-                
+                <th>Date</th>               
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let quote of quotes; let i=index">
                 <td>{{i+1}}</td>
                 <td>
-                  <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+                  <i class="fa fa-trash" (click)="deleteQuote(quote.id)" title="Delete"></i>
                 </td>
-      
                 <td>{{quote.name}}</td>
-                <td>{{quote.mobile}}</td>
+                <td>{{quote.mobile_no}}</td>
                 <td>{{quote.email}}</td>
-                <td>{{quote.type_of_service}}</td>
-                <td>{{quote.other}}</td>
+                <td>{{quote.service}}</td>
                 <td>{{quote.address}}</td>
                 <td>{{quote.comment}}</td>
-                <td>{{quote.date | date}}</td>
+                <td>{{quote.created_at | date}}</td>
             </tbody>
           </table>
         </div>

@@ -92,13 +92,13 @@
               <tr *ngFor="let question of questions; let i=index">
                 <td>{{i+1}}</td>
                 <td>
-                  <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+                  <i class="fa fa-trash" (click)="deleteQuestion(question.id)" title="Delete"></i>
                 </td>
       
                 <td>{{question.name}}</td>
                 <td>{{question.email}}</td>
                 <td>{{question.question}}</td>
-                <td>{{question.date | date}}</td>
+                <td>{{question.created_at | date}}</td>
             </tbody>
           </table>
         </div>
