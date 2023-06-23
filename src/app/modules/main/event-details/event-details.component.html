@@ -78,9 +78,9 @@
           <!-- <td>{{ event.file }}</td> -->
           <td>{{ i + 1 }}</td>
           <td>
-            <i class="fa fa-trash" (click)="deleteEvent(i)" title="Delete"></i></td>
+            <i class="fa fa-trash" (click)="deleteEvent(event.id)" title="Delete"></i></td>
           <td><img [src]="event.image" alt="Event Image"></td>
-          <td>{{ event.date | date: 'shortDate' }}</td>
+          <td>{{ event.created_at | date: 'shortDate' }}</td>
         </tr>
       </tbody>
     </table>

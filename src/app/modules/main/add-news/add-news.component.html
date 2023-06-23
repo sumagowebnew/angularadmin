@@ -1,21 +1,21 @@
 <h2 class="text-primary bold ">Add News</h2>
 <div class="card p-3">
-    <form id="achievements-form">
+    <form id="achievements-form" [formGroup]="NewsForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
         </div>
         <div class="form-group">
             <label for="file">Newspaper:</label>
-            <input type="file" id="file" name="file" required>
+            <input type="text" id=" newsPaper" name="newsPaper" required>
         </div>
         <div class="form-group">
             <label for="file">News:</label>
-            <input type="file" id="file" name="file" required>
+            <input type="file" id="imageFile" name="file" (change)="onFileSelected($event, 'image')" required>
         </div>
         <div class="form-group">
             <label for="file">News [Modal]:</label>
-            <input type="file" id="file" name="file" required>
+            <input type="file" id="modelFile" name="file" (change)="onFileSelected($event, 'model')" required>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>

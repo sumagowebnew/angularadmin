@@ -6,18 +6,11 @@ interface Portfolios {
   title: string;
   description: string;
   image: string;
-  website_link:string;
-  website_status:number;
+  website_link: string;
+  website_status: number;
   is_active: number;
   created_at: string | null;
   updated_at: string | null;
-}
-
-interface ApiResponse {
-  data: Portfolios[];
-  message: string;
-  status: string;
-  status_code: number;
 }
 
 @Component({
@@ -27,24 +20,50 @@ interface ApiResponse {
 })
 export class PortfolioDetailsComponent implements OnInit{
  
-  portfolio:Portfolios[]=[];
+  portfolios: Portfolios[] = [];
+  loading: boolean = false;
+  image:string
 
-  constructor(private service:SharedService){}
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-    this.getPortfolio()
+  constructor(private service: SharedService) {}
+
+  ngOnInit() {
+    this.loadPortfolios();
   }
 
-  getPortfolio(){
-    console.log("methhod works") 
-    this.service.getPortfolios().subscribe(res=> (res: ApiResponse) => {
-      if (res.status === 'success') {
-        this.portfolio = res.data;
+  loadPortfolios() {
+    this.loading = true;
+    this.service.getPortfolios().subscribe(
+      (data: any[]) => {
+        if (Array.isArray(data)) {
+          this.portfolios = data;
+          // Log the image string for each portfolio
+          this.portfolios.forEach(portfolio => {
+              this.image = portfolio.image
+            console.log(portfolio.image);
+          });
+        } else {
+          console.error('Invalid response format:', data);
+        }
+      },
+      (error: any) => {
+        console.error(error);
+        this.loading = false;
+      },
+      () => {
+        this.loading = false;
       }
-    },
-    (error: any) => {
-      console.log('Error retrieving contact enquiries:', error);
-    })
+    );
   }
+  
+  
+  
 
+  deletePortfolio(id:number){
+    this.service.deletePortfolio(id).subscribe(
+      (response) => {
+        console.log('Portfolio deleted successfully.',response);
+        this.loadPortfolios();
+      });
+  }
+  
 }

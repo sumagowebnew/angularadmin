@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ImageService } from 'src/app/services/image.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 @Component({
@@ -11,31 +12,42 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class BirthdayFormComponent  {
   fileForm = new FormGroup({
-    fileInput: new FormControl('',Validators.required)
+    fileInput: new FormControl('', Validators.required)
   });
-  imageUrl: string | null = null; // Declare imageUrl property
 
+  constructor(private service:SharedService) { }
 
-  @ViewChild('fileInput') fileInput: ElementRef<HTMLInputElement> | undefined;
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
 
-  constructor (private http: HttpClient,private imageService:ImageService) { }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
+  }
 
-  onUpload(): void {
-    const fileInput = this.fileInput?.nativeElement;
-    if (fileInput && fileInput.files && fileInput.files[0]) {
-      const file = fileInput.files[0];
-      this.imageService.convertImageToBase64(file, (base64String, error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          this.imageService.saveImageToServer(base64String);
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image)
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  uploadBirthday(): void {
+    if (this.base64Image) {
+      this.service.addBirthday(this.base64Image).subscribe(
+        response => {
+          console.log('Birthday Data uploaded successfully:', response);
+        },
+        error => {
+          console.error('Failed to upload birthday data:', error);
         }
-      });
+      );
     }
   }
- 
   onReset(): void {
     this.fileForm.reset();
-    this.imageUrl = null;
+    this.selectedFile = null;
   }
 }

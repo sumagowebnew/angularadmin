@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddNewsComponent,
     ViewAchievementsComponent,
     ViewNewsComponent,
-    TraineeTdetailsComponent
+    TraineeTdetailsComponent,
+    DemoComponent
 
   ],
   imports: [

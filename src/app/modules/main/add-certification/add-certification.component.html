@@ -4,19 +4,19 @@
   <form [formGroup]="certificateForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" required>
+      <input type="text" id="title"  name="title" required>
     </div>
     <div class="form-group">
       <label for="description">College Name</label>
-      <input type="text" rows="4" required>
+      <input type="text" rows="4" id="college_name" name="college_name"  required>
     </div>
     <div class="form-group">
       <label for="file">Certificate</label>
-      <input type="file" id="file" name="file" required>
+      <input type="file" id="file" (change)="onFileSelected($event, 'image_file')" name="file" required>
     </div>
     <div class="form-group">
       <label for="file">Certificate (model)</label>
-      <input type="file" id="file" name="file" required>
+      <input type="file" id="file" (change)="onFileSelected($event, 'model_file')" name="file" required>
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>

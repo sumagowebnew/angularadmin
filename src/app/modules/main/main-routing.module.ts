@@ -36,6 +36,7 @@ import { CertificationDetailsComponent } from './certification-details/certifica
 import { DesignationDetailsComponent } from './team/designation-details/designation-details.component';
 import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/development-teamdetails.component';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
+import { DemoComponent } from './demo/demo.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,7 @@ const routes: Routes = [
       { path: 'add-mou', component: AddMouComponent },
       { path: 'mou-det', component: MouDetailsComponent },
       { path: 'add-cert', component: AddCertificationComponent },
+      {path:'demo',component:DemoComponent},
       { path: 'cert-det', component: CertificationDetailsComponent },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
