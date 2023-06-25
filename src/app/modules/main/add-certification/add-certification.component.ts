@@ -7,19 +7,24 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./add-certification.component.css']
 })
 export class AddCertificationComponent {
-  certificateForm: FormGroup;
+  
+  
+  title: string;
+  collegeName: string;
+  imageFile: string;
+  modelFile:string
   selectedFile: File | null = null;
   base64Image: string | null = null;
   base64Model: string | null = null;
-  imageFile: string;
-  modelFile:string
 
-  constructor(private formBuilder: FormBuilder,private service:SharedService ) {
-    this.certificateForm = this.formBuilder.group({
+  CertificateForm: FormGroup;
+
+  constructor(private service: SharedService) {
+    this.CertificateForm = new FormGroup({
       title: new FormControl('Test', Validators.required),
-      college_name: new FormControl('check', Validators.required),
+      collegeName: new FormControl('check', Validators.required),
       image_file: new FormControl('', Validators.required),
-      model_File: new FormControl('', Validators.required)
+      modelFile: new FormControl('', Validators.required)
     });
   }
 
@@ -48,29 +53,28 @@ export class AddCertificationComponent {
     };
     reader.readAsDataURL(file);
   }
-  
-  onSubmit() {
-    if (this.certificateForm.valid) {
-      const title = this.certificateForm.get('title')?.value;
-      const collegeName = this.certificateForm.get('college_name')?.value;
 
-      this.service.addCertificate(title, collegeName, this.base64Image,this.base64Model)
+  onSubmit(): void {
+    if (this.base64Image && this.base64Model) {
+      const title = this.CertificateForm.get('title')?.value;
+      const description = this.CertificateForm.get('collegeName')?.value;
+
+      this.service
+        .addCertificate(title, description, this.base64Image,this.base64Model)
         .subscribe(
           response => {
-            alert("success on adding it")
+            console.log('Certificate uploaded successfully:', response);
           },
           error => {
-            // Handle error response
-            console.log(error)
+            console.error('Failed to upload Certificate:', error);
           }
         );
     }
   }
-
   
   
   onReset() {
-    this.certificateForm.reset();
+    this.CertificateForm.reset();
   }
 }
 

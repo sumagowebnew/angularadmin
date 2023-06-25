@@ -73,6 +73,7 @@
           <td><b>{{i+1}}</b></td>
           <td>
             <button class="btn btn-danger" (click)="onDelete(logo.id)">Delete</button>
+               <i class="fa fa-edit" (click)="edit(logo.id)" title="Edit"></i>
           </td>
 
           <td> <img  [src]="logo.image" alt="Client Logo"> &nbsp;
@@ -80,4 +81,9 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div *ngIf="showUpdateInput">
+  <input type="text" formControlName="fileInput" (change)="onFileSelected($event)" placeholder="Enter updated logo text">
+  <button class="btn btn-primary" >Update</button>
 </div>

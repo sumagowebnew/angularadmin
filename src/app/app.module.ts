@@ -51,6 +51,8 @@ import { AddAchievementsComponent } from './modules/main/add-achievements/add-ac
 import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
 import { RegisterComponent } from './auth-components/register/register.component';
 import { FilterPipe } from './filter.pipe';
+import { AddDesignationComponent } from './add-designation/add-designation.component';
+
 
 
 @NgModule({
@@ -84,7 +86,9 @@ import { FilterPipe } from './filter.pipe';
     AddAchievementsComponent,
     DesignationDetailsComponent,
     RegisterComponent,
-    FilterPipe
+    FilterPipe,
+    AddDesignationComponent,
+
 
   ],
   imports: [
@@ -110,7 +114,8 @@ import { FilterPipe } from './filter.pipe';
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+
 
   ],
   providers: [],

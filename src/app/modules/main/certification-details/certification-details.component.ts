@@ -1,23 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-certification-details',
   templateUrl: './certification-details.component.html',
   styleUrls: ['./certification-details.component.css']
 })
-export class CertificationDetailsComponent {
-  certificate: any[]=[
-    {
-      title:'Amrit MOU',
-      collegename:'Amrit College',
-      image: 'https://encrypteds-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2022-09-08'),
-    },
-  ];
-  deletecertificate(index: number){
-    this.certificate.splice(index, 1);
+export class CertificationDetailsComponent implements OnInit {
+  ngOnInit(): void {
+    this.getCertificate()
   }
-  editcertificate(index: number){
-    this.certificate.splice(index, 1);
+
+  constructor(private service:SharedService){}
+
+  certificateDetails: any[] = [];
+   
+  getCertificate() {
+    this.service.getCertificates().subscribe((certificates:[]) =>{
+      this.certificateDetails = certificates;
+    })
   }
-    }
+
+  deleteCertificate(id:number) {
+    this.service.deleteCertificate(id).subscribe(() =>{
+      alert('Delete Success')
+          this.getCertificate();
+        })
+  }
+
+}

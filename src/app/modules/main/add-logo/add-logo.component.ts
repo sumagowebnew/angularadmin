@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ClientLogoService } from 'src/app/services/client-logo.service';
-import { ImageService } from 'src/app/services/image.service';
 
 
 @Component({
@@ -15,7 +13,7 @@ export class AddLogoComponent {
     fileInput: new FormControl('', Validators.required)
   });
 
-  constructor(private http: HttpClient, private imageService: ImageService, private clientLogoService: ClientLogoService) { }
+  constructor(private clientLogoService: ClientLogoService) { }
 
   selectedFile: File | null = null;
   base64Image: string | null = null;

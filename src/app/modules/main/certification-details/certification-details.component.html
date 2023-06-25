@@ -76,16 +76,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cert of certificate; let i=index">
+          <tr *ngFor="let certificate of certificateDetails; let i=index">
             <td>{{i+1}}</td>
             <td>
-              <i class="fa fa-trash" (click)="deletecertificate(i)" title="Delete"></i>&nbsp;
-              <i class="fa fa-edit" (click)="editcertificate(i)" title="Edit"></i>
+              <i class="fa fa-trash" (click)="deleteCertificate(certificate.id)" title="Delete"></i>&nbsp;
             </td>
-            <td>{{cert.title}}</td>
-            <td>{{cert.collegename}}</td>
-            <td><img [src]="cert.image" alt="Certificate Image"></td>
-            <td>{{cert.date | date}}</td>
+            <td>{{certificate.title}}</td>
+            <td>{{certificate.collegename}}</td>
+            <td><img [src]="certificate.certificate_image" alt="Certificate Image"></td>
+            <td>{{certificate.created_at | date}}</td>
        
           <!-- add more rows as needed -->
         </tbody>

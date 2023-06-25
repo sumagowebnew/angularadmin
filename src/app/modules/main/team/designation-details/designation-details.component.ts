@@ -1,55 +1,82 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+
+
 
 @Component({
   selector: 'app-designation-details',
   templateUrl: './designation-details.component.html',
   styleUrls: ['./designation-details.component.scss']
 })
-export class DesignationDetailsComponent {
-  designationForm: FormGroup;
-  
-  constructor(private formBuilder: FormBuilder) {
-    this.designationForm = this.formBuilder.group({
-      srNo: ['', Validators.required],
-      action: ['', Validators.required],
-      designation: ['', Validators.required],
-      date: ['23/05/2023', Validators.required]
-    });
-    
+export class DesignationDetailsComponent implements OnInit {
+  designations: any[] = [];
+  newDesignation: string;
+  selectedDesignation: any;
+  updatedDesignation: string;
+
+  constructor(private service:SharedService) { }
+  ngOnInit(): void {
+    this.getDesignations()
   }
-  editAction() {
-    const srNoControl = this.designationForm.get('srNo');
-    const designationControl = this.designationForm.get('designation');
-    
-    if (srNoControl.valid && designationControl.valid) {
-      const srNoValue = srNoControl.value;
-      const designationValue = designationControl.value;
-      
-      console.log(`Edit action triggered for Serial Number: ${srNoValue}`);
-      console.log(`New designation value: ${designationValue}`);
-    } else {
-      console.log('Invalid form data. Please correct the required fields.');
-    }
-  }
-  deleteAction() {
-    const srNoControl = this.designationForm.get('srNo');
-    
-    if (srNoControl.valid) {
-      const srNoValue = srNoControl.value;
-      
-      console.log(`Delete action triggered for Serial Number: ${srNoValue}`);
-      
-      this.designationForm.reset();
-    } else {
-      console.log('Invalid Serial Number. Please enter a valid value.');
+
+  addDesignation() {
+    if (this.newDesignation) {
+      this.service.addDesignation(this.newDesignation).subscribe(
+        response => {
+          console.log('Designation added successfully');
+          this.newDesignation = ''; // Clear the input field
+          this.getDesignations(); // Refresh the list of designations
+        },
+        error => {
+          console.error('Failed to add designation', error);
+        }
+      );
     }
   }
 
-  
-  onSubmit() {
-    if (this.designationForm.valid) {
-      console.log(this.designationForm.value);
+  updateDesignation() {
+    if (this.selectedDesignation && this.updatedDesignation) {
+      this.service.updateDesignation(this.selectedDesignation.id, this.updatedDesignation).subscribe(
+        response => {
+          console.log('Designation updated successfully');
+          this.selectedDesignation = null; // Clear the selected designation
+          this.updatedDesignation = ''; // Clear the input field
+          this.getDesignations(); // Refresh the list of designations
+        },
+        error => {
+          console.error('Failed to update designation', error);
+        }
+      );
     }
   }
+
+  deleteDesignation(designation: any) {
+    this.service.deleteDesignation(designation.id).subscribe(
+      response => {
+        console.log('Designation deleted successfully');
+        this.getDesignations(); // Refresh the list of designations
+      },
+      error => {
+        console.error('Failed to delete designation', error);
+      }
+    );
+  }
+
+  editDesignation(designation: any) {
+    this.selectedDesignation = designation;
+    this.updatedDesignation = designation.designation;
+  }
+
+  getDesignations() {
+    this.service.getDesignations().subscribe(
+      response => {
+        this.designations = response.data; 
+        console.log(this.designations)
+      },
+      error => {
+        console.error('Failed to get designations', error);
+      }
+    );
+  }
+
 }

@@ -1,32 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-add-training',
   templateUrl: './add-training.component.html',
   styleUrls: ['./add-training.component.scss']
 })
-export class AddTrainingComponent implements OnInit {
-  trainingForm: FormGroup;
+export class AddTrainingComponent {
 
-  constructor(private formBuilder: FormBuilder) {}
+  trainingForm = new FormGroup({
+    fileInput: new FormControl('', Validators.required)
+  });
 
-  ngOnInit() {
-    this.trainingForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      file: [null, Validators.required]
-    });
+  constructor(private service:SharedService) { }
+
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
   }
 
-  onSubmit() {
-    if (this.trainingForm.invalid) {
-      return;
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image)
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  uploadTraining(): void {
+    if (this.base64Image) {
+      this.service.addTraining(this.base64Image).subscribe(
+        response => {
+          console.log('Training Image uploaded successfully:', response);
+        },
+        error => {
+          console.error('Failed to upload Training Image:', error);
+        }
+      );
     }
-
-    // Process the form submission
-    console.log(this.trainingForm.value);
-    // You can send the form data to the server or perform any other necessary actions here
   }
+
 
   onReset() {
     this.trainingForm.reset();

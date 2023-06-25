@@ -77,15 +77,15 @@
       </thead>
       <tbody>
 
-        <tr *ngFor="let mou of mous; let i=index">
+        <tr *ngFor="let mou of mouDetails; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteMou(mou.id)" title="Delete"></i>
           </td>
           <td>{{mou.title}}</td>
-          <td>{{mou.collegename}}</td>
-          <td><img [src]="" alt=" Image"></td>
-          <td>{{mou.date | date}}</td>
+          <td>{{mou.college_name}}</td>
+          <td><img [src]="mou.mou_image" alt=" Image"></td>
+          <td>{{mou.created_at | date}}</td>
       </tbody>
     </table>
   </div>

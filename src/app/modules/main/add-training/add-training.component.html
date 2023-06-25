@@ -1,28 +1,13 @@
 <h2 class="text-primary bold">Add Training</h2>
 <div class="card p-3">
-  <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="title">Title:</label>
-      <input type="text" id="title" formControlName="title" required>
-    </div>
+  <form [formGroup]="trainingForm">
     <div class="form-group">
       <label for="file">Achievements:</label>
-      <input type="file" id="file" formControlName="file" required>
+      <input type="file" id="file" name="file" formControlName="fileInput" (change)=" onFileSelected($event)" required>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
+      <button type="submit" class="btn btn-success" (click)="uploadTraining()"><i class="fa fa-check" aria-hidden="true" ></i> Submit</button>
       <button type="button" class="btn btn-primary" (click)="onReset()"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
     </div>
   </form>
 </div>
-
-<!-- <div class="card">
-    <form>
-      <div class="form-group">
-        <label for="file">Choose a file</label>
-        <input type="file" id="file" name="file" required>
-      </div>
-  
-      <button type="submit">Submit</button>
-    </form>
-  </div> -->
