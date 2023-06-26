@@ -38,6 +38,8 @@ import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
 import { DemoComponent } from './demo/demo.component';
 import { AddDesignationComponent } from 'src/app/add-designation/add-designation.component';
+import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
+import { DevelopmentFormComponent } from './development-form/development-form.component';
 
 const routes: Routes = [
   {
@@ -87,6 +89,8 @@ const routes: Routes = [
       {path: 'add-designation',component:AddDesignationComponent},
       {path:'demo',component:DemoComponent},
       { path: 'cert-det', component: CertificationDetailsComponent },
+      { path: 'update-portfolio/:id', component:UpdatePortfolioFormComponent },
+      {path:'add-development-details',component:DevelopmentFormComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

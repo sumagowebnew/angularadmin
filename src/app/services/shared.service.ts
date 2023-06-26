@@ -10,6 +10,17 @@ export class SharedService {
   private apiUrl = `${BASE_URL}`;
   constructor(private http:HttpClient) { }
 
+  //contact
+
+  getAllContactEnquiries(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}contact/get-all-record`);
+  }
+
+  deleteContactEnquiry(id: number): Observable<any> {
+    const url = `${this.apiUrl}contact/delete/${id}`;
+    return this.http.delete(url);
+  }
+
   //Question
   getQuestions(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}questions/get-all-record`);
@@ -64,7 +75,7 @@ export class SharedService {
     return this.http.get<any>(`${this.apiUrl}portfolio/get-all-record`);
   }
 
-  updatePortfolio(id: string, title: string, description: string, websiteLink: string, imageFile: string): Observable<any> {
+  updatePortfolio(id: number, title: string, description: string, websiteLink: string, imageFile: string): Observable<any> {
     const formData = new FormData();
     formData.append('title', title);
     formData.append('description', description);
@@ -205,11 +216,11 @@ export class SharedService {
   addClientLogo(imageData: string): Observable<any> {
     const formData = new FormData();
     formData.append('image_file', imageData);
-    return this.http.post(`${this.apiUrl}/add`, formData);
+    return this.http.post(`${this.apiUrl}clientLogo/add`, formData);
   }
   
   getAllClientLogos(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-all-record`);
+    return this.http.get<any>(`${this.apiUrl}clientLogo/get-all-record`);
   }
 
   updateClientLogo(imageData: string,id:number): Observable<any> {
@@ -222,7 +233,7 @@ export class SharedService {
   }
 
   deleteClientLogo(id:number): Observable<any>{
-    return this.http.delete(`${this.apiUrl}/delete/${id}`)
+    return this.http.delete(`${this.apiUrl}delete/${id}`)
   }
 
   //Awards
@@ -280,6 +291,42 @@ export class SharedService {
   deleteDesignation(id: number): Observable<any> {
     const url = `${this.apiUrl}designation/delete/${id}`;
 
+    return this.http.delete(url);
+  }
+
+  //count
+
+  updateCounts(clients: number, projects: number, cupOfCoffee: number, awards: number) {
+    const formData: FormData = new FormData();
+    formData.append('clients', clients.toString());
+    formData.append('projects', projects.toString());
+    formData.append('cup_of_coffee', cupOfCoffee.toString());
+    formData.append('awards', awards.toString());
+  
+    return this.http.post(`${this.apiUrl}count/update/1`, formData);
+  }
+  
+  getCount(): Observable<any> {
+    const url = `${this.apiUrl}count/get-all-record`;
+
+    return this.http.get(url);
+  
+}
+
+  //Development Team 
+
+  addDevelopmentTeam(data: any): Observable<any> {
+    const url = `${this.apiUrl}developement_team/add`;
+    return this.http.post(url, data);
+  }
+
+  getDevelopmentTeam(): Observable<any> {
+    const url = `${this.apiUrl}developement_team/get-all-record`;
+    return this.http.get(url);
+  }
+
+  deleteDevelopmentTeam(id: number): Observable<any> {
+    const url = `${this.apiUrl}developement_team/delete/${id}`;
     return this.http.delete(url);
   }
 }

@@ -24,6 +24,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoComponent } from './demo/demo.component';
+import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
+import { DevelopmentFormComponent } from './development-form/development-form.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { DemoComponent } from './demo/demo.component';
     ViewAchievementsComponent,
     ViewNewsComponent,
     TraineeTdetailsComponent,
-    DemoComponent
+    DemoComponent,
+    UpdatePortfolioFormComponent,
+    DevelopmentFormComponent
 
   ],
   imports: [

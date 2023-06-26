@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from 'src/app/services/contact.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 interface Contact {
@@ -32,7 +32,7 @@ export class ContactEnquiryComponent implements OnInit {
     this.contacts.splice(index, 1);
   }
 
-  constructor(private contactService:ContactService){}
+  constructor(private contactService:SharedService){}
   ngOnInit(): void {
 this.getContactEnquiries()
   }

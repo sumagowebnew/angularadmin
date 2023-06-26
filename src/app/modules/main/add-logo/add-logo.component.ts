@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ClientLogoService } from 'src/app/services/client-logo.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class AddLogoComponent {
     fileInput: new FormControl('', Validators.required)
   });
 
-  constructor(private clientLogoService: ClientLogoService) { }
+  constructor(private clientLogoService: SharedService) { }
 
   selectedFile: File | null = null;
   base64Image: string | null = null;

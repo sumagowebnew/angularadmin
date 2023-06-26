@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/services/shared.service';
+import { Router } from '@angular/router';
 
 interface Portfolios {
   id: number;
@@ -24,7 +25,7 @@ export class PortfolioDetailsComponent implements OnInit{
   loading: boolean = false;
   image:string
 
-  constructor(private service: SharedService) {}
+  constructor(private service: SharedService,private router:Router) {}
 
   ngOnInit() {
     this.loadPortfolios();
@@ -54,10 +55,12 @@ export class PortfolioDetailsComponent implements OnInit{
       }
     );
   }
-  
-  
-  
 
+
+  editPortfolio(portfolioId: number) {
+    this.router.navigate(['main/update-portfolio', portfolioId]);
+  }
+  
   deletePortfolio(id:number){
     this.service.deletePortfolio(id).subscribe(
       (response) => {

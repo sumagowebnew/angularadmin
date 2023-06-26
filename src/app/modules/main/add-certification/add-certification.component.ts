@@ -21,8 +21,8 @@ export class AddCertificationComponent {
 
   constructor(private service: SharedService) {
     this.CertificateForm = new FormGroup({
-      title: new FormControl('Test', Validators.required),
-      collegeName: new FormControl('check', Validators.required),
+      title: new FormControl('', Validators.required),
+      collegeName: new FormControl('', Validators.required),
       image_file: new FormControl('', Validators.required),
       modelFile: new FormControl('', Validators.required)
     });

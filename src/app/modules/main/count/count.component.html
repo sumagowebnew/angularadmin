@@ -76,16 +76,28 @@
         <tr *ngFor="let count of counts; let i = index">
           <td>{{ i + 1 }}</td>
           <td>
-            
-              <i class="fa fa-trash" (click)="deleteCount(i)"></i> &nbsp; 
-            
-              <i class="fa fa-edit" (click)="editCount(count)"></i>
+            <!-- <i class="fa fa-trash" (click)="deleteCount(count)"></i> &nbsp; -->
+        <i class="fa fa-edit" (click)="enableEditMode(count)"></i>
+        <i class="fa fa-check" *ngIf="count.editMode" (click)="updateCount(count)"></i>
+        <i class="fa fa-times" *ngIf="count.editMode" (click)="cancelEdit(count)"></i>
           </td>
-          <td>{{ count.clients }}</td>
-          <td>{{ count.projects }}</td>
-          <td>{{ count.cupOfCoffee }}</td>
-          <td>{{ count.awardsWin }}</td>
-          <td>{{ count.date | date }}</td>
+          <td>
+            <span *ngIf="!count.editMode">{{ count.clients }}</span>
+            <input type="number" [(ngModel)]="count.clients" *ngIf="count.editMode" class="form-control">
+          </td>
+          <td>
+            <span *ngIf="!count.editMode">{{ count.projects }}</span>
+            <input type="number" [(ngModel)]="count.projects" *ngIf="count.editMode" class="form-control">
+          </td>
+          <td>
+            <span *ngIf="!count.editMode">{{ count.cup_of_coffee }}</span>
+            <input type="number" [(ngModel)]="count.cup_of_coffee" *ngIf="count.editMode" class="form-control">
+          </td>
+          <td>
+            <span *ngIf="!count.editMode">{{ count.awards }}</span>
+            <input type="number" [(ngModel)]="count.awards" *ngIf="count.editMode" class="form-control">
+          </td>
+          <td>{{ count.updated_at | date }}</td>
         </tr>
       </tbody>
     </table>

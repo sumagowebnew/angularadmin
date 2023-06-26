@@ -1,12 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-
-import { map } from 'rxjs';
-import { Observable } from 'rxjs/internal/Observable';
-
-import { DomSanitizer } from '@angular/platform-browser';
-import { ClientLogoService } from 'src/app/services/client-logo.service';
 import { SharedService } from 'src/app/services/shared.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 interface ClientLogo {
   id: number;
@@ -27,12 +21,17 @@ export class ClientLogoComponent implements OnInit {
   updatedLogoText = '';
   selectedFile: File | null = null;
   base64Image: string | null = null;
+  id:number
+
+  fileForm = new FormGroup({
+    fileInput: new FormControl('', Validators.required)
+  });
 
   
   images: { id: number, base64String: string, url: string }[] = [];
 
 
-  constructor(private http: HttpClient,private sanitizer:DomSanitizer,private clientLogoService:SharedService) {}
+  constructor(private clientLogoService:SharedService) {}
 
 
   ngOnInit(): void {
@@ -61,10 +60,7 @@ export class ClientLogoComponent implements OnInit {
     );
   }
 
-  updateLogo(){
-
-  }
-
+  
   onFileSelected(event: any): void {
     this.selectedFile = event.target.files[0];
     this.convertToBase64();
@@ -81,18 +77,19 @@ export class ClientLogoComponent implements OnInit {
 
   edit(id:number){
     this.showUpdateInput = true;
-    this.uploadLogo(id)
+    this.id = id
   }
 
   uploadLogo(id:number): void {
-
+      id = this.id
     if (this.base64Image) {
       this.clientLogoService.updateClientLogo(this.base64Image,id).subscribe(
         response => {
-          console.log('Logo uploaded successfully:', response);
+          console.log('Logo updated successfully:', response);
+          this.getAllClientLogos()
         },
         error => {
-          console.error('Failed to upload logo:', error);
+          console.error('Failed to update logo:', error);
         }
       );
     }

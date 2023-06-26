@@ -50,44 +50,47 @@
     </div>
   </div>
 </div>
-
 <div class="table-responsive">
-    <div class="table-wrapper">
-      <div class="table-title">
-        <div class="row">
-          <div class="col-xs-6">
-            <h2>Certificate Details</h2>
-          </div>
-          <div class="col-xs-6">
-            <a  class="btn btn-success" routerLink="/main/add-cert"><i class="material-icons">&#xE147;</i> <span>Add New Certificate</span></a>
-          </div>
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-xs-6">
+          <h2>Certificate Details</h2>
+        </div>
+        <div class="col-xs-6">
+          <a class="btn btn-success" routerLink="/main/add-cert">
+            <i class="material-icons">&#xE147;</i>
+            <span>Add New Certificate</span>
+          </a>
         </div>
       </div>
-
-      <table class="table table-striped table-hover" matSort >
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Sr.NO</th>
-            <th scope="col">Action</th>
-            <th scope="col">Title</th>
-            <th scope="col">College Name</th>
-            <th scope="col">Image</th>
-            <th scope="col">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let certificate of certificateDetails; let i=index">
-            <td>{{i+1}}</td>
-            <td>
-              <i class="fa fa-trash" (click)="deleteCertificate(certificate.id)" title="Delete"></i>&nbsp;
-            </td>
-            <td>{{certificate.title}}</td>
-            <td>{{certificate.collegename}}</td>
-            <td><img [src]="certificate.certificate_image" alt="Certificate Image"></td>
-            <td>{{certificate.created_at | date}}</td>
-       
-          <!-- add more rows as needed -->
-        </tbody>
-      </table>
     </div>
-  </div>        
+
+    <table class="table table-striped table-hover" matSort>
+      <thead class="thead-light">
+        <tr>
+          <th mat-sort-header="index">Sr.NO</th>
+          <th>Action</th>
+          <th mat-sort-header="title">Title</th>
+          <th mat-sort-header="collegename">College Name</th>
+          <th>Image</th>
+          <th mat-sort-header="created_at">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let certificate of certificateDetails; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <i class="fa fa-trash" (click)="deleteCertificate(certificate.id)" title="Delete"></i>&nbsp;
+          </td>
+          <td>{{ certificate.title }}</td>
+          <td>{{ certificate.collegename }}</td>
+          <td>
+            <img [src]="certificate.certificate_image" alt="Certificate Image">
+          </td>
+          <td>{{ certificate.created_at | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

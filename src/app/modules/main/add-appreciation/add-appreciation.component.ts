@@ -1,7 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
-import { ImageService } from 'src/app/services/image.service';
 import { SharedService } from 'src/app/services/shared.service';
  @Component({
   selector: 'app-add-appreciation',

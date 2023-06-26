@@ -84,6 +84,8 @@
 </div>
 
 <div *ngIf="showUpdateInput">
-  <input type="text" formControlName="fileInput" (change)="onFileSelected($event)" placeholder="Enter updated logo text">
-  <button class="btn btn-primary" >Update</button>
+  <form [formGroup]="fileForm">
+  <input type="file" formControlName="fileInput" (change)="onFileSelected($event)" placeholder="Enter updated logo text">
+  <button class="btn btn-primary" (click)="uploadLogo(id)">Update</button>
+  </form>
 </div>

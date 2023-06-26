@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  // private apiUrl = 'http:///login';
 
    constructor(private http: HttpClient, private router: Router) { }
 
@@ -67,11 +66,4 @@ export class AuthService {
 
     return this.http.post(`${this.url}register`, formData);
   }
-
-
-
-
-
-
-
 }
