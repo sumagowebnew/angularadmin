@@ -40,6 +40,7 @@ import { DemoComponent } from './demo/demo.component';
 import { AddDesignationComponent } from 'src/app/add-designation/add-designation.component';
 import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
 import { DevelopmentFormComponent } from './development-form/development-form.component';
+import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,7 @@ const routes: Routes = [
       { path: 'cert-det', component: CertificationDetailsComponent },
       { path: 'update-portfolio/:id', component:UpdatePortfolioFormComponent },
       {path:'add-development-details',component:DevelopmentFormComponent},
+      {path:'add-admin-details',component:AddAdminTeamComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

@@ -233,7 +233,7 @@ export class SharedService {
   }
 
   deleteClientLogo(id:number): Observable<any>{
-    return this.http.delete(`${this.apiUrl}delete/${id}`)
+    return this.http.delete(`${this.apiUrl}clientLogo/delete/${id}`)
   }
 
   //Awards
@@ -315,9 +315,15 @@ export class SharedService {
 
   //Development Team 
 
-  addDevelopmentTeam(data: any): Observable<any> {
+  addDevelopmentTeam(name:string,designation_id:number,qualification:string,experience:string,photo:string): Observable<any> {
     const url = `${this.apiUrl}developement_team/add`;
-    return this.http.post(url, data);
+    const formData: FormData = new FormData();
+    formData.append('name', name.toString());
+    formData.append('designation_id', designation_id.toString());
+    formData.append('qualification', qualification);
+    formData.append('experience', experience);
+    formData.append('photo', photo);
+    return this.http.post(url, formData);
   }
 
   getDevelopmentTeam(): Observable<any> {
@@ -329,4 +335,48 @@ export class SharedService {
     const url = `${this.apiUrl}developement_team/delete/${id}`;
     return this.http.delete(url);
   }
+
+  //AdminTeam
+
+  addAdminTeam(name:string,designation_id:number,qualification:string,experience:string,photo:string): Observable<any> {
+    const url = `${this.apiUrl}admin_team/add`;
+    const formData: FormData = new FormData();
+    formData.append('name', name.toString());
+    formData.append('designation_id', designation_id.toString());
+    formData.append('qualification', qualification);
+    formData.append('experience', experience);
+    formData.append('photo', photo);
+    return this.http.post(url, formData);
+  }
+
+  getAdminTeam(): Observable<any> {
+    const url = `${this.apiUrl}admin_team/get-all-record`;
+    return this.http.get(url);
+  }
+
+  deleteAdminTeam(id: number): Observable<any> {
+    const url = `${this.apiUrl}admin_team/delete/${id}`;
+    return this.http.delete(url);
+  }
+
+  //Achievements
+
+  addAchievements(title:string,images:string): Observable<any> {
+    const url = `${this.apiUrl}achievement/add`;
+    const formData: FormData = new FormData();
+    formData.append('title', title);
+    formData.append('images', images);
+    return this.http.post(url, formData);
+  }
+
+  getAchievements(): Observable<any> {
+    const url = `${this.apiUrl}achievement/get-all-record`;
+    return this.http.get(url);
+  }
+
+  deleteAchievements(id: number): Observable<any> {
+    const url = `${this.apiUrl}achievement/delete/${id}`;
+    return this.http.delete(url);
+  }
 }
+

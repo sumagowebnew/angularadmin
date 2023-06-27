@@ -52,6 +52,7 @@ import { DesignationDetailsComponent } from './modules/main/team/designation-det
 import { RegisterComponent } from './auth-components/register/register.component';
 import { FilterPipe } from './filter.pipe';
 import { AddDesignationComponent } from './add-designation/add-designation.component';
+import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
 
 
 
@@ -88,6 +89,7 @@ import { AddDesignationComponent } from './add-designation/add-designation.compo
     RegisterComponent,
     FilterPipe,
     AddDesignationComponent,
+    DevelopmentTeamdetailsComponent
 
 
   ],

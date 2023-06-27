@@ -37,6 +37,8 @@ export class AddLogoComponent {
       this.clientLogoService.addClientLogo(this.base64Image).subscribe(
         response => {
           console.log('Logo uploaded successfully:', response);
+          alert('logo Added')
+          
         },
         error => {
           console.error('Failed to upload logo:', error);

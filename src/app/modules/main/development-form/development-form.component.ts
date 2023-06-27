@@ -1,5 +1,5 @@
   import { Component, OnInit } from '@angular/core';
-  import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+  import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
   import { SharedService } from 'src/app/services/shared.service';
 
   @Component({
@@ -8,64 +8,62 @@
     styleUrls: ['./development-form.component.scss']
   })
   export class DevelopmentFormComponent implements OnInit {
-    form: FormGroup;
-    designations: any[] = [];
+  designations:any[] =[]
+    TeamDetailsForm: FormGroup;
+    selectedFile: File | null = null;
+    base64Image: string | null = null;
   
-    constructor(
-      private formBuilder: FormBuilder,
-      private developmentTeamService: SharedService
-    ) { }
-  
-    ngOnInit(): void {
-      this.buildForm();
-      this.getDesignations()
-    }
-  
-    buildForm(): void {
-      this.form = this.formBuilder.group({
-        name: ['', Validators.required],
-        image: [''],
-        designation: ['', Validators.required],
-        qualification: [''],
-        experience: ['', Validators.required],
-        status: [false, Validators.required]
+    constructor(private service: SharedService) {
+      this.TeamDetailsForm = new FormGroup({
+        name: new FormControl('', Validators.required),
+        qualification: new FormControl('', Validators.required),
+        designation_id: new FormControl('', Validators.required),
+        image: new FormControl('', Validators.required),
+        experience: new FormControl('',Validators.required)
       });
     }
   
-    onFileChange(event: any): void {
-      const file = event.target.files[0];
-      this.convertToBase64(file);
+    ngOnInit(): void {
+      this.getDesignations()
     }
   
-    convertToBase64(file: File): void {
+    onFileSelected(event: any): void {
+      this.selectedFile = event.target.files[0];
+      this.convertToBase64();
+    }
+  
+    convertToBase64(): void {
       const reader = new FileReader();
-      reader.onloadend = () => {
-        this.form.patchValue({
-          image: reader.result
-        });
+      reader.onload = () => {
+        this.base64Image = reader.result as string;
+        console.log(this.base64Image);
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(this.selectedFile);
     }
   
     onSubmit(): void {
-      if (this.form.valid) {
-        this.developmentTeamService.addDevelopmentTeam(this.form.value).subscribe(
-          response => {
-            console.log('Development team added successfully', response);
-            this.form.reset();
-          },
-          error => {
-            console.error('Failed to add development team', error);
-            // Handle error response
-          }
-        );
-      } else {
-        // Handle form validation errors
+      if (this.base64Image) {
+        const name = this.TeamDetailsForm.get('name')?.value;
+        const qualification = this.TeamDetailsForm.get('qualification')?.value;
+        const designation_id = this.TeamDetailsForm.get('designation_id')?.value;
+        const experience = this.TeamDetailsForm.get('experience')?.value;
+        
+        this.service
+          .addDevelopmentTeam(name, designation_id,qualification,experience, this.base64Image)
+          .subscribe(
+            response => {
+              console.log('Details uploaded successfully:', response);
+            },
+            error => {
+              console.error('Failed to upload Details:', error);
+            }
+          );
       }
     }
+  
 
     getDesignations(): void {
-      this.developmentTeamService.getDesignations().subscribe(
+      this.service.getDesignations().subscribe(
         response => {
           this.designations = response.data;
         },

@@ -78,21 +78,20 @@
           
         </tr>
       </thead>
-     
-
-      <tbody>
-        <tr *ngFor="let development of developments; let i=index">
+    
+      <tbody *ngFor="let team of TeamDetails; let i=index">
+        <tr >
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteTeamDetails(team.id)"  title="Delete"></i>
           </td>
-          <td>{{development.name}}</td>
-          <td><img [src]="" alt="Image"></td>
-          <td>{{ development.designation}}</td>
-          <td>{{ development.qulification}}</td>
-          <td>{{ development.experience}}</td>
-          <td>{{ development.status}}</td>
-          <td>{{ development.date }}</td>
+          <td>{{team.name}}</td>
+          <td><img [src]="team.photo" alt="Image"></td>
+          <td>{{ team.designation_id}}</td>
+          <td>{{ team.qualification}}</td>
+          <td>{{ team.experience}}</td>
+          <td>{{ team.status}}</td>
+          <td>{{ team.date }}</td>
       </tbody>
     </table>
   </div>

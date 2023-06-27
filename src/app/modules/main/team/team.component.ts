@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 @Component({
@@ -6,34 +7,27 @@ import { Component } from '@angular/core';
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss']
 })
-export class TeamComponent {
-  admins:any[]=[
-    {
-      name:'Demo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Team Leader',
-      qulification:'MSC. Computer Science',
-      experience:'Industry:6 year',
-      status:'Active',
-      date: '2023-04-12'
-    },
-    {
-      name:'Aemo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Learning and Development',
-      qulification:'BSC Computer Science',
-      experience:'Industry:5 year',
-      status:'Active',
-      date: '2023-05-12'
-    }
+export class TeamComponent implements OnInit{
+  admins:any[]=[];
 
-  ];
-
-  editcontact(index: number){
-    this.admins.splice(index, 1);
+  constructor(private service:SharedService){}
+  ngOnInit(): void {
+    this.getAdminDetails()
   }
-  deletecontact(index: number){
-    this.admins.splice(index, 1);
+
+
+  getAdminDetails(){
+    this.service.getAdminTeam().subscribe((res)=>{
+      this.admins = res
+      console.log(res);
+    })
+  }
+
+
+  deletecontact(id: number){
+    this.service.deleteAdminTeam(id).subscribe((res)=>{
+      alert('deleted Success')
+    })
   }
   }
 

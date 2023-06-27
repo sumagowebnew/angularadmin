@@ -26,6 +26,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoComponent } from './demo/demo.component';
 import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
 import { DevelopmentFormComponent } from './development-form/development-form.component';
+import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DevelopmentFormComponent } from './development-form/development-form.co
     TraineeTdetailsComponent,
     DemoComponent,
     UpdatePortfolioFormComponent,
-    DevelopmentFormComponent
+    DevelopmentFormComponent,
+    AddAdminTeamComponent
 
   ],
   imports: [

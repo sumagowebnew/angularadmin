@@ -42,7 +42,8 @@ export class ClientLogoComponent implements OnInit {
   onDelete(id: number): void {
     this.clientLogoService.deleteClientLogo(id).subscribe(
       (response) => {
-        console.log('Image deleted successfully.',response);
+        console.log('Logo deleted successfully.',response);
+        alert('Logo Deleted')
         this.getAllClientLogos();
       });
   }

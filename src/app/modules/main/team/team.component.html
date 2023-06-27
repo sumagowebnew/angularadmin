@@ -72,7 +72,7 @@
           <h2>Admin Team Details</h2>
         </div>
         <div class="col-xs-6">
-          <a class="btn btn-success" routerLink="/main/designation-details"><i class="material-icons">&#xE147;</i>
+          <a class="btn btn-success" routerLink="/main/add-admin-details"><i class="material-icons">&#xE147;</i>
             <span>Add </span></a>
         </div>
       </div>
@@ -98,17 +98,15 @@
           <tr *ngFor="let admin of admins; let i=index">
             <td>{{i+1}}</td>
             <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>&nbsp;
-            <i class="fa fa-edit" (click)="editcontact(i)"title="Edit"></i>
-
+            <i class="fa fa-trash" (click)="deletecontact(admin.id)" title="Delete"></i>&nbsp;
             </td>
             <td>{{admin.name}}</td>
-            <td><img [src]="" alt="Image"></td>
-            <td>{{ admin.designation}}</td>
-            <td>{{ admin.qulification}}</td>
+            <td><img [src]="admin.photo" alt="Image"></td>
+            <td>{{ admin.designation_id}}</td>
+            <td>{{ admin.qualification}}</td>
             <td>{{ admin.experience}}</td>
             <td>{{ admin.status}}</td>
-            <td>{{ admin.date }}</td>
+            <td>{{ admin.created_at | date }}</td>
         </tbody>
       </table>
     </div>
