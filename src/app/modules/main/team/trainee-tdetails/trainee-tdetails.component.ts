@@ -1,37 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-trainee-tdetails',
   templateUrl: './trainee-tdetails.component.html',
   styleUrls: ['./trainee-tdetails.component.scss']
 })
-export class TraineeTdetailsComponent {
-  trainees:any[]=[
-    {
-      name:'Demo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Team Leader',
-      qulification:'MSC. Computer Science',
-      experience:'Industry:6 year',
-      status:'Active',
-      date: '2023-04-12'
-    },
-    {
-      name:'Aemo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Learning and Development',
-      qulification:'BSC Computer Science',
-      experience:'Industry:5 year',
-      status:'Active',
-      date: '2023-05-12'
-    }
-
-  ];
-  editcontact(index: number){
-    this.trainees.splice(index, 1);
+export class TraineeTdetailsComponent implements OnInit {
+  ngOnInit(): void {
+    this.getTraineeDetails()
   }
-  deletecontact(index: number){
-    this.trainees.splice(index, 1);
+
+  constructor(private service:SharedService){}
+  trainees:any[]=[];
+
+  getTraineeDetails(){
+    this.service.getTraineeTeam().subscribe(data => {this.trainees=data
+   alert('data loaded')});
+  }
+
+  deleteTrainee(id: number){
+    this.service.deleteTraineeTeam(id).subscribe((res)=>{
+      alert('Feleted successfully')
+    })
   }
  
 }

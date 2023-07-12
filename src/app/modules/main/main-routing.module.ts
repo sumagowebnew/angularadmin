@@ -41,6 +41,7 @@ import { AddDesignationComponent } from 'src/app/add-designation/add-designation
 import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
 import { DevelopmentFormComponent } from './development-form/development-form.component';
 import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
+import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-details.component';
 
 const routes: Routes = [
   {
@@ -93,6 +94,7 @@ const routes: Routes = [
       { path: 'update-portfolio/:id', component:UpdatePortfolioFormComponent },
       {path:'add-development-details',component:DevelopmentFormComponent},
       {path:'add-admin-details',component:AddAdminTeamComponent},
+      {path:'add-trainee-details',component:AddTraineeDetailsComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

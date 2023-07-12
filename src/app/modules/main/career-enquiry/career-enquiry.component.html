@@ -82,21 +82,20 @@
       </thead>
       <tbody>
 
-        <tr *ngFor="let enq of career; let i=index">
+        <tr *ngFor="let enq of careerEnquiries; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deleteEnquiry(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteCareerEnquiry(enq.id)" title="Delete"></i>
           </td>
           <td>{{enq.name}}</td>
           <td>{{enq.email}}</td>
-          <td>{{enq.mobno}}</td>
-          <td>{{enq.technology}}</td>
+          <td>{{enq.mobile_no}}</td>
+          <td>{{enq.technology_choice}}</td>
           <td>{{enq.position}}</td>
-          <td><img [src]="" alt=" Image"></td>
+          <td><a href="{{ enq.cv.download_url }}" download="{{ enq.cv.file_name }}">Download CV</a></td>
           <td>{{enq.duration}}</td>
-          <!-- <td>{{enq.letter}}</td> -->
-          <td><img [src]="" alt=" Cover Letter"></td>
-          <td>{{enq.date | date}}</td>
+          <td><a href="{{ enq.cover_letter.download_url }}" download="{{ enq.cover_letter.file_name }}">Download Cover Letter</a></td>
+          <td>{{enq.duration | date}}</td>
         </tr>
       </tbody>
     </table>

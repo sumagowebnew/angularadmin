@@ -378,5 +378,40 @@ export class SharedService {
     const url = `${this.apiUrl}achievement/delete/${id}`;
     return this.http.delete(url);
   }
+
+  //Trainee Team 
+  addTraineeTeam(name:string,designation_id:number,qualification:string,experience:string,photo:string): Observable<any> {
+    const url = `${this.apiUrl}trainee_team/add`;
+    const formData: FormData = new FormData();
+    formData.append('name', name.toString());
+    formData.append('designation_id', designation_id.toString());
+    formData.append('qualification', qualification);
+    formData.append('experience', experience);
+    formData.append('photo', photo);
+    return this.http.post(url, formData);
+  }
+
+  getTraineeTeam(): Observable<any> {
+    const url = `${this.apiUrl}trainee_team/get-all-record`;
+    return this.http.get(url);
+  }
+
+  deleteTraineeTeam(id: number): Observable<any> {
+    const url = `${this.apiUrl}trainee_team/delete/${id}`;
+    return this.http.delete(url);
+  }
+  //career enquiry
+
+  getAllCareerEnquiries() {
+    const url = `${this.apiUrl}career_enquirires/get-all-record`;
+    return this.http.get(url);
+  }
+
+  deleteCareerEnquiry(id: number) {
+    const url = `${this.apiUrl}career_enquirires/delete/${id}`;
+    return this.http.delete(url);
+  }
+
+  
 }
 
