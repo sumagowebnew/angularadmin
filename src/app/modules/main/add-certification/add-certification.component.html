@@ -1,22 +1,22 @@
 <h2 class="text-primary bold">Add Certificate</h2>
 
 <div class="card p-3">
-  <form [formGroup]="certificateForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="CertificateForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" required>
+      <input type="text" id="title"  name="title" formControlName="title" required>
     </div>
     <div class="form-group">
       <label for="description">College Name</label>
-      <input type="text" rows="4" required>
+      <input type="text" rows="4" id="college_name" formControlName="college_name" name="collegeName"  required>
     </div>
     <div class="form-group">
       <label for="file">Certificate</label>
-      <input type="file" id="file" name="file" required>
+      <input type="file" id="file" (change)="onFileSelected($event, 'image')" name="file" required>
     </div>
     <div class="form-group">
       <label for="file">Certificate (model)</label>
-      <input type="file" id="file" name="file" required>
+      <input type="file" id="file" (change)="onFileSelected($event, 'model')" name="file" required>
     </div>
     <div class="form-group">
       <button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>

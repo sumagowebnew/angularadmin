@@ -77,15 +77,15 @@
       </thead>
       <tbody>
 
-        <tr *ngFor="let news of newss; let i=index">
+        <tr *ngFor="let news of news; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteNews(news.id)" title="Delete"></i>
           </td>
           <td>{{news.title}}</td>
-          <td>{{news.newspaper}}</td>
-          <td><img [src]="" alt=" Image"></td>
-          <td>{{news.date | date}}</td>
+          <td>{{news.news_paper}}</td>
+          <td><img [src]="news.news_image" alt=" Image"></td>
+          <td>{{news.created_at | date}}</td>
       </tbody>
     </table>
   </div>

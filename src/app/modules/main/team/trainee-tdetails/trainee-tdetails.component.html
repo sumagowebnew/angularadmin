@@ -57,10 +57,10 @@
     <div class="table-title">
       <div class="row">
         <div class="col-xs-6">
-          <h2>Trainee Development Team Details</h2>
+          <h2>Trainee Team Details</h2>
         </div>
         <div class="col-xs-6">
-          <a class="btn btn-success" routerLink="/main/desigation-details"><i class="material-icons">&#xE147;</i>
+          <a class="btn btn-success" routerLink="/main/add-trainee-details"><i class="material-icons">&#xE147;</i>
             <span>Add </span></a>
         </div>
       </div>
@@ -87,16 +87,15 @@
           <tr *ngFor="let trainee of trainees; let i=index">
             <td>{{i+1}}</td>
             <td>
-              <i classs="fa fa-edit" (click)="editcontact(i)" title="Edit"></i>
-              <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+              <i class="fa fa-trash" (click)="deleteTrainee(trainee.id)" title="Delete"></i>
             </td>
             <td>{{trainee.name}}</td>
-            <td><img [src]="" alt="Image"></td>
-            <td>{{ trainee.designation}}</td>
-            <td>{{ trainee.qulification}}</td>
+            <td><img [src]="trainee.photo" alt="Image"></td>
+            <td>{{ trainee.designation_id}}</td>
+            <td>{{ trainee.qualification}}</td>
             <td>{{ trainee.experience}}</td>
             <td>{{ trainee.status}}</td>
-            <td>{{ trainee.date }}</td>
+            <td>{{ trainee.created_at|date }}</td>
         </tbody>
       </table>
     </div>

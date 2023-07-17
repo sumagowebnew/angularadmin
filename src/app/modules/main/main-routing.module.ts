@@ -36,6 +36,12 @@ import { CertificationDetailsComponent } from './certification-details/certifica
 import { DesignationDetailsComponent } from './team/designation-details/designation-details.component';
 import { DevelopmentTeamdetailsComponent } from './team/development-teamdetails/development-teamdetails.component';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
+import { DemoComponent } from './demo/demo.component';
+import { AddDesignationComponent } from 'src/app/add-designation/add-designation.component';
+import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
+import { DevelopmentFormComponent } from './development-form/development-form.component';
+import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
+import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-details.component';
 
 const routes: Routes = [
   {
@@ -82,7 +88,13 @@ const routes: Routes = [
       { path: 'add-mou', component: AddMouComponent },
       { path: 'mou-det', component: MouDetailsComponent },
       { path: 'add-cert', component: AddCertificationComponent },
+      {path: 'add-designation',component:AddDesignationComponent},
+      {path:'demo',component:DemoComponent},
       { path: 'cert-det', component: CertificationDetailsComponent },
+      { path: 'update-portfolio/:id', component:UpdatePortfolioFormComponent },
+      {path:'add-development-details',component:DevelopmentFormComponent},
+      {path:'add-admin-details',component:AddAdminTeamComponent},
+      {path:'add-trainee-details',component:AddTraineeDetailsComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

@@ -1,34 +1,80 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SharedService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-add-certification',
   templateUrl: './add-certification.component.html',
   styleUrls: ['./add-certification.component.css']
 })
-export class AddCertificationComponent implements OnInit {
-  certificateForm: FormGroup;
+export class AddCertificationComponent {
+  
+  
+  title: string;
+  collegeName: string;
+  imageFile: string;
+  modelFile:string
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
+  base64Model: string | null = null;
 
-  constructor(private formBuilder: FormBuilder) {}
+  CertificateForm: FormGroup;
 
-  ngOnInit() {
-    this.certificateForm = this.formBuilder.group({
-      title: ['', Validators.required],
-      file: [null, Validators.required]
+  constructor(private service: SharedService) {
+    this.CertificateForm = new FormGroup({
+      title: new FormControl('', Validators.required),
+      collegeName: new FormControl('', Validators.required),
+      image_file: new FormControl('', Validators.required),
+      modelFile: new FormControl('', Validators.required)
     });
   }
 
-  onSubmit() {
-    if (this.certificateForm.invalid) {
-      return;
-    }
+  onFileSelected(event: any, fileType: string): void {
+    const file = event.target.files[0];
 
-    // Process the form submission
-    console.log(this.certificateForm.value);
-    // You can send the form data to the server or perform any other necessary actions here
+    if (fileType === 'image') {
+      this.imageFile = file;
+      this.convertToBase64(file, 'image');
+    } else if (fileType === 'model') {
+      this.modelFile = file;
+      this.convertToBase64(file, 'model');
+    }
   }
 
+  convertToBase64(file: File, fileType: string): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (fileType === 'image') {
+        this.base64Image = reader.result as string;
+        console.log('Image base64:', this.base64Image);
+      } else if (fileType === 'model') {
+        this.base64Model = reader.result as string;
+        console.log('Model base64:', this.base64Model);
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
+  onSubmit(): void {
+    if (this.base64Image && this.base64Model) {
+      const title = this.CertificateForm.get('title')?.value;
+      const description = this.CertificateForm.get('collegeName')?.value;
+
+      this.service
+        .addCertificate(title, description, this.base64Image,this.base64Model)
+        .subscribe(
+          response => {
+            console.log('Certificate uploaded successfully:', response);
+          },
+          error => {
+            console.error('Failed to upload Certificate:', error);
+          }
+        );
+    }
+  }
+  
+  
   onReset() {
-    this.certificateForm.reset();
+    this.CertificateForm.reset();
   }
 }
 

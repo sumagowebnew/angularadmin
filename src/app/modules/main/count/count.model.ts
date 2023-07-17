@@ -10,24 +10,26 @@ export class PortDet{
     id: number;
     clients: number;
     projects: number;
-    cupOfCoffee: number;
-    awardsWin: number;
-    date: Date;
-  
+    cup_of_coffee: number;
+    awards: number;
+    updated_at: Date;
+    editMode: boolean;
     constructor(
       id: number,
       clients: number,
       projects: number,
-      cupOfCoffee: number,
+      cup_of_coffee: number,
       awardsWin: number,
-      date: Date
+      updated_at: Date,
+      editMode: boolean
     ) {
       this.id = id;
       this.clients = clients;
       this.projects = projects;
-      this.cupOfCoffee = cupOfCoffee;
-      this.awardsWin = awardsWin;
-      this.date = date;
+      this.cup_of_coffee = cup_of_coffee;
+      this.awards = awardsWin;
+      this.updated_at = updated_at;
+      this.editMode = editMode
     }
   }
   

@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth-components/login/login.component';
 import { NotFoundComponent } from './auth-components/not-found/not-found.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegisterComponent } from './auth-components/register/register.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'register',component:RegisterComponent},
   {
     path:'main',
     loadChildren:()=>

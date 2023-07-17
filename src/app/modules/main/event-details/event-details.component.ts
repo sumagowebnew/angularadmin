@@ -1,32 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
+interface Event{
+  id:number;
+  image:string;
+  created_at:string;
+  updated_at:string;
+}
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.scss']
 })
-export class EventDetailsComponent {
-  events: any[] = [
-    {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-15')
-    },
-    {
-      image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',
-      date: new Date('2023-03-31')
-    },
-    {
-      image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',
-      date: new Date('2023-04-15')
-    },
-    {
-      image: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...',
-      date:new Date('2023-04-15')
-    }
-  ];
+export class EventDetailsComponent implements OnInit {
+  events: Event[] = [];
 
-  deleteEvent(index: number) {
-    this.events.splice(index, 1);
+  ngOnInit(): void {
+    this.getEvent();
+  }
+  
+  constructor(private service: SharedService) {}
+  
+  
+  getEvent() {
+    this.service.getEvent().subscribe((data) => {
+      this.events = data;
+      console.log(this.events);
+    });
+  }
+  
+  deleteEvent(id: number) {
+    this.service.deleteEvent(id).subscribe((res) => {
+      console.log("Successfully deleted Event");
+      alert("Event Deleted Successfully");
+      this.getEvent(); // Update the list of Events after deleting
+    });
   }
 }
 

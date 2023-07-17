@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup,FormControl, Validators } from '@angular/forms';
-import { ImageService } from 'src/app/services/image.service';
+import { SharedService } from 'src/app/services/shared.service';
  @Component({
   selector: 'app-add-appreciation',
   templateUrl: './add-appreciation.component.html',
@@ -9,26 +8,39 @@ import { ImageService } from 'src/app/services/image.service';
 })
 export class AddAppreciationComponent {
   fileForm = new FormGroup({
-    fileInput: new FormControl('',Validators.required)
+    fileInput: new FormControl('', Validators.required)
   });
 
-  @ViewChild('fileInput') fileInput: ElementRef<HTMLInputElement> | undefined;
+  constructor(private service:SharedService) { }
 
-  constructor(private http: HttpClient,private imageService:ImageService) { }
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
 
-  onUpload(): void {
-    const fileInput = this.fileInput?.nativeElement;
-    if (fileInput && fileInput.files && fileInput.files[0]) {
-      const file = fileInput.files[0];
-      this.imageService.convertImageToBase64(file, (base64String, error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          this.imageService.saveImageToServer(base64String);
-        }
-      });
-    }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
   }
 
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image)
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  uploadAppreciation(): void {
+    if (this.base64Image) {
+      this.service.addAppreciation(this.base64Image).subscribe(
+        response => {
+          console.log('Appreciation uploaded successfully:', response);
+        },
+        error => {
+          console.error('Failed to upload Appreciation:', error);
+        }
+      );
+    }
+  }
 
 }

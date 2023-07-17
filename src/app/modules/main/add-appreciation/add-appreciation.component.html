@@ -7,10 +7,10 @@
   <form [formGroup]="fileForm">
     <div class="form-group">
       <label for="file">Select an Image</label>
-      <input type="file" id="file" name="file" formControlName="fileInput" #fileInput required>
+      <input type="file" id="file" name="file" formControlName="fileInput"  (change)="onFileSelected($event)" #fileInput required>
     </div>
     <div class="form-group">
-    <button type="submit" (click)="onUpload()">Submit</button>
+    <button type="submit" (click)=" uploadAppreciation()">Submit</button>
     <button type="reset" class="btn btn-primary"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
   </div>
   </form>

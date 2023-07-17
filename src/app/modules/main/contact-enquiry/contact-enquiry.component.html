@@ -51,6 +51,9 @@
       </div>
     </div>
   </div>
+  <ng-template #emptyTable empty-table>
+    <div class="empty-message">No Records found.</div>
+  </ng-template>
   
 
 <div class="table-responsive">
@@ -60,14 +63,9 @@
         <div class="col-xs-6">
           <h2>Contact Enquiries</h2>
         </div>
-        <!-- <div class="col-xs-6"> -->
-        <!-- <a class="btn btn-success" routerLink="/main/contact-enquiry"><i class="material-icons">&#xE147;</i> <span>Add New
-              Enquiry</span></a> -->
-
-        <!-- </div> -->
       </div>
     </div>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover ">
       <thead>
         <tr>
           <th scope="col">Sr No.</th>
@@ -79,18 +77,18 @@
           <th scope="col">Date</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngIf="contacts.length > 0; else emptyTable">
 
         <tr *ngFor="let contact of contacts; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteContactEnquiry(contact.id)" title="Delete"></i>
           </td>
           <td>{{contact.name}}</td>
-          <td>{{contact.mobno}}</td>
+          <td>{{contact.mobile_no}}</td>
           <td>{{contact.email}}</td>
-          <td>{{contact.message}}</td>
-          <td>{{contact.date | date}}</td>
+          <td>{{contact.messege}}</td>
+          <td>{{contact.created_at | date}}</td>
       </tbody>
     </table>
   </div>

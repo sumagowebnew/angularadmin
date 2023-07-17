@@ -89,11 +89,11 @@
         <tr *ngFor="let appreciation of appreciations; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="onDelete(appreciation.id)" title="Delete"></i>
           </td>
 
-          <td><img [src]="" alt="Image"></td>
-          <td>{{appreciation.date | date}}</td>
+          <td><img [src]="appreciation.image" alt="Image"></td>
+          <td>{{appreciation.created_at | date}}</td>
       </tbody>
     </table>
   </div>

@@ -88,11 +88,11 @@
         <tr *ngFor="let training of trainings; let i=index">
           <td>{{i+1}}</td>
           <td>
-            <i class="fa fa-trash" (click)="deletecontact(i)" title="Delete"></i>
+            <i class="fa fa-trash" (click)="deleteTrainingDet(training.id)" title="Delete"></i>
           </td>
 
-          <td><img [src]="" alt="Image"></td>
-          <td>{{training.date | date}}</td>
+          <td><img [src]="training.image" alt="Image"></td>
+          <td>{{training.created_at | date}}</td>
       </tbody>
     </table>
   </div>

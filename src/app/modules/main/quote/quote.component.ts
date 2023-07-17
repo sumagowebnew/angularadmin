@@ -1,36 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+
+interface Quote {
+  id: number;
+  name: string;
+  mobile_no:number;
+  email: string;
+  service: string;
+  address:string;
+  comment:string;
+  is_active: number;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+interface ApiResponse {
+  data: Quote[];
+  message: string;
+  status: string;
+  status_code: number;
+}
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss']
 })
-export class QuoteComponent {
-  quotes:any[]=[
-    {
-      
-      name:'Mohak Pardeshi',
-      mobile:9090009000,
-      email:'m@gmail.com',
-      type_of_service:'Training Internship',
-      other:'',
-      address:'Nashik',
-      comment:'gfehbcfyebg hegcyueb hygeybcb ',
-      date:new Date('2023-04-12'),
-    },
-    {
-      name:'Manav Joshi',
-      mobile:9090009000,
-      email:'m@gmail.com',
-      type_of_service:'Training Internship',
-      other:'',
-      address:'Nashik',
-      comment:'gfehbcfyebg hegcyueb hygeybcb ',
-      date:new Date('2023-04-12'),
-    }
+export class QuoteComponent implements OnInit {
+  quotes:Quote[]=[];
 
-  ];
-  deletecontact(index: number){
-    this.quotes.splice(index, 1);
+  constructor(private service:SharedService){}
+  ngOnInit(): void {
+    this.getQuote();
   }
+  getQuote() {
+    this.service.getQuote().subscribe(
+      (res: ApiResponse) => {
+        if (res.status === 'success') {
+          this.quotes = res.data;
+        }
+      },
+      (error: any) => {
+        console.log('Error retrieving Quote :', error);
+      }
+    );  
+  }
+  deleteQuote(id:number){
+    this.service.deleteQuote(id).subscribe(res=>{
+      alert('Successfully Deleted Quote');
+      this.getQuote()
+    })
+  }
+
+
+
+
+
 }

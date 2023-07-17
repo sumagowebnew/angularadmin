@@ -1,10 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { map } from 'rxjs';
-import { Observable } from 'rxjs/internal/Observable';
+interface ClientLogo {
+  id: number;
+  image: string;
+}
 
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-client-logo',
@@ -14,32 +16,84 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ClientLogoComponent implements OnInit {
 
   imageURL: string='';
+  clientLogos: any[] ;
+  showUpdateInput = false;
+  updatedLogoText = '';
+  selectedFile: File | null = null;
+  base64Image: string | null = null;
+  id:number
+
+  fileForm = new FormGroup({
+    fileInput: new FormControl('', Validators.required)
+  });
+
   
   images: { id: number, base64String: string, url: string }[] = [];
 
 
-  constructor(private http: HttpClient,private sanitizer:DomSanitizer) {}
+  constructor(private clientLogoService:SharedService) {}
+
 
   ngOnInit(): void {
-    this.getImages()
+    this.getAllClientLogos();
   }
 
 
-  getImages(): void {
-    this.http.get<any[]>('http://localhost:3000/logo').subscribe(
-      (response) => {
-        this.images = response.map((image) => ({
-          id: image.id,
-          base64String: image.base64String,
-          url: `data:$image/{jpeg};base64,/${image.base64String}`
-        }));
-      });
-  }
   onDelete(id: number): void {
-    this.http.delete(`http://localhost:3000/logo/${id}`).subscribe(
+    this.clientLogoService.deleteClientLogo(id).subscribe(
       (response) => {
-        console.log('Image deleted successfully.',response);
-        this.getImages();
+        console.log('Logo deleted successfully.',response);
+        alert('Logo Deleted')
+        this.getAllClientLogos();
       });
   }
+
+
+  getAllClientLogos() {
+    this.clientLogoService.getAllClientLogos().subscribe(
+      (logos: any[]) => {
+        this.clientLogos = logos;
+        console.log(this.clientLogos)
+      },
+      (error: any) => {
+        console.log('Error retrieving client logos:', error);
+      }
+    );
+  }
+
+  
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.convertToBase64();
+  }
+
+  convertToBase64(): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.base64Image = reader.result as string;
+      console.log(this.base64Image)
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  edit(id:number){
+    this.showUpdateInput = true;
+    this.id = id
+  }
+
+  uploadLogo(id:number): void {
+      id = this.id
+    if (this.base64Image) {
+      this.clientLogoService.updateClientLogo(this.base64Image,id).subscribe(
+        response => {
+          console.log('Logo updated successfully:', response);
+          this.getAllClientLogos()
+        },
+        error => {
+          console.error('Failed to update logo:', error);
+        }
+      );
+    }
+  }
+
 }

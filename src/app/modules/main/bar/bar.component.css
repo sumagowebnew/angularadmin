@@ -264,7 +264,7 @@ img {
 
  .main-content{
      padding: 10px 10px 10px 10px;
-     height: calc(100% - 10px);
+     height: 100%;
      overflow: hidden;
  }
 

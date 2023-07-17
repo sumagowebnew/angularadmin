@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-training-det',
   templateUrl: './training-det.component.html',
   styleUrls: ['./training-det.component.scss']
 })
-export class TrainingDetComponent {
-  trainings:any[]=[
-    {
-      
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
-    },
-    {
-     
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
-    }
+export class TrainingDetComponent implements OnInit {
+  ngOnInit(): void {
+    this.getTrainingDet();
+  }
+  constructor(private service:SharedService){}
+  trainings:any[]=[];
 
-  ];
-  deletecontact(index: number){
-    this.trainings.splice(index, 1);
+  getTrainingDet(){
+    this.service.getTraining().subscribe(training =>{
+      this.trainings=training;
+      console.log(this.trainings);
+    })
+  }
+  deleteTrainingDet(id: number){
+    this.service.deleteTraining(id).subscribe(res => {
+      alert('Training deleted');
+      this.getTrainingDet();
+    })
   }
 }

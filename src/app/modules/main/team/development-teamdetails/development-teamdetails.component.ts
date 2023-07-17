@@ -1,33 +1,44 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+interface TeamDetail {
+  id:number;
+  name: string;
+  photo: string;
+  designation_id: string;
+  qualification: string;
+  experience: number;
+  status: string;
+  date: string;
+}
 @Component({
   selector: 'app-development-teamdetails',
   templateUrl: './development-teamdetails.component.html',
   styleUrls: ['./development-teamdetails.component.scss']
 })
-export class DevelopmentTeamdetailsComponent {
-  developments:any[]=[
-    {
-      name:'Demo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Team Leader',
-      qulification:'MSC. Computer Science',
-      experience:'Industry:6 year',
-      status:'Active',
-      date: '2023-04-12'
-    },
-    {
-      name:'Aemo Name',
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      designation:'Learning and Development',
-      qulification:'BSC Computer Science',
-      experience:'Industry:5 year',
-      status:'Active',
-      date: '2023-05-12'
-    }
-
-  ];
-  deletecontact(index: number){
-    this.developments.splice(index, 1);
+export class DevelopmentTeamdetailsComponent implements OnInit {
+ constructor(private service:SharedService){}
+  ngOnInit(): void {
+   this.getTeamDetails();
   }
+
+ TeamDetails:TeamDetail[] = []
+
+ getTeamDetails(){
+  this.service.getDevelopmentTeam().subscribe((res)=>{
+    this.TeamDetails = res;
+    console.log(this.TeamDetails);
+    
+  })
+ }
+
+ deleteTeamDetails(id:number){
+  this.service.deleteDevelopmentTeam(id).subscribe((res)=>{
+      if(res){
+        alert('Deleted record Successfully')
+      }
+      else{
+        alert('failed')
+      }
+  })
+ }
 }

@@ -49,6 +49,11 @@ import { BirthdayFormComponent } from './modules/main/birthday-form/birthday-for
 
 import { AddAchievementsComponent } from './modules/main/add-achievements/add-achievements.component';
 import { DesignationDetailsComponent } from './modules/main/team/designation-details/designation-details.component';
+import { RegisterComponent } from './auth-components/register/register.component';
+import { FilterPipe } from './filter.pipe';
+import { AddDesignationComponent } from './add-designation/add-designation.component';
+import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
+
 
 
 @NgModule({
@@ -80,7 +85,12 @@ import { DesignationDetailsComponent } from './modules/main/team/designation-det
     EventDetailsComponent,
     TeamComponent,
     AddAchievementsComponent,
-    DesignationDetailsComponent
+    DesignationDetailsComponent,
+    RegisterComponent,
+    FilterPipe,
+    AddDesignationComponent,
+    DevelopmentTeamdetailsComponent
+
 
   ],
   imports: [
@@ -106,7 +116,8 @@ import { DesignationDetailsComponent } from './modules/main/team/designation-det
     MatIconModule,
     MatSortModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
+
 
   ],
   providers: [],

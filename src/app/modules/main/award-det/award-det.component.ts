@@ -1,25 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-award-det',
   templateUrl: './award-det.component.html',
   styleUrls: ['./award-det.component.scss']
 })
-export class AwardDetComponent {
-  awards:any[]=[
-    {
-      
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
-    },
-    {
-     
-      img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2023-04-12'),
-    }
+export class AwardDetComponent implements OnInit {
+  ngOnInit(): void {
+    this.getAwards()
+  }
+  constructor(private service:SharedService){}
 
-  ];
-  deletecontact(index: number){
-    this.awards.splice(index, 1);
+  awards:any[]=[];
+
+  getAwards(){
+    this.service.getAward().subscribe(data => this.awards=data)
+  }
+
+  deleteAward(id: number){
+    this.service.deleteAward(id).subscribe(
+      (res)=>{
+        alert('Award deleted');
+        this.getAwards()
+      }
+    )
   }
 }

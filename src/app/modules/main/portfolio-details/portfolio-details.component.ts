@@ -1,93 +1,72 @@
-import { Component } from '@angular/core';
-import { PortDet } from './port-det.model';
-import { Sort } from '@angular/material/sort';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
+import { Router } from '@angular/router';
 
+interface Portfolios {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  website_link: string;
+  website_status: number;
+  is_active: number;
+  created_at: string | null;
+  updated_at: string | null;
+}
 
 @Component({
   selector: 'app-portfolio-details',
   templateUrl: './portfolio-details.component.html',
   styleUrls: ['./portfolio-details.component.css']
 })
-export class PortfolioDetailsComponent {
-  portfolios:any[]=[
-    {
-      title:'MEAN stack development',
-      webstatus:'on-site',
-      portfolio:'Purva Diwate',
-      weblink:'https://angular.io/',
-      date:new Date('2022-09-08'),
-    },
-    {
-      title:'UI/UX' ,
-      webstatus:'remote',
-      portfolio:'Mitisha Patel',
-      weblink:'https://react.io/',
-      date:new Date('2021-08-31'),
-    },
-    {
-      title:'Angular Developer',
-      webstatus:'hybrid',
-      portfolio:'Aditi Sonawane',
-      weblink:'https://bootstrap.io/',
-      date:new Date('2019-02-24'),
-    },
-    
+export class PortfolioDetailsComponent implements OnInit{
+ 
+  portfolios: Portfolios[] = [];
+  loading: boolean = false;
+  image:string
 
-  ];
-  deleteportfolio(index: number){
-    this.portfolios.splice(index, 1);
+  constructor(private service: SharedService,private router:Router) {}
+
+  ngOnInit() {
+    this.loadPortfolios();
   }
-  editportfolio(index: number){
-    this.portfolios.splice(index, 1);
+
+  loadPortfolios() {
+    this.loading = true;
+    this.service.getPortfolios().subscribe(
+      (data: any[]) => {
+        if (Array.isArray(data)) {
+          this.portfolios = data;
+          // Log the image string for each portfolio
+          this.portfolios.forEach(portfolio => {
+              this.image = portfolio.image
+            console.log(portfolio.image);
+          });
+        } else {
+          console.error('Invalid response format:', data);
+        }
+      },
+      (error: any) => {
+        console.error(error);
+        this.loading = false;
+      },
+      () => {
+        this.loading = false;
+      }
+    );
   }
-}
-  //before code 
-//   portDet: PortDet[
-//   ] = [
-//     {
-//     Sr: 1,
-//     StatusAction: true,
-//     Title: 'Demo',
-//     WebsiteStatus: false,
-//     Portfolio: 'img',
-//     WebsiteLink: 'apple',
-//     Date: '26-10-2000',
-//   }
-//       ,
-//   {
-//     Sr: 1,
-//     StatusAction: false,
-//     Title: 'Aemo',
-//     WebsiteStatus: true,
-//     Portfolio: 'demo',
-//     WebsiteLink: 'google',
-//     Date: '27-10-2001',
-//   }
-//     ]
 
-//   sortData: PortDet[]
 
-//   sortedData(sort: Sort) {
-//     const data = this.portDet.slice();
-//     if (!sort.active || sort.direction === '') {
-//       this.sortData = data;
-//       return;
-//     }
-//     this.sortData = data.sort((a, b) => {
-//       const isAsc = sort.direction === 'asc';
-//       switch (sort.active) {
-//         case 'Title':
-//           return compare(a.Title, b.Title, isAsc);
-//         case 'Sr':
-//           return compare(a.Sr, b.Sr, isAsc);
-//         case 'Date':
-//           return compare(a.Date, b.Date, isAsc);
-//         default:
-//           return 0;
-//       }
-//     });
-//   }
-// }
-// function compare(a: number | string, b: number | string, isAsc: boolean) {
-//   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  editPortfolio(portfolioId: number) {
+    this.router.navigate(['main/update-portfolio', portfolioId]);
+  }
   
+  deletePortfolio(id:number){
+    this.service.deletePortfolio(id).subscribe(
+      (response) => {
+        console.log('Portfolio deleted successfully.',response);
+        this.loadPortfolios();
+      });
+  }
+  
+}

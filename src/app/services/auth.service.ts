@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private apiUrl = 'https://sumagoweb.sumagotest.in/login';
 
    constructor(private http: HttpClient, private router: Router) { }
 
@@ -23,7 +22,7 @@ export class AuthService {
       username: username,
       password: password
     };
-    return this.http.post<any>(this.apiUrl, body, httpOptions);
+    return this.http.post<any>(`${this.url}login`, body, httpOptions);
   }
 
   setToken(token: string): void {
@@ -53,10 +52,18 @@ export class AuthService {
     this.router.navigate(['login']);
   }
   
-  url = "http://localhost:8000/employee/";
+  url = "http://localhost/main-main/main/";
 
   getData(): Observable<any>{
     return this.http.get<any>(`${this.url}find`);
   }
 
+   registerUser(name: string, email: string, password: string) {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('password', password);
+
+    return this.http.post(`${this.url}register`, formData);
+  }
 }
