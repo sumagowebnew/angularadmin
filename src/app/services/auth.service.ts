@@ -52,7 +52,7 @@ export class AuthService {
     this.router.navigate(['login']);
   }
   
-  url = "http://localhost/main-main/main/";
+  url = "http://localhost/main/";
 
   getData(): Observable<any>{
     return this.http.get<any>(`${this.url}find`);

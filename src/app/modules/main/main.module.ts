@@ -28,6 +28,9 @@ import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-por
 import { DevelopmentFormComponent } from './development-form/development-form.component';
 import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
 import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-details.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { ContactDetailsListComponent } from './contact-details-list/contact-details-list.component';
+import { AddContactDetailsComponent } from './add-contact-details/add-contact-details.component';
 
 
 @NgModule({
@@ -48,7 +51,10 @@ import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-de
     UpdatePortfolioFormComponent,
     DevelopmentFormComponent,
     AddAdminTeamComponent,
-    AddTraineeDetailsComponent
+    AddTraineeDetailsComponent,
+    ContactDetailsComponent,
+    ContactDetailsListComponent,
+    AddContactDetailsComponent
 
   ],
   imports: [

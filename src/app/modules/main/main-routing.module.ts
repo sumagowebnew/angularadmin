@@ -42,6 +42,8 @@ import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-por
 import { DevelopmentFormComponent } from './development-form/development-form.component';
 import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component';
 import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-details.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { ContactDetailsListComponent } from './contact-details-list/contact-details-list.component';
 
 const routes: Routes = [
   {
@@ -95,6 +97,8 @@ const routes: Routes = [
       {path:'add-development-details',component:DevelopmentFormComponent},
       {path:'add-admin-details',component:AddAdminTeamComponent},
       {path:'add-trainee-details',component:AddTraineeDetailsComponent},
+      {path:'contact-details',component:ContactDetailsComponent},
+      {path:'contact-details-list',component:ContactDetailsListComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

@@ -412,6 +412,40 @@ export class SharedService {
     return this.http.delete(url);
   }
 
+  //dashboard Counters
+
+  getDashboardCounters() {
+    const url = `${this.apiUrl}dashboard/get_dashboard_count`;
+    return this.http.get(url);
+  }
+
+  //Add Dynamic Contact Us
+ 
+  addContactDetails(mobileNumbers: string[], emailIds: string[], address: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('mobile_no', JSON.stringify(mobileNumbers));
+    formData.append('email_id', JSON.stringify(emailIds));
+    formData.append('address', JSON.stringify(address));
+
+    return this.http.post<any>(`${this.apiUrl}contact_details/add`, formData);
+  }
+
+  getContactDetails(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}contact_details/get-all-record`);
+  }
+
+  deleteContactDetails(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}contact_details/delete/${id}`);
+  }
+
+  updateContactDetails(id: number, mobileNumbers: string[], emailIds: string[], address: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('mobile_no', JSON.stringify(mobileNumbers));
+    formData.append('email_id', JSON.stringify(emailIds));
+    formData.append('address', JSON.stringify(address));
+
+    return this.http.post<any>(`${this.apiUrl}contact_details/update/${id}`, formData);
+  }
   
 }
 
