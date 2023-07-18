@@ -446,6 +446,38 @@ export class SharedService {
 
     return this.http.post<any>(`${this.apiUrl}contact_details/update/${id}`, formData);
   }
+
+
+  //Vacancies
+  addVacancy(position: string, experience: string, location: string, branch: string, qualification: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('position', position);
+    formData.append('experience', experience);
+    formData.append('location', location);
+    formData.append('branch', branch);
+    formData.append('qualification', qualification);
+
+    return this.http.post<any>(`${this.apiUrl}/vacancy/add`, formData);
+  }
+
+  getVacancies(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/vacancy/get-all-record`);
+  }
+
+  updateVacancy(id: string, position: string, experience: string, location: string, branch: string, qualification: string): Observable<any> {
+    const formData = new FormData();
+    formData.append('position', position);
+    formData.append('experience', experience);
+    formData.append('location', location);
+    formData.append('branch', branch);
+    formData.append('qualification', qualification);
+
+    return this.http.post<any>(`${this.apiUrl}/vacancy/update/${id}`, formData);
+  }
+
+  deleteVacancy(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/vacancy/delete/${id}`);
+  }
   
 }
 

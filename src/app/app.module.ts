@@ -55,7 +55,6 @@ import { AddDesignationComponent } from './add-designation/add-designation.compo
 import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +88,8 @@ import { DevelopmentTeamdetailsComponent } from './modules/main/team/development
     RegisterComponent,
     FilterPipe,
     AddDesignationComponent,
-    DevelopmentTeamdetailsComponent
+    DevelopmentTeamdetailsComponent,
+    
 
 
   ],

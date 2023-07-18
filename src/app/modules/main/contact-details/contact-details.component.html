@@ -1,1 +1,50 @@
-<p>contact-details works!</p>
+<div class="table-responsive">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-xs-6">
+          <h2>Contact Data</h2>
+        </div>
+        <div class="col-xs-6">
+          <!-- <a class="btn btn-success" routerLink="/main/career-enquiry"><i class="material-icons">&#xE147;</i> <span>Add New
+              Enquiry</span></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">Action</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Address</th>
+          <th scope="col">Mobile No</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Updated At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <i class="fa fa-trash" (click)="deleteContact(responseData.id)" title="Delete"></i>
+          </td>
+          <td>
+            <ul style="list-style-type: none;">
+              <li *ngFor="let email of responseData.email_id[0] | keyvalue">{{ email.value }}</li>
+            </ul>
+          </td>
+          <td>{{ responseData.address[0]['1'] }}</td>
+          <td>
+            <ul style="list-style-type: none;">
+              <li *ngFor="let mobile of responseData.mobile_no[0] | keyvalue">{{ mobile.value }}</li>
+            </ul>
+          </td>
+          <td>{{ responseData.created_at | date }}</td>
+          <td>{{ responseData.updated_at | date }}</td>
+        </tr>
+      </tbody>      
+    </table> -->

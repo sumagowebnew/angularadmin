@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="card">
+          <div class="card-header">
+            Add Vacancy
+          </div>
+          <div class="card-body">
+            <form [formGroup]="vacancyForm" (ngSubmit)="addVacancy()">
+              <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" id="position" class="form-control" formControlName="position" required>
+              </div>
+              <div class="form-group">
+                <label for="experience">Experience</label>
+                <input type="text" id="experience" class="form-control" formControlName="experience" required>
+              </div>
+              <div class="form-group">
+                <label for="location">Location</label>
+                <select id="location" class="form-control" formControlName="location" required>
+                  <option value="" disabled selected>Select Location</option>
+                  <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="branch">Branch</label>
+                <select id="branch" class="form-control" formControlName="branch" required>
+                  <option value="" disabled selected>Select Branch</option>
+                  <option *ngFor="let branch of branches" [value]="branch">{{ branch }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="qualification">Qualification</label>
+                <input type="text" id="qualification" class="form-control" formControlName="qualification" required>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Add Vacancy</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

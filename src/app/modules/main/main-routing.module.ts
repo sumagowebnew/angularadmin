@@ -44,6 +44,8 @@ import { AddAdminTeamComponent } from './add-admin-team/add-admin-team.component
 import { AddTraineeDetailsComponent } from './add-trainee-details/add-trainee-details.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { ContactDetailsListComponent } from './contact-details-list/contact-details-list.component';
+import { AddVancancyComponent } from './add-vancancy/add-vancancy.component';
+import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
 
 const routes: Routes = [
   {
@@ -73,6 +75,8 @@ const routes: Routes = [
       { path: 'add-training', component: AddTrainingComponent },
       { path: 'award-det', component: AwardDetComponent },
       { path: 'appreciation-det', component: AppreciationDetComponent },
+      {path:'add-vacancy',component:AddVancancyComponent},
+      {path:'vacancy-details',component:VacancyDetailsComponent},
 
       { path: 'birthday-form', component: BirthdayFormComponent },
       { path: 'event-details', component: EventDetailsComponent },

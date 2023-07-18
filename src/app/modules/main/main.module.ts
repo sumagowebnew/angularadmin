@@ -32,6 +32,13 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 import { ContactDetailsListComponent } from './contact-details-list/contact-details-list.component';
 import { AddContactDetailsComponent } from './add-contact-details/add-contact-details.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { ValueFromObjectPipe } from 'src/app/pipes/value-from-object-pipe.pipe';
+import { AddVancancyComponent } from './add-vancancy/add-vancancy.component';
+import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +61,10 @@ import { AddContactDetailsComponent } from './add-contact-details/add-contact-de
     AddTraineeDetailsComponent,
     ContactDetailsComponent,
     ContactDetailsListComponent,
-    AddContactDetailsComponent
+    AddContactDetailsComponent,
+    ValueFromObjectPipe,
+    AddVancancyComponent,
+    VacancyDetailsComponent
 
   ],
   imports: [
@@ -69,7 +79,10 @@ import { AddContactDetailsComponent } from './add-contact-details/add-contact-de
     MatIconModule,
     MatListModule,
     MatListModule,
-    MatOptionModule
+    MatOptionModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule
   ],
 
   providers: [InquiryService],
