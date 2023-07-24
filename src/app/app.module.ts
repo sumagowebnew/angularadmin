@@ -53,6 +53,7 @@ import { RegisterComponent } from './auth-components/register/register.component
 import { FilterPipe } from './filter.pipe';
 import { AddDesignationComponent } from './add-designation/add-designation.component';
 import { DevelopmentTeamdetailsComponent } from './modules/main/team/development-teamdetails/development-teamdetails.component';
+import { GetPipePipe } from './pipes/get-pipe.pipe';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { DevelopmentTeamdetailsComponent } from './modules/main/team/development
     FilterPipe,
     AddDesignationComponent,
     DevelopmentTeamdetailsComponent,
+    GetPipePipe,
     
 
 

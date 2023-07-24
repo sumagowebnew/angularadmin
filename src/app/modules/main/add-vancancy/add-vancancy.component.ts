@@ -42,9 +42,14 @@ export class AddVancancyComponent {
       .subscribe(res => {
         // Handle success response
         console.log('Vacancy added successfully:', res);
+        alert("successfully added vacancy");
+        this.onReset()
       }, error => {
         // Handle error response
         console.error('Failed to add vacancy:', error);
       });
+  }
+  onReset() {
+    this.vacancyForm.reset();
   }
 }

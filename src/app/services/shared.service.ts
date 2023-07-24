@@ -421,11 +421,13 @@ export class SharedService {
 
   //Add Dynamic Contact Us
  
-  addContactDetails(mobileNumbers: string[], emailIds: string[], address: string): Observable<any> {
+  addContactDetails( mobileNumbers: { [key: string]: string }[],
+    emailIds: { [key: string]: string }[],
+    addresses: { [key: string]: string }[]): Observable<any> {
     const formData = new FormData();
     formData.append('mobile_no', JSON.stringify(mobileNumbers));
     formData.append('email_id', JSON.stringify(emailIds));
-    formData.append('address', JSON.stringify(address));
+    formData.append('address', JSON.stringify(addresses));
 
     return this.http.post<any>(`${this.apiUrl}contact_details/add`, formData);
   }
@@ -438,11 +440,13 @@ export class SharedService {
     return this.http.delete<any>(`${this.apiUrl}contact_details/delete/${id}`);
   }
 
-  updateContactDetails(id: number, mobileNumbers: string[], emailIds: string[], address: string): Observable<any> {
+  updateContactDetails(id: number, mobileNumbers: { [key: string]: string }[],
+    emailIds: { [key: string]: string }[],
+    addresses: { [key: string]: string }[]): Observable<any> {
     const formData = new FormData();
     formData.append('mobile_no', JSON.stringify(mobileNumbers));
     formData.append('email_id', JSON.stringify(emailIds));
-    formData.append('address', JSON.stringify(address));
+    formData.append('address', JSON.stringify(addresses));
 
     return this.http.post<any>(`${this.apiUrl}contact_details/update/${id}`, formData);
   }
@@ -461,7 +465,7 @@ export class SharedService {
   }
 
   getVacancies(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/vacancy/get-all-record`);
+    return this.http.get<any>(`${this.apiUrl}vacancy/get-all-record`);
   }
 
   updateVacancy(id: string, position: string, experience: string, location: string, branch: string, qualification: string): Observable<any> {
@@ -478,6 +482,31 @@ export class SharedService {
   deleteVacancy(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/vacancy/delete/${id}`);
   }
+
+  //Services We Provide
+
+  addService(title:string,description:string,image:string){
+    const formData = new FormData();
+    formData.append('title',title);
+    formData.append('description',description);
+    formData.append('image',image)
+    return this.http.post<any>(`${this.apiUrl}service/add`,formData)
+  }
   
+  getService(){
+    return this.http.get<any>(`${this.apiUrl}service/get-all-record`);
+  }
+
+  deleteService(id:number){
+    return this.http.delete<any>(`${this.apiUrl}service/delete/${id}`);
+  }
+
+  updateService(id: string, title: string, description: string, image: string, ): Observable<any> {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('image', image);
+    return this.http.post<any>(`${this.apiUrl}/service/update/${id}`, formData);
+  }
 }
 

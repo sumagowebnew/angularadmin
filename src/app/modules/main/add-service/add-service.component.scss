@@ -1,0 +1,69 @@
+
+.card {
+    border: 1px solid #333; /* Dark border for the card */
+}
+
+.card-header {
+    background-color: #333; /* Dark background for the card header */
+    color: #fff; /* White text for the card header */
+    padding: 10px;
+}
+
+.form-group label {
+    color: #333; /* Dark label text color */
+}
+
+.form-control,
+.form-control-file {
+    border: 1px solid #333; /* Dark border for input fields and file input */
+    color: #333; /* Dark text color for input fields */
+    background-color: #f0f0f0; /* Light background for input fields */
+    padding: 10px; /* Optional: Add some padding to input fields */
+}
+
+/* Optional: To make the labels more prominent, add some padding */
+.form-group label {
+    padding: 5px;
+}
+
+/* Optional: To add some spacing between the buttons */
+.form-group button {
+    margin-right: 10px;
+}
+
+/* Styling the image input as a button */
+.image-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.image-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: painted;
+    cursor:grab;
+}
+
+.image-input-button {
+    display: block;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Optional: Style the button on hover to make it interactive */
+.image-input-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+/* Make the placeholder text darker */
+.form-control::placeholder {
+    color: #000000;
+}

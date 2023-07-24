@@ -38,6 +38,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { ValueFromObjectPipe } from 'src/app/pipes/value-from-object-pipe.pipe';
 import { AddVancancyComponent } from './add-vancancy/add-vancancy.component';
 import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
+import { AddServiceComponent } from './add-service/add-service.component';
+import { ServiceComponent } from './service/service.component';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.compo
     AddContactDetailsComponent,
     ValueFromObjectPipe,
     AddVancancyComponent,
-    VacancyDetailsComponent
+    VacancyDetailsComponent,
+    AddServiceComponent,
+    ServiceComponent
 
   ],
   imports: [

@@ -1,4 +1,4 @@
-<div class="text-white bg-primary">Result for lastest "Career Enquiries"</div>
+<div class="text-white bg-primary">Result for "Lastest Service List"</div>
 
 <div class="row">
   <div class="col-xs-12">
@@ -46,7 +46,7 @@
           </div>
         </div>
       </div>
-      <input type="text">
+      <input type="text"  placeholder="Search by title">
     </div>
   </div>
 </div>
@@ -56,11 +56,11 @@
     <div class="table-title">
       <div class="row">
         <div class="col-xs-6">
-          <h2>Career Enquiries</h2>
+          <h2>Service List</h2>
         </div>
         <div class="col-xs-6">
-          <!-- <a class="btn btn-success" routerLink="/main/career-enquiry"><i class="material-icons">&#xE147;</i> <span>Add New
-              Enquiry</span></a> -->
+          <a class="btn btn-success" routerLink="/main/add-service"><i class="material-icons">&#xE147;</i> <span>Add New
+              Portfolio</span></a>
         </div>
       </div>
     </div>
@@ -68,49 +68,24 @@
       <thead>
         <tr>
           <th scope="col">Sr No.</th>
-          <td scope="col">Action</td>
-          <th scope="col">Address</th>
-          <th scope="col">Email_id</th>
-          <th scope="col">Mobile_no</th>
-          <th scope="col">Updated_at No</th>
+          <th scope="col">Action</th>
+          <th scope="col">Title</th>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngIf="dataGrid">
-          <tr *ngFor="let item of dataGrid.email_id; index as i">
-            <td>{{ i + 1 }}</td>
-            <td>
-              <i class="fa fa-trash" (click)="deleteData(dataGrid.id)" title="Delete"></i>
-            </td>
-            <td>{{ dataGrid.address[i]| json}}</td>
-            <td>{{ dataGrid.email_id[i] | json}}</td>
-            <td>{{ dataGrid.mobile_no[i]| json}}</td>
-            <td>{{ dataGrid.updated_at | date}}</td>
+      <tbody *ngFor="let data of ServiceList;let i=index" >
+        <tr>
+          <td>{{i+1}}</td>
+          <td>
+            <i class="fa fa-trash" title="Delete" (click)="deleteServiceList(data.id)"></i>&nbsp;
+           </td>
+          <td>{{data.title}}</td>
+          <td><img [src]="data.service_image"></td>
+          <td>{{data.description}} </td>
           </tr>
-        </ng-container>
       </tbody>
     </table>
-    <ng-template #noData>
-      <p>No data available.</p>
-    </ng-template>
   </div>
-</div>
-<!-- Update Form -->
-<div *ngIf="selectedItem">
-  <h3>Edit Contact Details</h3>
-  <!-- Display existing data in the form -->
-  <div>
-    <label for="mobileNumbers">Mobile Numbers:</label>
-    <input type="text" id="mobileNumbers" [(ngModel)]="selectedItem.mobile_no[1]" />
-  </div>
-  <div>
-    <label for="emailIds">Email IDs:</label>
-    <input type="text" id="emailIds" [(ngModel)]="selectedItem.email_id[1]" />
-  </div>
-  <div>
-    <label for="addresses">Addresses:</label>
-    <input type="text" id="addresses" [(ngModel)]="selectedItem.address[1]" />
-  </div>
-  <button (click)="updateContactDetails(selectedItem)">Save Changes</button>
-  <button (click)="cancelUpdate()">Cancel</button>
-</div>
+</div> 
