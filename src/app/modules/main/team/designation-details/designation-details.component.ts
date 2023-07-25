@@ -51,15 +51,21 @@ export class DesignationDetailsComponent implements OnInit {
   }
 
   deleteDesignation(designation: any) {
-    this.service.deleteDesignation(designation.id).subscribe(
-      response => {
-        console.log('Designation deleted successfully');
-        this.getDesignations(); // Refresh the list of designations
-      },
-      error => {
-        console.error('Failed to delete designation', error);
-      }
-    );
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteDesignation(designation).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getDesignations();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
 
   editDesignation(designation: any) {

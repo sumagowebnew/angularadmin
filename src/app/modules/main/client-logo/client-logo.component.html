@@ -64,20 +64,20 @@
       <thead>
         <tr>
           <th scope="col">Sr No.</th>
-          <th scope="col">Action</th>
           <th scope="col">Image</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody *ngFor="let logo of clientLogos;let i = index">
         <tr>
           <td><b>{{i+1}}</b></td>
+          <td> <img  [src]="logo.image" style="width: 200px;" alt="Client Logo"> &nbsp;
+          </td>
           <td>
             <button class="btn btn-danger" (click)="onDelete(logo.id)">Delete</button>
                <i class="fa fa-edit" (click)="edit(logo.id)" title="Edit"></i>
           </td>
-
-          <td> <img  [src]="logo.image" alt="Client Logo"> &nbsp;
-          </td>
+          
       </tbody>
     </table>
   </div>

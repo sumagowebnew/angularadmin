@@ -32,9 +32,21 @@ export class ServiceComponent implements OnInit {
       })
   }
   deleteServiceList(id){
-    this.sharedService.deleteService(id).subscribe((res)=>{
-        console.log("Deleted Successfully",res)
-    })
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.sharedService.deleteService(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getServiceList();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
 
   }

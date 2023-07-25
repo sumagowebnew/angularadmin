@@ -26,10 +26,20 @@ export class ViewNewsComponent implements OnInit {
 }
 
  deleteNews(id:number){
-  this.service.deleteNews(id).subscribe((res)=>{
-    console.log("success")
-    alert("Success deleting record")
-    this.getNews()
-  })
+  const confirmed = window.confirm('Are you sure you want to delete this data?');
+  if (confirmed) {
+    this.service.deleteNews(id).subscribe(
+      (res) => {
+        console.log('Deleted Successfully');
+        // You may also want to refresh the dataGrid after deletion if needed
+        this.getNews();
+      },
+      (error) => {
+        console.error('Error while deleting data:', error);
+      }
+    );
+  } else {
+    console.log('Deletion cancelled by the user.');
+  }
  }
 }

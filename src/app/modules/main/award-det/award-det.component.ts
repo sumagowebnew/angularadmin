@@ -19,11 +19,21 @@ export class AwardDetComponent implements OnInit {
   }
 
   deleteAward(id: number){
-    this.service.deleteAward(id).subscribe(
-      (res)=>{
-        alert('Award deleted');
-        this.getAwards()
-      }
-    )
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteAward(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getAwards();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
+    
   }
 }

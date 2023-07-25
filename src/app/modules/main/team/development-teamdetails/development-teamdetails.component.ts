@@ -32,13 +32,20 @@ export class DevelopmentTeamdetailsComponent implements OnInit {
  }
 
  deleteTeamDetails(id:number){
-  this.service.deleteDevelopmentTeam(id).subscribe((res)=>{
-      if(res){
-        alert('Deleted record Successfully')
+  const confirmed = window.confirm('Are you sure you want to delete this data?');
+  if (confirmed) {
+    this.service.deleteDevelopmentTeam(id).subscribe(
+      (res) => {
+        console.log('Deleted Successfully');
+        // You may also want to refresh the dataGrid after deletion if needed
+        this.getTeamDetails();
+      },
+      (error) => {
+        console.error('Error while deleting data:', error);
       }
-      else{
-        alert('failed')
-      }
-  })
+    );
+  } else {
+    console.log('Deletion cancelled by the user.');
+  }
  }
 }

@@ -30,11 +30,21 @@ export class BirthdayComponent implements OnInit {
   }
   
   deleteBirthday(id: number) {
-    this.service.deleteBirthday(id).subscribe((res) => {
-      console.log("Successfully deleted birthday");
-      alert("Birthday Deleted Successfully");
-      this.getBirthday(); // Update the list of birthdays after deleting
-    });
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteBirthday(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getBirthday();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
   
   }

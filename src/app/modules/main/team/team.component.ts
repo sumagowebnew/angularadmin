@@ -25,9 +25,21 @@ export class TeamComponent implements OnInit{
 
 
   deletecontact(id: number){
-    this.service.deleteAdminTeam(id).subscribe((res)=>{
-      alert('deleted Success')
-    })
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteAdminTeam(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getAdminDetails();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
   }
 

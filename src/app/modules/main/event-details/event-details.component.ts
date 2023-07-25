@@ -30,11 +30,21 @@ export class EventDetailsComponent implements OnInit {
   }
   
   deleteEvent(id: number) {
-    this.service.deleteEvent(id).subscribe((res) => {
-      console.log("Successfully deleted Event");
-      alert("Event Deleted Successfully");
-      this.getEvent(); // Update the list of Events after deleting
-    });
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteEvent(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getEvent();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
 }
 

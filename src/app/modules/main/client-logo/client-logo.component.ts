@@ -40,12 +40,21 @@ export class ClientLogoComponent implements OnInit {
 
 
   onDelete(id: number): void {
-    this.clientLogoService.deleteClientLogo(id).subscribe(
-      (response) => {
-        console.log('Logo deleted successfully.',response);
-        alert('Logo Deleted')
-        this.getAllClientLogos();
-      });
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.clientLogoService.deleteClientLogo(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getAllClientLogos();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
 
 

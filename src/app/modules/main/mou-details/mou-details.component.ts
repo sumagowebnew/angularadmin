@@ -22,10 +22,21 @@ export class MouDetailsComponent implements OnInit {
   }
 
   deleteMou(id:number) {
-    this.service.deleteMou(id).subscribe(() =>{
-      alert('Delete Success')
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteMou(id).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
           this.getMou();
-        })
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
   }
 
 }
