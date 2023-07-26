@@ -31,9 +31,9 @@ export class UpdatePortfolioFormComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private service:SharedService){
     this.PortfolioForm = new FormGroup({
-      title: new FormControl('Test', Validators.required),
-      description: new FormControl('check', Validators.required),
-      websitelink: new FormControl('https://', Validators.required),
+      title: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
+      websitelink: new FormControl('', Validators.required),
       image_file: new FormControl('', Validators.required)
     });
   }

@@ -34,6 +34,9 @@ export class ContactEnquiryComponent implements OnInit {
     this.contacts.splice(index, 1);
   }
 
+  filtered:any[]=[]
+  searchTerm:string = ''
+
   constructor(private contactService:SharedService){}
   ngOnInit(): void {
 this.getContactEnquiries()
@@ -44,6 +47,7 @@ this.getContactEnquiries()
       (res: ApiResponse) => {
         if (res.status === 'success') {
           this.contacts = res.data;
+          this.filtered = this.contacts
         }
       },
       (error: any) => {
@@ -80,5 +84,15 @@ this.getContactEnquiries()
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
     const data: Blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     saveAs(data, 'contacts.xlsx');
+  }
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.contacts;
+    } else {
+      this.filtered = this.contacts.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
   }
 }

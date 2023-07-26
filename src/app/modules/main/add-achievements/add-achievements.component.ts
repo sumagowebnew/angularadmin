@@ -1,56 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/services/shared.service';
 @Component({
     selector: 'app-add-achievements',
     templateUrl: './add-achievements.component.html',
     styleUrls: ['./add-achievements.component.scss']
   })
-  export class AddAchievementsComponent implements OnInit {
-    achievementsForm: FormGroup;
+  export class AddAchievementsComponent {
+    title: string;
+    images: string[] = []; // Array to store base64 encoded images
   
-    constructor(private formBuilder: FormBuilder,private service:SharedService) {
-      this.achievementsForm = new FormGroup({
-        title: new FormControl('', Validators.required),
-        images: new FormControl('', Validators.required),
-
-      });
+    constructor(private postmanPaiService: SharedService) {}
+  
+    onFileSelected(event: any) {
+      const file = event.target.files[0];
+  
+      if (file) {
+        const reader = new FileReader();
+  
+        reader.onload = (e: any) => {
+          // e.target.result contains the base64 encoded image
+          this.images.push(e.target.result);
+        };
+  
+        reader.readAsDataURL(file);
+      }
     }
-
-    selectedFile: File | null = null;
-  base64Image: string | null = null;
-
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];
-    this.convertToBase64();
-  }
-
-  convertToBase64(): void {
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.base64Image = reader.result as string;
-      console.log(this.base64Image)
-    };
-    reader.readAsDataURL(this.selectedFile);
-  }
-
-  
-    ngOnInit() {}
   
     onSubmit() {
-      if (this.achievementsForm.valid) {
-        const title = this.achievementsForm.get('title')?.value
-        this.service.addAchievements(title,this.base64Image).subscribe((res)=>
-        {
-          alert('Added Achievemetns');
-        }),err=>{
-          console.log(err)
-        }
+      const formData = new FormData();
+      formData.append('title', this.title);
+  
+      // Append base64 encoded image strings to the FormData
+      for (let i = 0; i < this.images.length; i++) {
+        formData.append('images[' + i + ']', this.images[i]);
       }
   
-    }
-  
-    onReset() {
-      this.achievementsForm.reset();
+      this.postmanPaiService.addAchievements(formData).subscribe(
+        (response) => {
+          // Handle the response from the server
+          console.log('Response:', response);
+        },
+        (error) => {
+          // Handle error if any
+          console.error('Error:', error);
+        }
+      );
     }
   }

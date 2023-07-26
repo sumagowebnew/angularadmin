@@ -6,9 +6,10 @@
         <div class="col-xs-6">
           <h2>Career Enquiries</h2>
         </div>
-        <div class="col-xs-6">
-          <!-- <a class="btn btn-success" routerLink="/main/career-enquiry"><i class="material-icons">&#xE147;</i> <span>Add New
-              Enquiry</span></a> -->
+        <div class="col-xs-2">
+          <div class="search-container">
+            <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
+          </div>
         </div>
       </div>
     </div>
@@ -30,7 +31,7 @@
       </thead>
       <tbody>
 
-        <tr *ngFor="let enq of careerEnquiries; let i=index">
+        <tr *ngFor="let enq of filtered; let i=index">
           <td>{{i+1}}</td>
           <td>
             <i class="fa fa-trash" (click)="deleteCareerEnquiry(enq.id)" title="Delete"></i>

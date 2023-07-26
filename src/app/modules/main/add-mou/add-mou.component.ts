@@ -64,6 +64,8 @@ export class AddMouComponent {
         .subscribe(
           response => {
             console.log('MOU uploaded successfully:', response);
+            alert('added data');
+            this.onReset();
           },
           error => {
             console.error('Failed to upload MOU:', error);

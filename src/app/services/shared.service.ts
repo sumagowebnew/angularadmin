@@ -361,12 +361,8 @@ export class SharedService {
 
   //Achievements
 
-  addAchievements(title:string,images:string): Observable<any> {
-    const url = `${this.apiUrl}achievement/add`;
-    const formData: FormData = new FormData();
-    formData.append('title', title);
-    formData.append('images', images);
-    return this.http.post(url, formData);
+  addAchievements(formData): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/achievement/add`, formData);
   }
 
   getAchievements(): Observable<any> {
@@ -508,5 +504,7 @@ export class SharedService {
     formData.append('image', image);
     return this.http.post<any>(`${this.apiUrl}/service/update/${id}`, formData);
   }
+
+  
 }
 

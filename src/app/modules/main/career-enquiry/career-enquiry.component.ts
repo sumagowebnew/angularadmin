@@ -37,7 +37,8 @@ interface ApiResponse {
 })
 export class CareerEnquiryComponent implements OnInit {
   careerEnquiries: Applicant[]=[];
-
+  filtered:any[] = []
+  searchTerm: string = '';
   constructor(private careerEnquiryService: SharedService) { }
 
   ngOnInit() {
@@ -48,6 +49,7 @@ export class CareerEnquiryComponent implements OnInit {
     this.careerEnquiryService.getAllCareerEnquiries().subscribe(
       (data: any) => {
         this.careerEnquiries = data.applicants;
+        this.filtered = this.careerEnquiries
         console.log(data); 
       },
       (error) => {
@@ -83,6 +85,15 @@ export class CareerEnquiryComponent implements OnInit {
   saveAs(data, 'career_enquiries.xlsx');
 }
 
-
-  // Function to export data as PDF
+onSearch(): void {
+  if (this.searchTerm.trim() === '') {
+    this.filtered = this.careerEnquiries;
+  } else {
+    this.filtered = this.careerEnquiries.filter((data) =>
+      data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+      data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+      data.position.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+    );
+  }
+}
 }

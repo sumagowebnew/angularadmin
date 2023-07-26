@@ -341,3 +341,15 @@ tr.hover{
 .fa{
 	cursor: pointer;
 }
+.search-container {
+	margin: 10px 0;
+  }
+  
+  .search-container input {
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	width: 100%;
+	color: #000;
+  }

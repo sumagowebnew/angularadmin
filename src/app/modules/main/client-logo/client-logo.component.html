@@ -31,10 +31,16 @@
     </table>
   </div>
 </div>
-
-<div *ngIf="showUpdateInput">
-  <form [formGroup]="fileForm">
-  <input type="file" formControlName="fileInput" (change)="onFileSelected($event)" placeholder="Enter updated logo text">
-  <button class="btn btn-primary" (click)="uploadLogo(id)">Update</button>
-  </form>
+<div class="card mt-4 col-md-6 col-sm-12 mx-auto animate__animated animate__fadeIn" style="width: 18rem;">
+  <div class="card-body">
+    <div *ngIf="showUpdateInput">
+      <form [formGroup]="fileForm">
+        <div class="form-group">
+          <label for="fileInput">Choose a File:</label>
+          <input type="file" class="form-control-file" formControlName="fileInput" (change)="onFileSelected($event)" id="fileInput">
+        </div>
+        <button class="btn btn-primary" (click)="uploadLogo(id)">Update</button>
+      </form>
+    </div>
+  </div>
 </div>

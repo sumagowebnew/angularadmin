@@ -1,0 +1,33 @@
+/* Custom CSS to adjust spacing and appearance */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Add space between columns on larger screens */
+  @media (min-width: 992px) {
+    .row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    .col-lg-6 {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  
+  /* Style the submit button */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  

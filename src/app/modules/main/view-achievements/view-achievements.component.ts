@@ -1,25 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-view-achievements',
   templateUrl: './view-achievements.component.html',
   styleUrls: ['./view-achievements.component.scss']
 })
-export class ViewAchievementsComponent {
-  achievements:any[]=[
-    {
-      title:'Purva Diwate',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2022-03-09'),
-    },
-    {
-      title:'Mitisha Patel',
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLYtLDlvHW2qWZR_qy8PmZ_rz-TPcVUGidsLRfe_Ck&s',
-      date:new Date('2022-10-31'),
-    }
-
-  ];
-  deletecontact(index: number){
-    this.achievements.splice(index, 1);
+export class ViewAchievementsComponent implements OnInit {
+  constructor(private service:SharedService){}
+  ngOnInit(): void {
+    this.getAchievements()
   }
+  achievements:any[]=[];
+  deletecontact(index: number){
+    const confirmed = window.confirm('Are you sure you want to delete this data?');
+    if (confirmed) {
+      this.service.deleteAchievements(index).subscribe(
+        (res) => {
+          console.log('Deleted Successfully');
+          // You may also want to refresh the dataGrid after deletion if needed
+          this.getAchievements();
+        },
+        (error) => {
+          console.error('Error while deleting data:', error);
+        }
+      );
+    } else {
+      console.log('Deletion cancelled by the user.');
+    }
+  }
+
+    getAchievements(){
+      this.service.getAchievements().subscribe((res)=>{
+        this.achievements = res
+        console.log(res)
+      },
+      err=>{
+        console.log("error",err)
+      })
+    }
 }

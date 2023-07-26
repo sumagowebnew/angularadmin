@@ -20,7 +20,8 @@ interface Portfolios {
   styleUrls: ['./portfolio-details.component.css']
 })
 export class PortfolioDetailsComponent implements OnInit{
- 
+ filtered: any[] = [];
+ searchTerm: string = '';
   portfolios: Portfolios[] = [];
   loading: boolean = false;
   image:string
@@ -30,6 +31,15 @@ export class PortfolioDetailsComponent implements OnInit{
   ngOnInit() {
     this.loadPortfolios();
   }
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.portfolios;
+    } else {
+      this.filtered = this.portfolios.filter((data) =>
+        data.title.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
 
   loadPortfolios() {
     this.loading = true;
@@ -37,6 +47,7 @@ export class PortfolioDetailsComponent implements OnInit{
       (data: any[]) => {
         if (Array.isArray(data)) {
           this.portfolios = data;
+          this.filtered = this.portfolios
           // Log the image string for each portfolio
           this.portfolios.forEach(portfolio => {
               this.image = portfolio.image
