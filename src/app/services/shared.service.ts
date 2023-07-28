@@ -416,16 +416,12 @@ export class SharedService {
   }
 
   //Add Dynamic Contact Us
- 
-  addContactDetails( mobileNumbers: { [key: string]: string }[],
-    emailIds: { [key: string]: string }[],
-    addresses: { [key: string]: string }[]): Observable<any> {
-    const formData = new FormData();
-    formData.append('mobile_no', JSON.stringify(mobileNumbers));
-    formData.append('email_id', JSON.stringify(emailIds));
-    formData.append('address', JSON.stringify(addresses));
-
-    return this.http.post<any>(`${this.apiUrl}contact_details/add`, formData);
+  addContactDetails(mobile_no, address, email_id ) {
+    const formData= new FormData();
+    formData.append('mobile_no', mobile_no);
+    formData.append('address', address);
+    formData.append('email_id', email_id);
+    return this.http.post(`${this.apiUrl}contact_details/add`, formData);
   }
 
   getContactDetails(): Observable<any> {

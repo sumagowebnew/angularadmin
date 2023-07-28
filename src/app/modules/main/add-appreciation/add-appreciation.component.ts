@@ -35,12 +35,18 @@ export class AddAppreciationComponent {
       this.service.addAppreciation(this.base64Image).subscribe(
         response => {
           console.log('Appreciation uploaded successfully:', response);
+          this.onReset()
         },
         error => {
           console.error('Failed to upload Appreciation:', error);
+          alert('empty')
         }
       );
     }
+  }
+
+  onReset(){
+    this.fileForm.reset() 
   }
 
 }

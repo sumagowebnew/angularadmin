@@ -37,6 +37,7 @@ export class AddTrainingComponent {
       this.service.addTraining(this.base64Image).subscribe(
         response => {
           console.log('Training Image uploaded successfully:', response);
+          this.onReset()
         },
         error => {
           console.error('Failed to upload Training Image:', error);

@@ -9,8 +9,11 @@
         </div>
         <div class="col-xs-6">
           <a class="btn btn-success" routerLink="/main/add-trainee-details"><i class="material-icons">&#xE147;</i>
-            <span>Add </span></a>
+            <span>Add Trainee Team Details </span></a>
         </div>
+      </div>
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
       </div>
     </div>
 

@@ -34,6 +34,18 @@ body {
 	border-radius: 3px;
 	box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
+.search-container {
+	margin: 10px 0;
+  }
+  
+  .search-container input {
+	padding: 8px 12px;
+	border: 1px solid #000000;
+	border-radius: 4px;
+	font-size: 14px;
+	width: 100%;
+	color: #000;
+  }
 .table-title {
 	padding-bottom: 15px;
 	background: #435d7d;

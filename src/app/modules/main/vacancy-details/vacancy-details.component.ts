@@ -11,6 +11,8 @@ experience:number
 })
 export class VacancyDetailsComponent implements OnInit {
   vacancy:any[]
+  searchTerm:string = ''
+
   ngOnInit(): void {
 this.getVacancy()
   }
@@ -37,5 +39,9 @@ this.getVacancy()
     } else {
       console.log('Deletion cancelled by the user.');
     }
+  }
+
+  onSearch(){
+    
   }
 }

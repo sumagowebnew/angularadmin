@@ -50,6 +50,7 @@ export class AddServiceComponent implements OnInit {
 
       this.sharedService.addService(title,description,this.base64Image).subscribe((res)=>{
         console.log('success on adding',res)
+        this.onReset()
       })
     }
     else{

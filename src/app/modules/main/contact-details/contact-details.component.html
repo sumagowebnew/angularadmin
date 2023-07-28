@@ -1,45 +1,59 @@
-<div class="container">
-  <div class="card mb-4">
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Add Contact Details</h2>
+    </div>
     <div class="card-body">
-      <h3 class="card-title">Contact Details</h3>
+      <form (ngSubmit)="onSubmit()">
+        
+        <!-- Mobile Numbers -->
 
-      <!-- Mobile Number Group -->
-      <form (ngSubmit)="addContactDetails()">
-        <div class="mb-3" *ngFor="let mobileNumber of mobileNumbers; let i = index">
-          <div class="d-flex align-items-center">
-            <label for="mobileNumber_{{ i }}">Mobile Number {{ i + 1 }}:</label>
-            <input type="text" class="form-control" id="mobileNumber_{{ i }}" [(ngModel)]="mobileNumber[i + 1]" name="mobileNumber_{{ i }}">
-            <button type="button" class="btn btn-danger ml-2" (click)="removeMobileNumber(i)">Remove</button>
+        <div class="form-group" *ngFor="let mobile of mobileNumbers; let i = index">
+          <div class="input-group mb-2">
+            <input type="text" [(ngModel)]="mobileNumbers[i][i + 1]" name="mobile_no{{ i }}" class="form-control"
+              placeholder="Enter mobile number">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-danger" (click)="removeField('mobile_no', i)">Remove</button>
+            </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" (click)="addNewMobileNumber()">Add New Mobile Number</button>
-      </form>
+        <button type="button" class="btn btn-primary mb-3" (click)="addField('mobile_no')">Add Mobile Number</button>
+        &nbsp;
 
-      <!-- Email ID Group -->
-      <form (ngSubmit)="addContactDetails()">
-        <div class="mb-3" *ngFor="let emailId of emailIds; let i = index">
-          <div class="d-flex align-items-center">
-            <label for="emailId_{{ i }}">Email Id {{ i + 1 }}:</label>
-            <input type="text" class="form-control" id="emailId_{{ i }}" [(ngModel)]="emailId[i + 1]" name="emailId_{{ i }}">
-            <button type="button" class="btn btn-danger ml-2" (click)="removeEmailId(i)">Remove</button>
+        <!-- Email IDs -->
+
+        <div class="form-group" *ngFor="let email of emailIds; let i = index">
+          <div class="input-group mb-2">
+            <input type="text" [(ngModel)]="emailIds[i][i + 1]" name="email_id{{ i }}" class="form-control"
+              placeholder="Enter email ID">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-danger" (click)="removeField('email_id', i)">Remove</button>
+            </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" (click)="addNewEmailId()">Add New Email ID</button>
-      </form>
+        <button type="button" class="btn btn-primary mb-3" (click)="addField('email_id')">Add Email ID</button>
 
-      <!-- Address Group -->
-      <form (ngSubmit)="addContactDetails()">
-        <div class="mb-3" *ngFor="let address of addresses; let i = index">
-          <div class="d-flex align-items-center">
-            <label for="address_{{ i }}">Address {{ i + 1 }}:</label>
-            <input type="text" class="form-control" id="address_{{ i }}" [(ngModel)]="address[i + 1]" name="address_{{ i }}">
-            <button type="button" class="btn btn-danger ml-2" (click)="removeAddress(i)">Remove</button>
+        &nbsp;
+
+        <!-- Addresses -->
+
+        <div class="form-group" *ngFor="let addr of addresses; let i = index">
+          <div class="input-group mb-2">
+            <input type="text" [(ngModel)]="addresses[i][i + 1]" name="address{{ i }}" class="form-control"
+              placeholder="Enter address">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-danger" (click)="removeField('address', i)">Remove</button>
+            </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" (click)="addNewAddress()">Add New Address</button>
-      </form>
+        <button type="button" class="btn btn-primary mb-3" (click)="addField('address')">Add Address</button>
 
-      <button type="submit" class="btn btn-success mt-3" (click)="addContactDetails()">Submit</button>
+        &nbsp;
+
+        <div>
+          <button type="submit" class="btn btn-success mt-3">Add Contact</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

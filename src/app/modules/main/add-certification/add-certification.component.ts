@@ -64,6 +64,7 @@ export class AddCertificationComponent {
         .subscribe(
           response => {
             console.log('Certificate uploaded successfully:', response);
+            this.onReset()
           },
           error => {
             console.error('Failed to upload Certificate:', error);

@@ -48,6 +48,7 @@ import { AddVancancyComponent } from './add-vancancy/add-vancancy.component';
 import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ServiceComponent } from './service/service.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
 
 const routes: Routes = [
   {
@@ -108,6 +109,7 @@ const routes: Routes = [
       {path:'add-service',component:AddServiceComponent},
       {path:'service-list',component:ServiceComponent},
       {path:'update-service/:id',component:AddServiceComponent},
+      {path:'update-contact/:id',component:UpdateContactComponent},
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
       { path: ' ', redirectTo: '/main/home', pathMatch: 'full' },
 

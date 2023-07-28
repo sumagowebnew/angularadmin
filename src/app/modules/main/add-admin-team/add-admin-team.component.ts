@@ -72,5 +72,8 @@ export class AddAdminTeamComponent {
       }
     );
   }
+  onReset() {
+    this.AdminTeamDetails.reset();
+  }
 
 }

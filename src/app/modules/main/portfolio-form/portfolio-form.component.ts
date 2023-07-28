@@ -21,9 +21,9 @@ export class PortfolioFormComponent implements OnInit {
 
   constructor(private service: SharedService) {
     this.PortfolioForm = new FormGroup({
-      title: new FormControl('Test', Validators.required),
-      description: new FormControl('check', Validators.required),
-      websitelink: new FormControl('https://', Validators.required),
+      title: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
+      websitelink: new FormControl('', Validators.required),
       image_file: new FormControl('', Validators.required)
     });
   }
@@ -55,9 +55,15 @@ export class PortfolioFormComponent implements OnInit {
         .subscribe(
           response => {
             console.log('Portfolio uploaded successfully:', response);
+            if(response == 200){
+              alert('Success uploading data')
+              this.PortfolioForm.reset()
+            }
+           
           },
           error => {
             console.error('Failed to upload Portfolio:', error);
+            alert('Error uploading data ')
           }
         );
     }

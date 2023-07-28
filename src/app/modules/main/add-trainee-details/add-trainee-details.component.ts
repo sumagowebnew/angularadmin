@@ -53,6 +53,7 @@ export class AddTraineeDetailsComponent {
         .subscribe(
           response => {
             console.log('Details uploaded successfully:', response);
+            this.onReset()
           },
           error => {
             console.error('Failed to upload Details:', error);
@@ -71,6 +72,10 @@ export class AddTraineeDetailsComponent {
         console.error('Failed to get designations', error);
       }
     );
+  }
+
+  onReset() {
+    this.TraineeTeamDetails.reset();
   }
 
 }

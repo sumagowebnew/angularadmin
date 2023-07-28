@@ -42,6 +42,7 @@ export class EventAddComponent {
       this.service.addEvent(this.base64Image).subscribe(
         response => {
           console.log('Event Data uploaded successfully:', response);
+          this.fileForm.reset()
         },
         error => {
           console.error('Failed to upload Event data:', error);

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { SharedService } from 'src/app/services/shared.service';
 @Component({
     selector: 'app-add-achievements',
@@ -8,6 +9,8 @@ import { SharedService } from 'src/app/services/shared.service';
   export class AddAchievementsComponent {
     title: string;
     images: string[] = []; // Array to store base64 encoded images
+    PortfolioForm
+    @ViewChild('portfolioFormRef', { static: true }) portfolioFormRef: NgForm;
   
     constructor(private postmanPaiService: SharedService) {}
   
@@ -39,11 +42,16 @@ import { SharedService } from 'src/app/services/shared.service';
         (response) => {
           // Handle the response from the server
           console.log('Response:', response);
+            alert('Success uploading data')  
         },
         (error) => {
           // Handle error if any
           console.error('Error:', error);
         }
       );
+    }
+    onReset() {
+      this.title = '';
+      this.portfolioFormRef.resetForm()
     }
   }

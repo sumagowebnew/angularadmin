@@ -38,6 +38,7 @@ export class AddLogoComponent {
         response => {
           console.log('Logo uploaded successfully:', response);
           alert('logo Added')
+          this.onReset()
           
         },
         error => {
@@ -45,6 +46,9 @@ export class AddLogoComponent {
         }
       );
     }
+  }
+  onReset() {
+    this.fileForm.reset();
   }
 
 }

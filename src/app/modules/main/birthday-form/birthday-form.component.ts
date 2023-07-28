@@ -38,6 +38,8 @@ export class BirthdayFormComponent  {
       this.service.addBirthday(this.base64Image).subscribe(
         response => {
           console.log('Birthday Data uploaded successfully:', response);
+          alert('bday added')
+          this.onReset()
         },
         error => {
           console.error('Failed to upload birthday data:', error);

@@ -63,12 +63,16 @@ export class AddNewsComponent {
         .subscribe(
           response => {
             console.log('News uploaded successfully:', response);
+            this.onReset()
           },
           error => {
             console.error('Failed to upload News:', error);
           }
         );
     }
+  }
+  onReset() {
+    this.NewsForm.reset();
   }
 
 }

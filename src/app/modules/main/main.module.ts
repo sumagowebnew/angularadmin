@@ -22,7 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatOptionModule } from '@angular/material/core';
 import { TraineeTdetailsComponent } from './team/trainee-tdetails/trainee-tdetails.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemoComponent } from './demo/demo.component';
 import { UpdatePortfolioFormComponent } from './update-portfolio-form/update-portfolio-form.component';
 import { DevelopmentFormComponent } from './development-form/development-form.component';
@@ -40,7 +40,7 @@ import { AddVancancyComponent } from './add-vancancy/add-vancancy.component';
 import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.component';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ServiceComponent } from './service/service.component';
-
+import { UpdateContactComponent } from './update-contact/update-contact.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,8 @@ import { ServiceComponent } from './service/service.component';
     AddVancancyComponent,
     VacancyDetailsComponent,
     AddServiceComponent,
-    ServiceComponent
+    ServiceComponent,
+    UpdateContactComponent
 
   ],
   imports: [

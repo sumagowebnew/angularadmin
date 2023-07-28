@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -7,16 +8,38 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./contact-details-list.component.scss']
 })
 export class ContactDetailsListComponent implements OnInit {
-  dataGrid: any = null; // Change here
+  dataGrid: any // Change here
   ngOnInit(): void {
     this.getContactData()
   }
-  constructor(private sharedService: SharedService) { }
-
+  constructor(private sharedService: SharedService, private router: Router) { }
+  address: any[]
+  contact: any[]
+  EmailId: any[]
+  data: any[]
   getContactData() {
     this.sharedService.getContactDetails().subscribe((res) => {
       this.dataGrid = res
-      console.log(this.dataGrid);
+      console.log(res.id);
+
+      const addressObject = this.dataGrid.address;
+      const addressValues = addressObject.map(obj => Object.values(obj)[0])
+      this.address = addressValues
+
+      // Access the email values
+      const emailObject = this.dataGrid.email_id;
+      const emailValues = emailObject.map(obj => Object.values(obj)[0])
+      this.EmailId = emailValues
+
+      // Access the Contact values
+      const contactObject = this.dataGrid.mobile_no;
+      const contactValues = contactObject.map(obj => Object.values(obj)[0]);
+      this.contact = contactValues;
+
+
+      this.data = [{ 'EmailId': this.EmailId, 'contacts': this.contact, 'address': this.address }]
+
+      console.log(this.data)
     })
   }
 
@@ -25,8 +48,7 @@ export class ContactDetailsListComponent implements OnInit {
     if (confirmed) {
       this.sharedService.deleteContactDetails(id).subscribe(
         (res) => {
-          console.log('Deleted Successfully');
-          // You may also want to refresh the dataGrid after deletion if needed
+          console.log('Deleted Successfully', res.id);
           this.getContactData();
         },
         (error) => {
@@ -38,42 +60,9 @@ export class ContactDetailsListComponent implements OnInit {
     }
   }
 
-  
-  enableEditMode(count: any) {
-    count.editMode = true;
+  updateContactDetails(id: number) {
+    this.router.navigate(['main/update-contact',id])
   }
 
-  cancelEdit(count: any) {
-    count.editMode = false;
-  }
-  selectedItem: any = null;
 
-openUpdateForm(item: any) {
-  // Clone the item to prevent updating the original data directly
-  this.selectedItem = { ...item };
-}
-
-  updateContactDetails(updatedData: any) {
-    const id = updatedData.id;
-    const mobileNumbers = [updatedData.mobile_no];
-    const emailIds = [updatedData.email_id];
-    const addresses = [updatedData.address];
-  
-    this.sharedService.updateContactDetails(id, mobileNumbers, emailIds, addresses).subscribe(
-      (res) => {
-        console.log('Updated Successfully');
-        this.getContactData();
-        this.selectedItem = null;
-      },
-      (error) => {
-        console.error('Error while updating data:', error);
-      }
-    );
-  }
-  
-  cancelUpdate() {
-    // Clear the selectedItem and close the update form
-    this.selectedItem = null;
-  }
-  
 }

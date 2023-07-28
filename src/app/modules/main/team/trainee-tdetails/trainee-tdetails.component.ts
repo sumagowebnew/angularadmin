@@ -7,6 +7,8 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./trainee-tdetails.component.scss']
 })
 export class TraineeTdetailsComponent implements OnInit {
+  filtered:any[] = [];
+  searchTerm:string = '';
   ngOnInit(): void {
     this.getTraineeDetails()
   }
@@ -16,7 +18,7 @@ export class TraineeTdetailsComponent implements OnInit {
 
   getTraineeDetails(){
     this.service.getTraineeTeam().subscribe(data => {this.trainees=data
-   alert('data loaded')});
+  });
   }
 
   deleteTrainee(id: number){
@@ -34,6 +36,15 @@ export class TraineeTdetailsComponent implements OnInit {
       );
     } else {
       console.log('Deletion cancelled by the user.');
+    }
+  }
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.trainees;
+    } else {
+      this.filtered = this.trainees.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) 
+      );
     }
   }
  

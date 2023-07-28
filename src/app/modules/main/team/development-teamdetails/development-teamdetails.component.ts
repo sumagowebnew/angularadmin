@@ -17,6 +17,8 @@ interface TeamDetail {
 })
 export class DevelopmentTeamdetailsComponent implements OnInit {
  constructor(private service:SharedService){}
+ searchTerm:string = ''
+ filtered: any[] = [];
   ngOnInit(): void {
    this.getTeamDetails();
   }
@@ -48,4 +50,16 @@ export class DevelopmentTeamdetailsComponent implements OnInit {
     console.log('Deletion cancelled by the user.');
   }
  }
+ 
+ onSearch(): void {
+  if (this.searchTerm.trim() === '') {
+    this.filtered = this.TeamDetails;
+  } else {
+    this.filtered = this.TeamDetails.filter((news) =>
+      news.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+      news.designation_id.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+      news.experience
+    );
+  }
+}
 }

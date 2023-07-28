@@ -64,6 +64,7 @@ export class UpdatePortfolioFormComponent implements OnInit {
         .subscribe(
           response => {
             console.log('Portfolio uploaded successfully:', response);
+            this.PortfolioForm.reset()
           },
           error => {
             console.error('Failed to upload Portfolio:', error);

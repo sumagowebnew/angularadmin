@@ -9,6 +9,8 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class TeamComponent implements OnInit{
   admins:any[]=[];
+  filtered:any[] = []
+  searchTerm: string = ''
 
   constructor(private service:SharedService){}
   ngOnInit(): void {
@@ -39,6 +41,16 @@ export class TeamComponent implements OnInit{
       );
     } else {
       console.log('Deletion cancelled by the user.');
+    }
+  }
+
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.admins;
+    } else {
+      this.filtered = this.admins.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) 
+      );
     }
   }
   }

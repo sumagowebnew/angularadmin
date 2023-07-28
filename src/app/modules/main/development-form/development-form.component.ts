@@ -53,6 +53,7 @@
           .subscribe(
             response => {
               console.log('Details uploaded successfully:', response);
+              this.TeamDetailsForm.reset()
             },
             error => {
               console.error('Failed to upload Details:', error);
@@ -71,6 +72,10 @@
           console.error('Failed to get designations', error);
         }
       );
+    }
+
+    onReset(){
+      this.TeamDetailsForm.reset()
     }
   
   }

@@ -37,6 +37,7 @@ export class AddAwardsComponent {
       this.service.addAward(this.base64Image).subscribe(
         response => {
           console.log('Award uploaded successfully:', response);
+          this.onReset()
         },
         error => {
           console.error('Failed to upload logo:', error);
