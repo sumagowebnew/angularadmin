@@ -26,6 +26,10 @@ body {
 	font-size: 13px;
 }
 .table-responsive {
+		color: $color_1;
+	background: #f5f5f5;
+	font-family: $font-family_1;
+	font-size: 13px;
 	margin: 30px 0;
 	border: 1px solid #435d7d;
 }
@@ -337,6 +341,7 @@ tr.hover{
 .excel{
 	color: black;
 	cursor: pointer;
+	height: 35px;
 }
 .fa{
 	cursor: pointer;
@@ -346,10 +351,10 @@ tr.hover{
   }
   
   .search-container input {
-	padding: 8px 12px;
+	padding: 0px 4px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: 12px;
 	width: 100%;
 	color: #000;
   }

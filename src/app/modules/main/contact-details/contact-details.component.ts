@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/services/shared.service';
 interface Contact {
@@ -9,7 +9,7 @@ interface Contact {
   templateUrl: './contact-details.component.html',
   styleUrls: ['./contact-details.component.scss']
 })
-export class ContactDetailsComponent {
+export class ContactDetailsComponent implements OnInit {
   contactForm: FormGroup;
   mobileNumbers: Contact[] = [];
   emailIds: Contact[] = [];
@@ -21,6 +21,15 @@ export class ContactDetailsComponent {
       address: ''
     });
   }
+  ngOnInit(): void {
+    this.service.getContactDetails().subscribe((res)=>{
+      if(res == null){
+        alert("Contact Details exists already")
+      }
+    })
+  }
+
+
 
   addField(field: string) {
     if (field === 'mobile_no') {
@@ -57,6 +66,7 @@ export class ContactDetailsComponent {
         this.mobileNumbers = [];
         this.emailIds = [];
         this.addresses = [];
+        alert('Record Added')
       },
       (error) => {
         console.error('Error adding contact details:', error);
@@ -66,9 +76,6 @@ export class ContactDetailsComponent {
 
   private getFormattedData(contactArray: Contact[]): string {
     return contactArray.map((item) => JSON.stringify(item)).join(',');
-  }
-  private logContacts(fieldName: string, contactArray: Contact[]): void {
-    console.log(`${JSON.stringify(contactArray)}`);
   }
 
 onReset(){

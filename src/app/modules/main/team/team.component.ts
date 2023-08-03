@@ -21,6 +21,7 @@ export class TeamComponent implements OnInit{
   getAdminDetails(){
     this.service.getAdminTeam().subscribe((res)=>{
       this.admins = res
+      this.filtered = this.admins;
       console.log(res);
     })
   }

@@ -35,13 +35,13 @@
        
 
         <tbody>
-          <tr *ngFor="let trainee of trainees; let i=index">
+          <tr *ngFor="let trainee of filtered; let i=index">
             <td>{{i+1}}</td>
             <td>
               <i class="fa fa-trash" (click)="deleteTrainee(trainee.id)" title="Delete"></i>
             </td>
             <td>{{trainee.name}}</td>
-            <td><img [src]="trainee.photo" alt="Image"></td>
+            <td><img [src]="trainee.photo" alt="Image" style="width: 80px;"></td>
             <td>{{ trainee.designation_id}}</td>
             <td>{{ trainee.qualification}}</td>
             <td>{{ trainee.experience}}</td>

@@ -28,8 +28,8 @@ export class DevelopmentTeamdetailsComponent implements OnInit {
  getTeamDetails(){
   this.service.getDevelopmentTeam().subscribe((res)=>{
     this.TeamDetails = res;
+    this.filtered = this.TeamDetails
     console.log(this.TeamDetails);
-    
   })
  }
 
@@ -57,8 +57,7 @@ export class DevelopmentTeamdetailsComponent implements OnInit {
   } else {
     this.filtered = this.TeamDetails.filter((news) =>
       news.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
-      news.designation_id.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
-      news.experience
+      news.designation_id.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) 
     );
   }
 }

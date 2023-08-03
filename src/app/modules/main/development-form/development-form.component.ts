@@ -53,6 +53,7 @@
           .subscribe(
             response => {
               console.log('Details uploaded successfully:', response);
+              alert('Data Added Successfully')
               this.TeamDetailsForm.reset()
             },
             error => {

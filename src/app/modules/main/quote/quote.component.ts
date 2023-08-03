@@ -64,6 +64,19 @@ export class QuoteComponent implements OnInit {
   }
 
 
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
+ onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.quotes;
+    } else {
+      this.filtered = this.quotes.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
 
 
 

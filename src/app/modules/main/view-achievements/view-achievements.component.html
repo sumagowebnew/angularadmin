@@ -9,7 +9,11 @@
         <div class="col-xs-6">
           <a class="btn btn-success" routerLink="/main/add-achievements"><i class="material-icons">&#xE147;</i>
             <span>Add New Achievement</span></a>
+            <div class="search-container">
+              <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
+            </div>
         </div>
+        
       </div>
     </div>
     <table class="table table-striped table-hover">

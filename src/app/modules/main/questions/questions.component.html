@@ -7,9 +7,9 @@
               <div class="col-xs-6">
                 <h2>Questions from User</h2>
               </div>
-              <!-- <div class="col-xs-6">
-                <a  class="btn btn-success" routerLink="/main/add-training"><i class="material-icons">&#xE147;</i> <span>Add Training</span></a>
-              </div> -->
+              <div class="search-container">
+                <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
+              </div>
             </div>
           </div>
           <table class="table table-striped table-hover">
@@ -37,7 +37,7 @@
             </tbody> -->
 
             <tbody>
-              <tr *ngFor="let question of questions; let i=index">
+              <tr *ngFor="let question of filtered; let i=index">
                 <td>{{i+1}}</td>
                 <td>
                   <i class="fa fa-trash" (click)="deleteQuestion(question.id)" title="Delete"></i>

@@ -47,13 +47,13 @@
        
 
         <tbody>
-          <tr *ngFor="let admin of admins; let i=index">
+          <tr *ngFor="let admin of filtered; let i=index">
             <td>{{i+1}}</td>
             <td>
             <i class="fa fa-trash" (click)="deletecontact(admin.id)" title="Delete"></i>&nbsp;
             </td>
             <td>{{admin.name}}</td>
-            <td><img [src]="admin.photo" alt="Image"></td>
+            <td><img [src]="admin.photo" alt="Image" style="width: 80px;"></td>
             <td>{{ admin.designation_id}}</td>
             <td>{{ admin.qualification}}</td>
             <td>{{ admin.experience}}</td>

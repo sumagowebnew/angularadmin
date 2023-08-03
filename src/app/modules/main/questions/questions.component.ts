@@ -26,7 +26,9 @@ interface ApiResponse {
 
 export class QuestionsComponent implements OnInit {
   questions:Question[]=[];
-
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
   constructor(private service:SharedService){}
   ngOnInit(): void {
     this.getQuestions();
@@ -36,6 +38,7 @@ export class QuestionsComponent implements OnInit {
       (res: ApiResponse) => {
         if (res.status === 'success') {
           this.questions = res.data;
+          this.filtered = this.questions
         }
       },
       (error: any) => {
@@ -61,5 +64,16 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
+
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.questions;
+    } else {
+      this.filtered = this.questions.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
 
 }

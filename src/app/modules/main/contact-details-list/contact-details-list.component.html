@@ -27,7 +27,6 @@
         <tr *ngIf="dataGrid">
           <td>{{ 1 }}</td>
           <td>
-            <i class="fa fa-edit" (click)="updateContactDetails(dataGrid.id)" title="Edit"></i>
             <i class="fa fa-trash" (click)="deleteData(dataGrid.id)" title="Delete"></i>
           </td>
           <td *ngFor="let grid of data">

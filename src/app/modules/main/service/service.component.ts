@@ -13,6 +13,19 @@ export class ServiceComponent implements OnInit {
   ngOnInit(): void {
     this.getServiceList()
   }
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
+ onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.ServiceList;
+    } else {
+      this.filtered = this.ServiceList.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
   selectedService: any = {}; // Variable to store the selected service to be updated
 
   // Function to open the update modal and set the selectedService data

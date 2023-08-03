@@ -22,6 +22,19 @@ export class ClientLogoComponent implements OnInit {
   selectedFile: File | null = null;
   base64Image: string | null = null;
   id:number
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
+ onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.clientLogos;
+    } else {
+      this.filtered = this.clientLogos.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
 
   fileForm = new FormGroup({
     fileInput: new FormControl('', Validators.required)
@@ -86,8 +99,14 @@ export class ClientLogoComponent implements OnInit {
   }
 
   edit(id:number){
-    this.showUpdateInput = true;
-    this.id = id
+    if(this.showUpdateInput == false){
+      this.showUpdateInput = true;
+      this.id = id
+    }
+    else{
+      this.showUpdateInput = false
+    }
+
   }
 
   uploadLogo(id:number): void {

@@ -12,6 +12,17 @@ experience:number
 export class VacancyDetailsComponent implements OnInit {
   vacancy:any[]
   searchTerm:string = ''
+  filtered:any[]=[]
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.vacancy;
+    } else {
+      this.filtered = this.vacancy.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
 
   ngOnInit(): void {
 this.getVacancy()
@@ -41,7 +52,5 @@ this.getVacancy()
     }
   }
 
-  onSearch(){
-    
-  }
+
 }

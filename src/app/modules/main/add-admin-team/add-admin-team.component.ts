@@ -53,6 +53,8 @@ export class AddAdminTeamComponent {
         .subscribe(
           response => {
             console.log('Details uploaded successfully:', response);
+            alert('Data Added Successfully')
+            this.AdminTeamDetails.reset()
           },
           error => {
             console.error('Failed to upload Details:', error);

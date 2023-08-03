@@ -18,6 +18,7 @@ export class TraineeTdetailsComponent implements OnInit {
 
   getTraineeDetails(){
     this.service.getTraineeTeam().subscribe(data => {this.trainees=data
+      this.filtered = this.trainees
   });
   }
 
@@ -43,7 +44,8 @@ export class TraineeTdetailsComponent implements OnInit {
       this.filtered = this.trainees;
     } else {
       this.filtered = this.trainees.filter((data) =>
-        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) 
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.designation_id.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
       );
     }
   }

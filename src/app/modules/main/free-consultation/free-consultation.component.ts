@@ -1,8 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Inquiry } from './inquiry.model';
-import { InquiryService } from './inquiry.service';
 import { SharedService } from 'src/app/services/shared.service';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
+
 
 interface Consultation {
   id: number;
@@ -34,6 +36,9 @@ export class FreeConsultationComponent implements OnInit{
   }
 
   
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
   consultations:Consultation[]=[]
   
 
@@ -46,6 +51,7 @@ export class FreeConsultationComponent implements OnInit{
       (res: ApiResponse) => {
         if (res.status === 'success') {
           this.consultations = res.data;
+          this.filtered = this.consultations
         }
       },
       (error: any) => {
@@ -71,5 +77,23 @@ export class FreeConsultationComponent implements OnInit{
     }
   }
 
+  
+  exportToExcel(): void {
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.consultations);
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const data: Blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    saveAs(data, 'contacts.xlsx');
+  }
+  onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.consultations;
+    } else {
+      this.filtered = this.consultations.filter((data) =>
+        data.name.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        JSON.stringify(data.mobile_no).includes(this.searchTerm.trim())      );
+    }
+  }
 
 }

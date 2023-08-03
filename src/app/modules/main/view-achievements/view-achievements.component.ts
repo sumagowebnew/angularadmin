@@ -11,6 +11,19 @@ export class ViewAchievementsComponent implements OnInit {
   ngOnInit(): void {
     this.getAchievements()
   }
+  filtered:any[]=[]
+  searchTerm:string = ''
+  
+ onSearch(): void {
+    if (this.searchTerm.trim() === '') {
+      this.filtered = this.achievements;
+    } else {
+      this.filtered = this.achievements.filter((data) =>
+        data.title.toLowerCase().includes(this.searchTerm.trim().toLowerCase()) ||
+        data.email.toLowerCase().includes(this.searchTerm.trim().toLowerCase())
+      );
+    }
+  }
   achievements:any[]=[];
   deletecontact(index: number){
     const confirmed = window.confirm('Are you sure you want to delete this data?');

@@ -7,8 +7,11 @@
           <h2>Service List</h2>
         </div>
         <div class="col-xs-6">
-          <a class="btn btn-success" routerLink="/main/add-service"><i class="material-icons">&#xE147;</i> <span>Add New
-              Portfolio</span></a>
+          <a class="btn btn-success" routerLink="/main/add-service"><i class="material-icons">&#xE147;</i><span>Add New
+              Service</span></a>
+              <div class="search-container">
+                <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
+              </div>
         </div>
       </div>
     </div>
@@ -23,17 +26,17 @@
         </tr>
       </thead>
       <tbody>
-      <tbody *ngFor="let data of ServiceList;let i=index" >
+      <tbody *ngFor="let data of ServiceList;let i=index">
         <tr>
           <td>{{i+1}}</td>
           <td>
             <i class="fa fa-trash" title="Delete" (click)="deleteServiceList(data.id)"></i>&nbsp;
-           </td>
+          </td>
           <td>{{data.title}}</td>
           <td><img [src]="data.service_image" style="width: 200px;"></td>
           <td>{{data.description}} </td>
-          </tr>
+        </tr>
       </tbody>
     </table>
   </div>
-</div> 
+</div>
