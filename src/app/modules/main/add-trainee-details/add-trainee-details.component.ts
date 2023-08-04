@@ -36,7 +36,6 @@ export class AddTraineeDetailsComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image);
     };
     reader.readAsDataURL(this.selectedFile);
   }

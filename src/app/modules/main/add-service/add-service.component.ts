@@ -25,7 +25,6 @@ export class AddServiceComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image)
     };
     reader.readAsDataURL(this.selectedFile);
   }
@@ -49,12 +48,12 @@ export class AddServiceComponent implements OnInit {
       const image = this.formGroup.get('image')?.value;
 
       this.sharedService.addService(title,description,this.base64Image).subscribe((res)=>{
-        console.log('success on adding',res)
+        alert(`Record Added: ${res} `);
         this.onReset()
       })
     }
     else{
-      console.log("errorr")
+      alert(`Failed to upload record`);
     }
   }
 

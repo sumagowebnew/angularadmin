@@ -9,8 +9,8 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class AddVancancyComponent {
   vacancyForm: FormGroup;
-  locations: string[] = ['Pune', 'Mumbai', 'Nashik', 'Other'];
-  branches: string[] = ['IT', 'Business', 'HR', 'Clerk'];
+  locations: string[] = ['Pune','Nashik', 'USA'];
+  branches: string[] = ['Development', 'Marketing', 'Designers', 'Management'];
 
 
   constructor(

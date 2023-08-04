@@ -46,7 +46,7 @@ export class ViewAchievementsComponent implements OnInit {
     getAchievements(){
       this.service.getAchievements().subscribe((res)=>{
         this.achievements = res
-        console.log(res)
+        this.filtered = this.achievements
       },
       err=>{
         console.log("error",err)

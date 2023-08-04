@@ -23,8 +23,6 @@ export class LoginComponent {
     if (!this.loginForm.valid) {
       return;
     }
-   
-    // console.log(this.loginForm.value)
     const {email,password} = this.loginForm.value;
     if (!email || !password) {
       return;
@@ -33,7 +31,7 @@ export class LoginComponent {
     this.auth.login(email, password).subscribe(response => {
       console.log(email,password,response);
       if(response.status == 'error'){
-          console.log('error')
+          alert('error')
       }
       else{
         this.router.navigate(['main']);

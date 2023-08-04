@@ -58,11 +58,6 @@ $border-color_4: #dddddd;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Exo", sans-serif;
-    background: #ebf3f4;
-}
-
 html,
 body {
     height: 100%;
@@ -78,10 +73,3 @@ body {
 	font-size: 13px;
 
 }
-
-
-// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

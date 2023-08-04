@@ -27,7 +27,6 @@ export class AddAwardsComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image)
     };
     reader.readAsDataURL(this.selectedFile);
   }
@@ -36,11 +35,11 @@ export class AddAwardsComponent {
     if (this.base64Image) {
       this.service.addAward(this.base64Image).subscribe(
         response => {
-          console.log('Award uploaded successfully:', response);
+          alert("record addded")
           this.onReset()
         },
         error => {
-          console.error('Failed to upload logo:', error);
+          alert(`Failed to upload record :${error}`);
         }
       );
     }

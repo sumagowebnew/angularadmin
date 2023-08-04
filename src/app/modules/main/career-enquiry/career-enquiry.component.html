@@ -6,14 +6,11 @@
         <div class="col-xs-6">
           <h2>Career Enquiries</h2>
         </div>
-        <div class="col-xs-2">
-          <div class="search-container">
-            <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
-          </div>
-        </div>
       </div>
     </div>
+
     <table class="table table-striped table-hover">
+
       <thead>
         <tr>
           <th scope="col">Sr No.</th>
@@ -43,7 +40,8 @@
           <td>{{enq.position}}</td>
           <td><a href="{{ enq.cv.download_url }}" download="{{ enq.cv.file_name }}">Download CV</a></td>
           <td>{{enq.duration}}</td>
-          <td><a href="{{ enq.cover_letter.download_url }}" download="{{ enq.cover_letter.file_name }}">Download Cover Letter</a></td>
+          <td><a href="{{ enq.cover_letter.download_url }}" download="{{ enq.cover_letter.file_name }}">Download Cover
+              Letter</a></td>
           <td>{{enq.duration | date}}</td>
         </tr>
       </tbody>

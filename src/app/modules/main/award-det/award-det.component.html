@@ -1,4 +1,3 @@
-<!-- <div class="container"> -->
 <div class="text-white bg-primary">Result for "Lastest Portfolio Details"</div>
 <div class="table-responsive">
   <div class="table-wrapper">
@@ -30,7 +29,7 @@
             <i class="fa fa-trash" (click)="deleteAward(award.id)" title="Delete"></i>
           </td>
 
-          <td><img [src]="award.image" alt="Image"></td>
+          <td><img [src]="award.image" style="width: 100px;" alt="Image"></td>
           <td>{{award.created_at | date}}</td>
       </tbody>
     </table>

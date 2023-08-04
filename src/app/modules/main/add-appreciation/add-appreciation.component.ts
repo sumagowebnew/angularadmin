@@ -25,7 +25,6 @@ export class AddAppreciationComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image)
     };
     reader.readAsDataURL(this.selectedFile);
   }
@@ -34,12 +33,11 @@ export class AddAppreciationComponent {
     if (this.base64Image) {
       this.service.addAppreciation(this.base64Image).subscribe(
         response => {
-          console.log('Appreciation uploaded successfully:', response);
+        alert(`Record Added: ${response} `);
           this.onReset()
         },
         error => {
-          console.error('Failed to upload Appreciation:', error);
-          alert('empty')
+          alert(`Failed to upload record :${error}`);
         }
       );
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { map } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 interface Contact {
   [key: string]: string;
@@ -14,22 +15,38 @@ export class ContactDetailsComponent implements OnInit {
   mobileNumbers: Contact[] = [];
   emailIds: Contact[] = [];
   addresses: Contact[] = [];
+  DataPresent:Boolean = false;
 
   constructor(private formBuilder: FormBuilder, private service: SharedService) {
     this.contactForm = this.formBuilder.group({
-      email_id: '',
-      address: ''
+      email_id: ['', [Validators.required, Validators.email]], // Add Validators for email field.
+      address: ['', Validators.required], // Add Validators for address field.
     });
   }
+  
   ngOnInit(): void {
     this.service.getContactDetails().subscribe((res)=>{
       if(res == null){
         alert("Contact Details exists already")
       }
     })
+    this.getLength()
   }
 
-
+  getLength(){
+    this.service.getContactDetails().subscribe((res:any) =>{
+      if (res && Object.keys(res).length > 0) {
+        console.log('Data is present in the response.');
+        this.DataPresent = true
+      } else {
+        console.log('No data found in the response.');
+      }
+    },
+    (error) => {
+      console.error('Error fetching contact details:', error);
+    }
+  );
+  }
 
   addField(field: string) {
     if (field === 'mobile_no') {

@@ -21,7 +21,6 @@ import { SharedService } from 'src/app/services/shared.service';
         const reader = new FileReader();
   
         reader.onload = (e: any) => {
-          // e.target.result contains the base64 encoded image
           this.images.push(e.target.result);
         };
   
@@ -33,20 +32,17 @@ import { SharedService } from 'src/app/services/shared.service';
       const formData = new FormData();
       formData.append('title', this.title);
   
-      // Append base64 encoded image strings to the FormData
       for (let i = 0; i < this.images.length; i++) {
         formData.append('images[' + i + ']', this.images[i]);
       }
   
       this.postmanPaiService.addAchievements(formData).subscribe(
         (response) => {
-          // Handle the response from the server
           console.log('Response:', response);
             alert('Success uploading data')  
         },
         (error) => {
-          // Handle error if any
-          console.error('Error:', error);
+       alert('Error');
         }
       );
     }

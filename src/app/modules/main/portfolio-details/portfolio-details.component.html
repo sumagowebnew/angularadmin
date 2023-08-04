@@ -10,10 +10,14 @@
           <a class="btn btn-success" routerLink="/main/add-news"><i class="material-icons">&#xE147;</i> <span>Add New
               Portfolio</span></a>
         </div>
-        <div class="search-container">
-          <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
-        </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search..."> 
+      </div> 
+    </div>     
     </div>
     <table class="table table-striped table-hover">
       <thead>

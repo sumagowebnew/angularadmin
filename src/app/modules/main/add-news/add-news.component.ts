@@ -44,10 +44,8 @@ export class AddNewsComponent {
     reader.onload = () => {
       if (fileType === 'image') {
         this.base64Image = reader.result as string;
-        console.log('Image base64:', this.base64Image);
       } else if (fileType === 'model') {
         this.base64Model = reader.result as string;
-        console.log('Model base64:', this.base64Model);
       }
     };
     reader.readAsDataURL(file);
@@ -62,11 +60,11 @@ export class AddNewsComponent {
         .addNews(title, description, this.base64Image,this.base64Model)
         .subscribe(
           response => {
-            console.log('News uploaded successfully:', response);
+            alert(`Record Added: ${response} `);
             this.onReset()
           },
           error => {
-            console.error('Failed to upload News:', error);
+ alert(`Failed to upload record :${error}`);
           }
         );
     }

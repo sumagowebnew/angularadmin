@@ -45,10 +45,8 @@ export class AddMouComponent {
     reader.onload = () => {
       if (fileType === 'image') {
         this.base64Image = reader.result as string;
-        console.log('Image base64:', this.base64Image);
       } else if (fileType === 'model') {
         this.base64Model = reader.result as string;
-        console.log('Model base64:', this.base64Model);
       }
     };
     reader.readAsDataURL(file);
@@ -63,12 +61,11 @@ export class AddMouComponent {
         .addMou(title, description, this.base64Image,this.base64Model)
         .subscribe(
           response => {
-            console.log('MOU uploaded successfully:', response);
             alert('added data');
             this.onReset();
           },
           error => {
-            console.error('Failed to upload MOU:', error);
+            alert(`Failed to upload record :${error}`);
           }
         );
     }

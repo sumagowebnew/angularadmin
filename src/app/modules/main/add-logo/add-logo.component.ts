@@ -27,7 +27,6 @@ export class AddLogoComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image)
     };
     reader.readAsDataURL(this.selectedFile);
   }
@@ -36,13 +35,11 @@ export class AddLogoComponent {
     if (this.base64Image) {
       this.clientLogoService.addClientLogo(this.base64Image).subscribe(
         response => {
-          console.log('Logo uploaded successfully:', response);
           alert('logo Added')
           this.onReset()
-          
         },
         error => {
-          console.error('Failed to upload logo:', error);
+          alert(`Failed to upload record :${error}`);
         }
       );
     }

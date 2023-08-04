@@ -1,0 +1,26 @@
+<!-- count-form.component.html -->
+
+<h1>Count Form</h1>
+<div class="container">
+  <form [formGroup]="countForm" (ngSubmit)="addCount()" class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="clients">Clients:</label>
+        <input type="number" id="clients" formControlName="clients" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="projects">Projects:</label>
+        <input type="number" id="projects" formControlName="projects" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="cupOfCoffee">Cup of Coffee:</label>
+        <input type="number" id="cupOfCoffee" formControlName="cupOfCoffee" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="awards">Awards:</label>
+        <input type="number" id="awards" formControlName="awards" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

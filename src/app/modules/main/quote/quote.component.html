@@ -1,5 +1,4 @@
 <div class="text-white bg-primary">Result for lastest "Get A Quote"</div>
-<!-- <div class="container"> -->
     <div class="table-responsive">
         <div class="table-wrapper">
           <div class="table-title">
@@ -7,11 +6,15 @@
               <div class="col-xs-6">
                 <h2>Quote from User</h2>
               </div>
-              <div class="search-container">
-                <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search...">
-              </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="search-container">
+                <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Search..."> 
+            </div> 
+          </div> 
+          </div>    
           <table class="table table-striped table-hover">
             <thead>
               <tr>
@@ -27,7 +30,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let quote of quotes; let i=index">
+              <tr *ngFor="let quote of filtered; let i=index">
                 <td>{{i+1}}</td>
                 <td>
                   <i class="fa fa-trash" (click)="deleteQuote(quote.id)" title="Delete"></i>

@@ -36,7 +36,6 @@ export class AddAdminTeamComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.base64Image = reader.result as string;
-      console.log(this.base64Image);
     };
     reader.readAsDataURL(this.selectedFile);
   }
@@ -52,12 +51,11 @@ export class AddAdminTeamComponent {
         .addAdminTeam(name, designation_id,qualification,experience, this.base64Image)
         .subscribe(
           response => {
-            console.log('Details uploaded successfully:', response);
             alert('Data Added Successfully')
             this.AdminTeamDetails.reset()
           },
           error => {
-            console.error('Failed to upload Details:', error);
+            alert(`Failed to upload Details :${error}`);
           }
         );
     }

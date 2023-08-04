@@ -296,6 +296,15 @@ export class SharedService {
 
   //count
 
+  addCount(clients: number, projects: number, cupOfCoffee: number, awards: number){   const formData: FormData = new FormData();
+    formData.append('clients', clients.toString());
+    formData.append('projects', projects.toString());
+    formData.append('cup_of_coffee', cupOfCoffee.toString());
+    formData.append('awards', awards.toString());
+    
+    return this.http.post(`${this.apiUrl}count/add`,formData)
+  }
+
   updateCounts(clients: number, projects: number, cupOfCoffee: number, awards: number) {
     const formData: FormData = new FormData();
     formData.append('clients', clients.toString());

@@ -38,6 +38,7 @@ export class QuoteComponent implements OnInit {
       (res: ApiResponse) => {
         if (res.status === 'success') {
           this.quotes = res.data;
+          this.filtered = this.quotes
         }
       },
       (error: any) => {

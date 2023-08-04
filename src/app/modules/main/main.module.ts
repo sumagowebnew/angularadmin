@@ -41,6 +41,7 @@ import { VacancyDetailsComponent } from './vacancy-details/vacancy-details.compo
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ServiceComponent } from './service/service.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { AddCountComponent } from './add-count/add-count.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { UpdateContactComponent } from './update-contact/update-contact.componen
     VacancyDetailsComponent,
     AddServiceComponent,
     ServiceComponent,
-    UpdateContactComponent
+    UpdateContactComponent,
+    AddCountComponent
 
   ],
   imports: [

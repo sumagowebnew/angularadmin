@@ -3,8 +3,6 @@ import { SharedService } from 'src/app/services/shared.service';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
-
-
 interface Contact {
   id: number;
   name: string;

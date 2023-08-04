@@ -1,3 +1,4 @@
+<h1 *ngIf="DataPresent==true">data is Already Been Added Not able to add again </h1> 
 <div class="container mt-4">
   <div class="card">
     <div class="card-header">
@@ -5,9 +6,7 @@
     </div>
     <div class="card-body">
       <form (ngSubmit)="onSubmit()">
-        
         <!-- Mobile Numbers -->
-
         <div class="form-group" *ngFor="let mobile of mobileNumbers; let i = index">
           <div class="input-group mb-2">
             <input type="text" [(ngModel)]="mobileNumbers[i][i + 1]" name="mobile_no{{ i }}" class="form-control"
@@ -17,7 +16,7 @@
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary mb-3" (click)="addField('mobile_no')">Add Mobile Number</button>
+        <button type="button" class="btn btn-primary mb-3" [disabled]="DataPresent==true" (click)="addField('mobile_no')">Add Mobile Number</button>
         &nbsp;
 
         <!-- Email IDs -->
@@ -27,11 +26,11 @@
             <input type="text" [(ngModel)]="emailIds[i][i + 1]" name="email_id{{ i }}" class="form-control"
               placeholder="Enter email ID">
             <div class="input-group-append">
-              <button type="button" class="btn btn-danger" (click)="removeField('email_id', i)">Remove</button>
+              <button type="button" class="btn btn-danger"  (click)="removeField('email_id', i)">Remove</button>
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary mb-3" (click)="addField('email_id')">Add Email ID</button>
+        <button type="button" class="btn btn-primary mb-3" [disabled]="DataPresent==true" (click)="addField('email_id')">Add Email ID</button>
 
         &nbsp;
 
@@ -46,7 +45,7 @@
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary mb-3" (click)="addField('address')">Add Address</button>
+        <button type="button" class="btn btn-primary mb-3" [disabled]="DataPresent==true" (click)="addField('address')">Add Address</button>
 
         &nbsp;
 
