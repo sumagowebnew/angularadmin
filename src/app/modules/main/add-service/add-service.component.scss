@@ -38,25 +38,25 @@
     display: inline-block;
 }
 
-.image-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: painted;
-    cursor:grab;
-}
+// .image-input {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     opacity: 0;
+//     pointer-events: painted;
+//     cursor:grab;
+// }
 
-.image-input-button {
-    display: block;
-    padding: 10px;
-    border: 1px solid #333;
-    background-color: #f0f0f0;
-    color: #333;
-    cursor: pointer;
-}
+// .image-input-button {
+//     display: block;
+//     padding: 10px;
+//     border: 1px solid #333;
+//     background-color: #f0f0f0;
+//     color: #333;
+//     cursor: pointer;
+// }
 
 /* Optional: Style the button on hover to make it interactive */
 .image-input-button:hover {
