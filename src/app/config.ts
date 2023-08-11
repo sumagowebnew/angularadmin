@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://localhost/main/';
+export const BASE_URL = 'https://sumagoweb.sumagotest.in/';
